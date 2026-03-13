@@ -1,0 +1,125 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-etätuki yrityksille koko Suomessa | Archipelago Technics";
+const description = "Nopea ja asiantunteva IT-etätuki ja IT-ulkoistus yrityksille koko Suomessa. Ratkaisemme tietokoneongelmat ja IT-haasteet etänä nopeasti ja luotettavasti.";
+---
+
+<BaseLayout 
+  title={title} 
+  description={description} 
+  lang="fi"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "IT-etätuki",
+    "description": "Henkilökohtainen ja nopea IT-etätuki yrityksille.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Archipelago Technics",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Turku",
+        "addressRegion": "Varsinais-Suomi",
+        "addressCountry": "FI"
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Finland"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT-tukipalvelut",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Päivittäinen IT-tuki"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ohjelmistotuki ja Microsoft 365"
+          }
+        }
+      ]
+    }
+  }}
+>
+  <PageHeader title={title} description={description} />
+  
+  <div class="max-w-7xl mx-auto px-6 py-16" data-ps="src/pages/fi/etatuki.astro:h14iaj">
+    <div class="grid lg:grid-cols-2 gap-12 mb-16 items-center" data-ps="src/pages/fi/etatuki.astro:h14iai">
+      <div class="prose prose-lg prose-invert" data-ps="src/pages/fi/etatuki.astro:h14iah">
+        <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/fi/etatuki.astro:co56km">Nopea IT-etätuki ja asiantunteva IT-apu</h2>
+        <p class="lead text-xl text-orange-500 font-semibold" data-ps="src/pages/fi/etatuki.astro:ugr0cf">
+          Meiltä saat henkilökohtaista IT-etätukea ilman pitkiä jonotusaikoja!
+        </p>
+        <p data-ps="src/pages/fi/etatuki.astro:ugr0cg">
+          Autamme yrityksiä kaikissa <strong>IT-asioissa</strong> etänä ympäri Suomen. Tehokas <strong>etätuki</strong> parantaa työntekijöidenne tuottavuutta tarjoamalla reaaliaikaisen ratkaisun kaikkiin IT-ongelmiin. Archipelago Technics on kumppanisi, kun tarvitset luotettavaa <strong>IT-tukea</strong> – olitpa Turussa, Helsingissä, Tampereella tai missä päin Suomea tahansa.
+        </p>
+        <p data-ps="src/pages/fi/etatuki.astro:ugr0ch">
+          Asiantuntijamme ovat valmiina auttamaan sinua kaikissa IT-haasteissasi. Tarjoamme turvallista, 
+          luotettavaa ja nopeaa palvelua, joka tekee yrityksesi IT-ympäristöstä sujuvan ja saumattoman.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4" data-ps="src/pages/fi/etatuki.astro:h14iag">
+          <a href="tel:+358405829704" class="bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-6 rounded-lg transition text-center" data-ps="src/pages/fi/etatuki.astro:xgf4xi">
+            Soita: 040 582 9704
+          </a>
+          <a href="/fi/yhteystiedot" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg transition text-center border border-zinc-700" data-ps="src/pages/fi/etatuki.astro:xgf4ww">
+            Jätä yhteydenottopyyntö
+          </a>
+        </div>
+      </div>
+      <div data-ps="src/pages/fi/etatuki.astro:gl6v8g">
+        <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1758577515339-93872db0d37e?auto=format&w=800&q=80" 
+          class="rounded-xl shadow-2xl w-full h-full object-cover" 
+          alt="Etätuki" data-ps="src/pages/fi/etatuki.astro:jjdmm0" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16" data-ps="src/pages/fi/etatuki.astro:gl6v8f">
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/fi/etatuki.astro:gl6v8e">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/fi/etatuki.astro:rck3s9">Päivittäinen tuki</h3>
+        <p class="text-zinc-400" data-ps="src/pages/fi/etatuki.astro:ugr0ci">Päivittäinen tuki työntekijöille kaikissa tietoteknisissä ongelmissa.</p>
+      </div>
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/fi/etatuki.astro:gl6v8d">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/fi/etatuki.astro:rck3s8">Ohjelmistotuki</h3>
+        <p class="text-zinc-400" data-ps="src/pages/fi/etatuki.astro:ugr0cj">Ohjelmistoihin liittyvät kysymykset, kuten esim. Microsoft Office 365.</p>
+      </div>
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/fi/etatuki.astro:gl6v8c">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/fi/etatuki.astro:rck3s7">Vianetsintä</h3>
+        <p class="text-zinc-400" data-ps="src/pages/fi/etatuki.astro:ugr0ck">Järjestelmäpäivitykset, vianetsintä ja huolto etäyhteydellä.</p>
+      </div>
+    </div>
+
+    <div class="bg-zinc-900 p-10 rounded-2xl border border-zinc-800" data-ps="src/pages/fi/etatuki.astro:gl6v8b">
+      <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/fi/etatuki.astro:co56kl">Ulkoistettu IT-tuki</h2>
+      <div class="grid md:grid-cols-2 gap-8" data-ps="src/pages/fi/etatuki.astro:gl6v8a">
+        <div data-ps="src/pages/fi/etatuki.astro:gl6v89">
+          <p class="text-zinc-300 mb-4" data-ps="src/pages/fi/etatuki.astro:ugr0cl">
+            Tarjoamme lisäresurssiapua nykyiselle IT-osastolle kiireen sattuessa tai kokonaisvaltaista ulkoistusta.
+            Olemme ratkaisu kun:
+          </p>
+          <ul class="list-disc list-inside text-zinc-300 space-y-2">
+            <li data-ps="src/pages/fi/etatuki.astro:bx6a3m">Kaipaatte heti apua IT-huolissa</li>
+            <li data-ps="src/pages/fi/etatuki.astro:bx6a3l">Tarvitsette yhden numeron, josta saatte heti henkilökohtaista apua ilman jonotusta</li>
+            <li data-ps="src/pages/fi/etatuki.astro:bx6a3k">Ette tiedä mistä jokin IT-vika johtuu tai ette osaa korjata sitä</li>
+            <li data-ps="src/pages/fi/etatuki.astro:bx6a3j">Tarvitsette apua päivityksiin liittyvissä kysymyksissä</li>
+          </ul>
+        </div>
+        <div class="flex items-center justify-center bg-zinc-950/50 rounded-xl p-8" data-ps="src/pages/fi/etatuki.astro:gl6v88">
+          <div class="text-center" data-ps="src/pages/fi/etatuki.astro:gl6v87">
+            <p class="text-2xl font-bold text-orange-500 mb-2" data-ps="src/pages/fi/etatuki.astro:ugr0cm">Henkilökohtaista palvelua</p>
+            <p class="text-white" data-ps="src/pages/fi/etatuki.astro:ugr0cn">Aina. Tämä on lupaus!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

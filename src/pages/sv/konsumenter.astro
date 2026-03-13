@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Konsumenter";
+const description = "IT-tjänster för hemmet och familjen.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/sv/konsumenter.astro:5htnnk">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/sv/konsumenter.astro:5htnnl">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/sv/konsumenter.astro:5htnnm">
+        <p class="lead" data-ps="src/pages/sv/konsumenter.astro:6mkt1d">Professionell IT-hjälp för ditt hem.</p>
+        <p data-ps="src/pages/sv/konsumenter.astro:6mkt1c">Vi hjälper privatpersoner och familjer med datorproblem, nätverksinstallationer, säkerhet och underhåll av enheter. Oavsett om du behöver fjärrsupport eller hembesök finns vi här för att hjälpa till.</p>
+        <ul>
+            <li data-ps="src/pages/sv/konsumenter.astro:bpcgqu">Datorservice & Underhåll</li>
+            <li data-ps="src/pages/sv/konsumenter.astro:fntjni">Hemnätverk (Wi-Fi)</li>
+            <li data-ps="src/pages/sv/konsumenter.astro:fntjnh">Dataåterställning & Backup</li>
+            <li data-ps="src/pages/sv/konsumenter.astro:fntjng">Säkerhet & Antivirus</li>
+            <li data-ps="src/pages/sv/konsumenter.astro:fntjn9">Gratis upphämtning och återlämning (i Åboregionen)</li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/sv/konsumenter.astro:5htnnn">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Familj vid datorn" data-ps="src/pages/sv/konsumenter.astro:odfazp" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

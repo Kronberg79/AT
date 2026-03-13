@@ -1,0 +1,97 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Services from '@/components/home/Services.astro';
+import Microsoft from '@/components/home/Microsoft.astro';
+import Security from '@/components/home/Security.astro';
+import FAQ from '@/components/home/FAQ.astro';
+import About from '@/components/home/About.astro';
+import Contact from '@/components/home/Contact.astro';
+import { SITE } from '@/config/site';
+
+const lang = 'en';
+
+
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Archipelago Technics",
+    "image": "https://a-t.fi/favicon.svg",
+    "@id": "https://a-t.fi",
+    "url": "https://a-t.fi",
+    "telephone": "+358 40 554 1234",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rantatie 30",
+      "addressLocality": "Parainen",
+      "postalCode": "21600",
+      "addressCountry": "FI"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 60.301,
+      "longitude": 22.302
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/archipelagotechnics"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Archipelago Technics",
+    "url": "https://a-t.fi",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://a-t.fi/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
+---
+
+<BaseLayout 
+  title="Archipelago Technics | Your IT Partner in Turku, Parainen & Kaarina" 
+  description="Reliable IT solutions for businesses and individuals. Expert managed services, Microsoft 365, cybersecurity, and computer repair in the Turku archipelago area." 
+  lang={lang} 
+  jsonLd={jsonLd}
+>
+  <script is:inline>
+    (function() {
+      try {
+        var saved = localStorage.getItem('language-preference');
+        var userLang = navigator.language || navigator.userLanguage; 
+        
+        if (saved) {
+          if (saved === 'fi') window.location.href = '/fi';
+          if (saved === 'sv') window.location.href = '/sv';
+        } else {
+          // No preference saved, auto-detect
+          if (userLang.startsWith('fi')) window.location.href = '/fi';
+          else if (userLang.startsWith('sv')) window.location.href = '/sv';
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <Hero lang={lang} />
+  <Services lang={lang} />
+  <Microsoft lang={lang} />
+  <Security lang={lang} />
+  <FAQ lang={lang} />
+  <About lang={lang} />
+  <Contact lang={lang} />
+</BaseLayout>

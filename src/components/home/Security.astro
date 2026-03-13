@@ -1,0 +1,53 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access
+const defaultSecurity = content['en']?.security || {};
+const currentSecurity = content[lang]?.security || {};
+const t = {
+  title: "Cybersecurity is Vital for SMEs",
+  description: "Security threats ignore company size. We offer comprehensive security.",
+  features: [],
+  ...defaultSecurity,
+  ...currentSecurity
+};
+---
+
+<section id="security" class="py-24 bg-slate-900 text-white overflow-hidden" data-ps="src/components/home/Security.astro:sec1">
+  <div class="max-w-7xl mx-auto px-6" data-ps="src/components/home/Security.astro:sec2">
+    <div class="max-w-4xl mx-auto text-center reveal" data-ps="src/components/home/Security.astro:sec3">
+      <h2 class="text-3xl md:text-5xl font-bold mb-8" data-ps="src/components/home/Security.astro:sec4">
+        {t.title}
+      </h2>
+      <p class="text-xl text-slate-400 mb-12" data-ps="src/components/home/Security.astro:sec5">
+        {t.description}
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" data-ps="src/components/home/Security.astro:sec6">
+        {t.features.map(feature => (
+          <div class="p-6 bg-slate-800/50 rounded-xl border border-slate-700" data-ps="src/components/home/Security.astro:sec7">
+            <div class="text-blue-400 font-bold text-lg mb-2" data-ps="src/components/home/Security.astro:sec8">{feature.title}</div>
+            <p class="text-slate-400 text-sm" data-ps="src/components/home/Security.astro:sec9">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 rounded-3xl overflow-hidden shadow-2xl reveal-scale" data-ps="src/components/home/Security.astro:sec16">
+        <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1614064642261-3ccbfafa481b?auto=format&w=1200&q=80" 
+          srcset="https://images.unsplash.com/photo-1614064642261-3ccbfafa481b?auto=format&w=320&q=80 320w, https://images.unsplash.com/photo-1614064642261-3ccbfafa481b?auto=format&w=640&q=80 640w, https://images.unsplash.com/photo-1614064642261-3ccbfafa481b?auto=format&w=1200&q=80 1200w"
+          sizes="100vw"
+          alt="Kyberturva ja tietosuoja" 
+          class="w-full h-[400px] object-cover opacity-60"
+          loading="lazy"
+          data-ps="src/components/home/Security.astro:sec17"
+        />
+      </div>
+    </div>
+  </div>
+</section>

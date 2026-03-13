@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-tjänster & Företagslösningar | Archipelago Technics";
+const description = "Din lokala IT-partner i Åboland. Vi erbjuder helhetslösningar för företag, från IT-stöd och underhåll till molntjänster och säkerhet.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/sv/foretag.astro:ab693t">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/sv/foretag.astro:ab693u">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/sv/foretag.astro:ab693v">
+        <p class="lead" data-ps="src/pages/sv/foretag.astro:yw7vu0">Fokusera på din verksamhet, vi sköter IT:n.</p>
+        <p data-ps="src/pages/sv/foretag.astro:yw7vtz">Vi erbjuder omfattande IT-lösningar för små och medelstora företag. Från hantering av arbetsstationer till molntjänster och cybersäkerhet, vi ser till att din teknik fungerar smidigt.</p>
+        <ul>
+            <li data-ps="src/pages/sv/foretag.astro:rwcmj1">Hanterade IT-tjänster</li>
+            <li data-ps="src/pages/sv/foretag.astro:nt9ue3">Microsoft 365-lösningar</li>
+            <li data-ps="src/pages/sv/foretag.astro:nt9ue4">Nätverksinfrastruktur</li>
+            <li data-ps="src/pages/sv/foretag.astro:nt9ue5">Säkerhetsrevisioner</li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/sv/foretag.astro:ab693w">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Modernt kontor" data-ps="src/pages/sv/foretag.astro:jk2pjg" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

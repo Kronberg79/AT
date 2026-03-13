@@ -1,0 +1,107 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout
+  title="Microsoft 365 for Business | Archipelago Technics"
+  description="We are an official Microsoft Partner. Providing all Microsoft 365 solutions, installations, and support for your business."
+>
+  <PageHeader
+    title="Microsoft 365"
+    subtitle="Efficiency, Security, and Collaboration for Your Business"
+  />
+
+  <section class="py-24 bg-white" data-ps="src/pages/m365.astro:5xu7ci">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-ps="src/pages/m365.astro:rh3k9l">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-24" data-ps="src/pages/m365.astro:rh3k9k">
+        <div data-ps="src/pages/m365.astro:m0yvc0">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-bold mb-6" data-ps="src/pages/m365.astro:m0yvc1">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/></svg>
+            Microsoft Partner
+          </div>
+          <h2 class="text-4xl font-black text-zinc-900 mb-6 leading-tight" data-ps="src/pages/m365.astro:my0g57">Your Trusted Microsoft Partner</h2>
+          <p class="text-lg text-zinc-600 mb-8 leading-relaxed" data-ps="src/pages/m365.astro:eonkd9">
+            Archipelago Technics is an official Microsoft Partner. We help your company choose the right licenses, perform cloud migrations, and ensure top-tier cybersecurity. We provide every possible solution you need to run your business smoothly.
+          </p>
+          <ul class="space-y-4 mb-10">
+            {[
+              'Expert License Management',
+              'Email & File Migration',
+              'Advanced Threat Protection (ATP)',
+              'Ongoing Support & Maintenance'
+            ].map(item => (
+              <li class="flex items-center gap-3 text-zinc-800 font-bold" data-ps="src/pages/m365.astro:nozcn0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg shadow-blue-200" data-ps="src/pages/m365.astro:lslh2e">
+            Contact an Expert
+          </a>
+        </div>
+        <div class="relative" data-ps="src/pages/m365.astro:m0yvc2">
+          <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1758876021739-d7c60b8742a5?auto=format&w=800&q=80" 
+            alt="Microsoft 365 Business" 
+            class="rounded-3xl shadow-2xl relative z-10" data-ps="src/pages/m365.astro:tzcol3" />
+          <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10" data-ps="src/pages/m365.astro:m0yvc3"></div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-24" data-ps="src/pages/m365.astro:m0yvc4">
+        {[
+          {
+            title: 'Microsoft 365 Business Basic',
+            desc: 'Best for businesses that need easy remote solutions, cloud storage, and cloud services.',
+            features: ['Teams, Exchange, OneDrive', 'Web and mobile versions of Office apps', '1 TB cloud storage']
+          },
+          {
+            title: 'Microsoft 365 Business Standard',
+            desc: 'The perfect solution for businesses that need full Office apps on all devices.',
+            features: ['All Basic features', 'Desktop versions of Outlook, Word, Excel, etc.', 'Host webinars easily']
+          },
+          {
+            title: 'Microsoft 365 Business Premium',
+            desc: 'The most comprehensive solution including advanced security and device management.',
+            features: ['All Standard features', 'Advanced cybersecurity', 'Device management (Intune)']
+          }
+        ].map(plan => (
+          <div class="p-10 rounded-3xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:shadow-xl transition-all group" data-ps="src/pages/m365.astro:m0yvc5">
+            <h3 class="text-2xl font-black text-zinc-900 mb-4" data-ps="src/pages/m365.astro:89lixm">{plan.title}</h3>
+            <p class="text-zinc-600 mb-8 leading-relaxed" data-ps="src/pages/m365.astro:eonkda">{plan.desc}</p>
+            <ul class="space-y-3">
+              {plan.features.map(f => (
+                <li class="flex gap-2 text-sm text-zinc-700 font-medium" data-ps="src/pages/m365.astro:nozcn1">
+                  <span class="text-blue-600" data-ps="src/pages/m365.astro:urqkwx">•</span> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-zinc-900 rounded-[3rem] p-12 md:p-20 text-center overflow-hidden relative" data-ps="src/pages/m365.astro:m0yvc6">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-50" data-ps="src/pages/m365.astro:m0yvc7"></div>
+        <div class="relative z-10 max-w-3xl mx-auto" data-ps="src/pages/m365.astro:m0yvc8">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-8" data-ps="src/pages/m365.astro:my0g58">Need Help Choosing?</h2>
+          <p class="text-xl text-zinc-400 mb-12" data-ps="src/pages/m365.astro:eonkdb">
+            We'll help you select the exact Microsoft 365 package for your business needs. We handle everything with a turnkey approach.
+          </p>
+          <div class="flex flex-wrap justify-center gap-6" data-ps="src/pages/m365.astro:m0yvc9">
+            <a href="tel:+358405829704" class="px-8 py-4 bg-white text-zinc-900 font-bold rounded-xl hover:scale-105 transition-transform" data-ps="src/pages/m365.astro:lslh2f">
+              Call Us: +358 40 582 9704
+            </a>
+            <a href="/contact" class="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/10 transition-colors" data-ps="src/pages/m365.astro:lslh2g">
+              Send a Message
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

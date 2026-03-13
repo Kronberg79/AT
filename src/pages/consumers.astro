@@ -1,0 +1,152 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+
+
+
+const services = [
+  {
+    title: "Computer Repair",
+    desc: "Slow computer? Broken screen? We diagnose and fix hardware and software issues for both PC and Mac.",
+    icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+  },
+  {
+    title: "Home Wi-Fi & Network",
+    desc: "Dead zones? Slow speeds? We optimize your home network for seamless streaming and gaming in every room.",
+    icon: "M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
+  },
+  {
+    title: "Virus & Malware Removal",
+    desc: "Get rid of pop-ups, spyware, and viruses. We clean your system and install protection to keep you safe.",
+    icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+  },
+  {
+    title: "New Device Setup",
+    desc: "Bought a new computer, printer, or phone? We set it up, transfer your data, and show you how to use it.",
+    icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+  },
+  {
+    title: "Free Pickup & Return",
+    desc: "In the Turku region? We'll pick up your computer for repair and return it to you for free.",
+    icon: "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+  }
+];
+---
+
+<BaseLayout 
+  title="Home IT Support & Computer Services | Archipelago Technics" 
+  description="Professional computer repair, Wi-Fi setup, and tech support for your home in Turku and Parainen." 
+  lang="en"
+>
+  <!-- Hero Section -->
+  <section class="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden" data-ps="src/pages/consumers.astro:hero">
+    <div class="absolute inset-0 z-0" data-ps="src/pages/consumers.astro:dr7o99">
+      <img 
+        crossorigin="anonymous"
+        src="https://images.unsplash.com/photo-1657653464178-b4dd0879df5c?auto=format&w=1920&q=80" 
+        srcset="https://images.unsplash.com/photo-1657653464178-b4dd0879df5c?auto=format&w=800&q=80 800w, https://images.unsplash.com/photo-1657653464178-b4dd0879df5c?auto=format&w=1200&q=80 1200w, https://images.unsplash.com/photo-1657653464178-b4dd0879df5c?auto=format&w=1920&q=80 1920w"
+        sizes="100vw"
+        alt="Family using computer at home" 
+        class="w-full h-full object-cover" data-ps="src/pages/consumers.astro:b8yjxr" />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" data-ps="src/pages/consumers.astro:dr7o9a"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 w-full" data-ps="src/pages/consumers.astro:dr7o9b">
+      <div class="max-w-2xl reveal-left" data-ps="src/pages/consumers.astro:dr7o9c">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight" data-ps="src/pages/consumers.astro:casdlf">
+          Tech Support for <span class="text-[#F54a00]" data-ps="src/pages/consumers.astro:ieulv2">Your Home</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-ps="src/pages/consumers.astro:nq2nca">
+          Frustrated with technology? We make it work. From slow computers to spotty Wi-Fi, our friendly experts are here to help you enjoy your digital life.
+        </p>
+        <div class="flex flex-wrap gap-4" data-ps="src/pages/consumers.astro:dr7o9d">
+          <a href="/contact" class="px-8 py-4 bg-[#F54a00] text-white rounded-full font-bold hover:bg-[#D43F00] transition-all hover:scale-105 shadow-lg shadow-[#F54a00]/30" data-ps="src/pages/consumers.astro:uu0k1d">
+            Get Help Now
+          </a>
+          <a href="/services" class="px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-bold hover:bg-white/20 transition-all backdrop-blur-sm" data-ps="src/pages/consumers.astro:uu0k1e">
+            View All Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-24 bg-zinc-950" data-ps="src/pages/consumers.astro:services">
+    <div class="max-w-7xl mx-auto px-6" data-ps="src/pages/consumers.astro:dr7o9e">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal" data-ps="src/pages/consumers.astro:dr7o9f">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-ps="src/pages/consumers.astro:qz7at2">How We Can Help</h2>
+        <p class="text-xl text-gray-400" data-ps="src/pages/consumers.astro:nq2ncb">We solve the tech problems that slow you down. Fast, friendly, and plain English—no geek speak.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-ps="src/pages/consumers.astro:dr7o9g">
+        {services.map((service, index) => (
+          <div class={`bg-zinc-900/50 p-8 rounded-2xl border border-white/5 hover:border-[#F54a00]/30 transition-all hover:-translate-y-2 group reveal-delay-${index + 1} reveal`} data-ps="src/pages/consumers.astro:xxc5zg">
+            <div class="w-14 h-14 bg-[#F54a00]/10 rounded-xl flex items-center justify-center text-[#F54a00] mb-6 group-hover:bg-[#F54a00] group-hover:text-white transition-colors" data-ps="src/pages/consumers.astro:xxc5zf">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon} /></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3" data-ps="src/pages/consumers.astro:tdhtyh">{service.title}</h3>
+            <p class="text-gray-400 leading-relaxed" data-ps="src/pages/consumers.astro:nq2ncc">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Remote Support Banner -->
+  <section class="py-24 bg-zinc-900 relative overflow-hidden" data-ps="src/pages/consumers.astro:remote">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F54a00]/5 to-transparent pointer-events-none" data-ps="src/pages/consumers.astro:xxc5ze"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10" data-ps="src/pages/consumers.astro:xxc5zd">
+      <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/consumers.astro:xxc5zc">
+        <div class="reveal-left" data-ps="src/pages/consumers.astro:xxc5zb">
+          <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-ps="src/pages/consumers.astro:qz7at1">Need Immediate Help?</h2>
+          <p class="text-xl text-gray-400 mb-8" data-ps="src/pages/consumers.astro:nq2ncd">
+            Many issues can be fixed remotely without a home visit. Our secure remote support software allows us to diagnose and repair your computer while you watch.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center text-gray-300" data-ps="src/pages/consumers.astro:q88ebe">
+              <svg class="w-6 h-6 text-[#F54a00] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Quick & Convenient
+            </li>
+            <li class="flex items-center text-gray-300" data-ps="src/pages/consumers.astro:q88ebd">
+              <svg class="w-6 h-6 text-[#F54a00] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              Secure Connection
+            </li>
+            <li class="flex items-center text-gray-300" data-ps="src/pages/consumers.astro:q88ebc">
+              <svg class="w-6 h-6 text-[#F54a00] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              No Travel Fees
+            </li>
+          </ul>
+          <a href="/remote-support" class="inline-flex items-center text-[#F54a00] font-bold hover:text-white transition-colors" data-ps="src/pages/consumers.astro:uu0k1f">
+            Learn more about Remote Support <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+        <div class="relative reveal-right" data-ps="src/pages/consumers.astro:xxc5za">
+          <div class="absolute inset-0 bg-[#F54a00] rounded-2xl rotate-3 opacity-20 blur-xl" data-ps="src/pages/consumers.astro:xxc5z9"></div>
+          <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1748932123709-7a340870408c?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1748932123709-7a340870408c?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1748932123709-7a340870408c?auto=format&w=800&q=80 800w"
+            class="rounded-2xl shadow-2xl relative z-10 w-full" 
+            alt="Remote support technician" data-ps="src/pages/consumers.astro:b8yjxs" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-black text-center" data-ps="src/pages/consumers.astro:cta">
+    <div class="max-w-4xl mx-auto px-6 reveal-scale" data-ps="src/pages/consumers.astro:xxc5z8">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-8" data-ps="src/pages/consumers.astro:qz7at0">Ready to fix your tech problems?</h2>
+      <p class="text-xl text-gray-400 mb-10" data-ps="src/pages/consumers.astro:nq2nce">Don't let technology stress you out. Book an appointment today and get back to enjoying your devices.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-ps="src/pages/consumers.astro:xxc5z7">
+        <a href="/booking" class="px-8 py-4 bg-[#F54a00] text-white rounded-full font-bold hover:bg-[#D43F00] transition-all hover:scale-105 shadow-lg shadow-[#F54a00]/30 text-lg" data-ps="src/pages/consumers.astro:uu0k1g">
+          Book an Appointment
+        </a>
+        <a href="/contact" class="px-8 py-4 bg-zinc-800 text-white rounded-full font-bold hover:bg-zinc-700 transition-all hover:scale-105 text-lg" data-ps="src/pages/consumers.astro:uu0k1h">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

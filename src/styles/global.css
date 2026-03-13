@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --nav-height: 72px;
+
+  /* Theme colors - High Contrast Modern */
+  --background: #ffffff;
+  --text: #000000;
+  --text-muted: #4b5563;
+  --border: #e5e7eb;
+  --surface: #f9fafb;
+
+  /* Brand colors */
+  --primary: #ff5a00;
+  --primary-hover: #e65100;
+  
+  --dark: #000000;
+  --dark-surface: #111111;
+}
+
+html, body {
+  overflow-x: clip;
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.prose {
+  --tw-prose-body: var(--text);
+  --tw-prose-headings: var(--text);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bullets: var(--primary);
+}
+
+h1, h2, h3 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  hyphens: none;
+}
+
+p, li {
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-animate-delay-1 { animation-delay: 0.2s; }
+.hero-animate-delay-2 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    animation: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,72 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access
+const defaultHero = content['en']?.hero || {};
+const currentHero = content[lang]?.hero || {};
+const t = {
+  tag: "Reliable IT Solutions",
+  title1: "DIGITAL",
+  title2: "STRENGTH",
+  title3: "IN THE ARCHIPELAGO",
+  description: "Your local partner for IT outsourcing, Microsoft 365, and cybersecurity.",
+  ctaPrimary: "Explore Services",
+  ctaSecondary: "Contact Experts",
+  ...defaultHero,
+  ...currentHero
+};
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black text-white pt-24 lg:pt-32" data-ps="src/components/home/Hero.astro:c630a">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0" data-ps="src/components/home/Hero.astro:ecxgf7">
+    <img 
+      crossorigin="anonymous" 
+      src="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=1200&q=80" 
+      srcset="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=640&q=80 640w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=1200&q=80 1200w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=1920&q=80 1920w"
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="w-full h-full object-cover opacity-40 grayscale-[0.5]" 
+      alt="Server room background" 
+      data-ps="src/components/home/Hero.astro:fibi83" 
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" data-ps="src/components/home/Hero.astro:ecxgf8"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10 text-center" data-ps="src/components/home/Hero.astro:ecxgf9">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-semibold mb-8 hero-animate" data-ps="src/components/home/Hero.astro:ecxgfa">
+      <span class="w-2 h-2 rounded-full bg-[#F54a00] animate-pulse" data-ps="src/components/home/Hero.astro:z1i1wg"></span>
+      {t.tag}
+    </div>
+    
+    <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-8 hero-animate hero-animate-delay-1 leading-[0.9]" data-ps="src/components/home/Hero.astro:p3vdzs">
+      {t.title1} <span class="text-[#F54a00]" data-ps="src/components/home/Hero.astro:z1i1wf">{t.title2}</span><br/>
+      {t.title3}
+    </h1>
+    
+    <p class="max-w-2xl mx-auto text-xl text-white/70 mb-12 hero-animate hero-animate-delay-2" data-ps="src/components/home/Hero.astro:ijv6zj">
+      {t.description}
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center hero-animate hero-animate-delay-3" data-ps="src/components/home/Hero.astro:ecxgfb">
+      <a href="#services" class="px-10 py-5 bg-[#D43F00] text-white rounded-full font-black text-lg hover:bg-[#B53600] transition-all hover:scale-105" data-ps="src/components/home/Hero.astro:8zc2u">
+        {t.ctaPrimary}
+      </a>
+      <a href="#contact" class="px-10 py-5 bg-white/10 text-white border border-white/20 backdrop-blur-sm rounded-full font-black text-lg hover:bg-white/20 transition-all" data-ps="src/components/home/Hero.astro:8zc2v">
+        {t.ctaSecondary}
+      </a>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30" data-ps="src/components/home/Hero.astro:ecxgfc">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7" /></svg>
+  </div>
+</section>

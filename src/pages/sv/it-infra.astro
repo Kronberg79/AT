@@ -1,0 +1,35 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-infrastruktur & Nätverkslösningar | Archipelago Technics";
+const description = "Planering och implementering av IT-infrastruktur. Vi bygger pålitliga nätverk och servermiljöer för ditt företag i Åboland.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-4xl mx-auto px-6 py-16" data-ps="src/pages/sv/it-infra.astro:container">
+    <div class="prose prose-invert prose-lg max-w-none" data-ps="src/pages/sv/it-infra.astro:content">
+      <h2 data-ps="src/pages/sv/it-infra.astro:h2-1">Personlig och behovsanpassad tjänst</h2>
+      <p data-ps="src/pages/sv/it-infra.astro:p-1">Behöver din IT-infrastruktur en uppdatering, eller har du precis börjat skapa en? På Archipelago Technics tror vi på att varje kund och individ är olika. Vi satsar på personlig service anpassad efter kundens behov. Detta gäller även IT-infrastrukturer!</p>
+      
+      <p data-ps="src/pages/sv/it-infra.astro:p-2">Vi designar IT-infrastrukturer skräddarsydda efter kundens önskemål, oavsett om det rör sig om en större eller mindre helhet. Vi har över ett decenniums erfarenhet inom branschen!</p>
+
+      <h3 data-ps="src/pages/sv/it-infra.astro:h3-1">Vad vi erbjuder:</h3>
+      <ul data-ps="src/pages/sv/it-infra.astro:ul-1">
+        <li data-ps="src/pages/sv/it-infra.astro:li-1"><strong>Nätverksdesign:</strong> Vi bygger pålitliga och snabba lokala nätverk (LAN) och trådlösa nätverk (WLAN).</li>
+        <li data-ps="src/pages/sv/it-infra.astro:li-2"><strong>Serverhantering:</strong> Installation, underhåll och optimering av servrar.</li>
+        <li data-ps="src/pages/sv/it-infra.astro:li-3"><strong>Säkerhetskopiering:</strong> Vi ser till att ditt företags viktiga data alltid är säker och kan återställas.</li>
+        <li data-ps="src/pages/sv/it-infra.astro:li-4"><strong>IT-säkerhet:</strong> Integrerad säkerhet som en del av hela infrastrukturen.</li>
+      </ul>
+
+      <p data-ps="src/pages/sv/it-infra.astro:p-3">Vår uppgift är att ta hänsyn till tekniska krav, budget och affärsmål för att bygga en optimal infrastruktur för dig. En rätt planerad IT-infrastruktur är nyckeln till ditt företags framgång.</p>
+
+      <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-8 mt-12" data-ps="src/pages/sv/it-infra.astro:cta">
+        <h3 class="mt-0" data-ps="src/pages/sv/it-infra.astro:cta-h3">Intresserad?</h3>
+        <p data-ps="src/pages/sv/it-infra.astro:cta-p">Ring oss direkt på +358 40 582 9704 eller lämna en kontaktförfrågan, så återkommer vi snart.</p>
+        <a href="/sv/kontakt" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors no-underline" data-ps="src/pages/sv/it-infra.astro:cta-a">Kontakta oss</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

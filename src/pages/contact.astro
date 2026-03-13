@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Contact Archipelago Technics | IT Support Turku & Parainen";
+const description = "Get in touch with Archipelago Technics. We provide IT support, computer repair, and business technology solutions in Turku and Parainen.";
+---
+
+<BaseLayout 
+  title={title} 
+  description={description} 
+  lang="en"
+>
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/contact.astro:lx8n1m">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/contact.astro:lx8n1l">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/contact.astro:lx8n1k">
+        <p class="lead" data-ps="src/pages/contact.astro:wmga0c">We're here to help.</p>
+        <p data-ps="src/pages/contact.astro:wmga0b">Reach out to us for any IT inquiries, support requests, or partnership opportunities.</p>
+        <div class="not-prose mt-8 p-6 bg-zinc-900 rounded-xl border border-white/10" data-ps="src/pages/contact.astro:lx8n1j">
+            <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/contact.astro:rn54ws">Contact Info</h3>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/contact.astro:5muzal">Phone: <a href="tel:+358405829704" class="text-white hover:text-[#F54a00]" data-ps="src/pages/contact.astro:piidak">+358 40 582 9704</a></p>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/contact.astro:5muzak">Email: <a href="mailto:info@a-t.fi" class="text-white hover:text-[#F54a00]" data-ps="src/pages/contact.astro:piidaj">info@a-t.fi</a></p>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/contact.astro:5muzaj">Address: Teollisuuskatu 22, 21600 Parainen</p>
+            <p class="text-gray-400" data-ps="src/pages/contact.astro:vat-en">VAT: FI20349445</p>
+        </div>
+      </div>
+      <div data-ps="src/pages/contact.astro:lx8n1i">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Contact support" data-ps="src/pages/contact.astro:j8mga9" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

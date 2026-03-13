@@ -1,0 +1,110 @@
+---
+import { SITE } from '@/config/site';
+
+interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+const currentYear = new Date().getFullYear();
+
+const locationText = {
+  en: 'Parainen, Turku & Kaarina',
+  fi: 'Parainen, Turku & Kaarina',
+  sv: 'Pargas, Åbo & S:t Karins'
+};
+
+const servicesText = {
+  en: 'Services',
+  fi: 'Palvelut',
+  sv: 'Tjänster'
+};
+
+const contactText = {
+  en: 'Contact',
+  fi: 'Yhteystiedot',
+  sv: 'Kontakt'
+};
+
+const privacyText = {
+  en: 'Privacy Policy',
+  fi: 'Tietosuojaseloste',
+  sv: 'Integritetspolicy'
+};
+
+const termsText = {
+  en: 'Terms of Service',
+  fi: 'Käyttöehdot',
+  sv: 'Användarvillkor'
+};
+
+const agentText = {
+  en: 'Become an A-T Agent',
+  fi: 'Ryhdy A-T Agentiksi',
+  sv: 'Bli en A-T Agent'
+};
+
+const footerDesc = {
+  en: "The archipelago's most reliable technology partner. We bring high-level expertise to your doorstep.",
+  fi: "Saariston luotettavin teknologiakumppani. Tuomme korkean tason asiantuntemuksen ovellesi.",
+  sv: "Skärgårdens mest pålitliga teknikpartner. Vi tar med expertis på hög nivå till din dörr."
+};
+---
+
+<footer class="bg-black text-white pt-24 pb-12 border-t border-white/5" data-ps="src/components/Footer.astro:ikmf2z">
+  <div class="container mx-auto px-6" data-ps="src/components/Footer.astro:p4vf84">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24" data-ps="src/components/Footer.astro:p4vf85">
+      <div class="md:col-span-2" data-ps="src/components/Footer.astro:p4vf86">
+        <a href="/" class="text-3xl font-black tracking-tighter flex items-center gap-3 mb-8" data-ps="src/components/Footer.astro:7gqbzp">
+          <span class="w-10 h-10 bg-[#D43F00] rounded-lg flex items-center justify-center text-white text-sm font-bold" data-ps="src/components/Footer.astro:abywzu">AT</span>
+          {SITE.name}
+        </a>
+        <p class="text-white/70 text-lg max-w-sm mb-8 leading-relaxed" data-ps="src/components/Footer.astro:csfaq">
+          {footerDesc[lang]}
+        </p>
+        <div class="flex gap-4" data-ps="src/components/Footer.astro:p4vf87">
+          {['facebook', 'linkedin'].map(social => (
+            <a href={SITE.socials[social]} target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#F54a00] hover:border-[#F54a00] transition-all" data-ps="src/components/Footer.astro:7gqbzq">
+              <span class="sr-only" data-ps="src/components/Footer.astro:abywzv">{social}</span>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                {social === 'facebook' && <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />}
+                {social === 'linkedin' && <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />}
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div data-ps="src/components/Footer.astro:p4vf88">
+        <h2 class="font-black text-xl mb-8 uppercase tracking-widest text-[#F54a00]" data-ps="src/components/Footer.astro:2uqr9q">{servicesText[lang]}</h2>
+        <ul class="space-y-4 text-white/80">
+          <li data-ps="src/components/Footer.astro:wyji6e"><a href={lang === 'en' ? '/companies' : (lang === 'fi' ? '/fi/yritykset' : '/sv/foretag')} class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqbzr">{lang === 'en' ? 'IT Outsourcing' : (lang === 'fi' ? 'IT-ulkoistus' : 'IT-outsourcing')}</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6f"><a href={lang === 'en' ? '/companies' : (lang === 'fi' ? '/fi/yritykset' : '/sv/foretag')} class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqc0d">Microsoft 365</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6g"><a href={lang === 'en' ? '/security' : (lang === 'fi' ? '/fi/tietoturva' : '/sv/sakerhet')} class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqc0e">{lang === 'en' ? 'Cybersecurity' : (lang === 'fi' ? 'Tietoturva' : 'Cybersäkerhet')}</a></li>
+          <li data-ps="src/components/Footer.astro:wyji6h"><a href={lang === 'en' ? '/computer-repair' : (lang === 'fi' ? '/fi/tietokonehuolto' : '/sv/datorservice')} class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqc0f">{lang === 'en' ? 'Support & Repairs' : (lang === 'fi' ? 'Huolto & Korjaus' : 'Support & Reparationer')}</a></li>
+          <li data-ps="src/components/Footer.astro:wyji-agent"><a href={lang === 'en' ? '/agent' : (lang === 'fi' ? '/fi/agentti' : '/sv/agent')} class="hover:text-white transition-colors font-bold text-[#F54a00]" data-ps="src/components/Footer.astro:7gqc0g">{agentText[lang]}</a></li>
+        </ul>
+      </div>
+
+      <div data-ps="src/components/Footer.astro:p4vf89">
+        <h2 class="font-black text-xl mb-8 uppercase tracking-widest text-[#F54a00]" data-ps="src/components/Footer.astro:fy3jba">{contactText[lang]}</h2>
+        <ul class="space-y-4 text-white/80">
+          <li data-ps="src/components/Footer.astro:wyji6i">{locationText[lang]}</li>
+          <li data-ps="src/components/Footer.astro:wyji6j">
+            {lang === 'sv' ? 'Industrigatan 22, 21600 Pargas' : 'Teollisuuskatu 22, 21600 Parainen'}
+          </li>
+          <li data-ps="src/components/Footer.astro:wyji6j">+358 40 582 9704</li>
+          <li data-ps="src/components/Footer.astro:wyji6k">info@a-t.fi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/60 text-sm font-bold" data-ps="src/components/Footer.astro:p4vf8a">
+      <p data-ps="src/components/Footer.astro:csfar">© {currentYear} {SITE.name}. All rights reserved.</p>
+      <div class="flex gap-8" data-ps="src/components/Footer.astro:p4vf8b">
+        <a href="#" class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqc0g">{privacyText[lang]}</a>
+        <a href="#" class="hover:text-white transition-colors" data-ps="src/components/Footer.astro:7gqc0h">{termsText[lang]}</a>
+      </div>
+    </div>
+  </div>
+</footer>

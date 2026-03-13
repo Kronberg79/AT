@@ -1,0 +1,101 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Global Remote IT Support & Managed Services | Archipelago Technics";
+const description = "Fast, secure, and professional remote IT support for businesses worldwide. 24/7 helpdesk, cloud solutions, and IT maintenance without borders.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Global Remote IT Support",
+    "description": "Professional remote IT support and helpdesk services for businesses worldwide.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Archipelago Technics",
+      "url": "https://a-t.fi/remote-support"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "World"
+    }
+  }}
+>
+  <PageHeader title={title} description={description} />
+  
+  <div class="max-w-7xl mx-auto px-6 py-16" data-ps="src/pages/remote-support.astro:bm510o">
+    <div class="grid lg:grid-cols-2 gap-12 mb-16 items-center" data-ps="src/pages/remote-support.astro:bm510p">
+      <div class="prose prose-lg prose-invert" data-ps="src/pages/remote-support.astro:bm510q">
+        <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/remote-support.astro:2vpr99">Computer Problems?</h2>
+        <p class="lead text-xl text-orange-400 font-semibold" data-ps="src/pages/remote-support.astro:rm4hdq">
+          Get personal IT remote support from us, without long wait times!
+        </p>
+        <p data-ps="src/pages/remote-support.astro:rm4hdp">
+          We help companies worldwide with all IT matters remotely! Our global remote IT help for businesses boosts your productivity 
+          and ensures your operations run smoothly by providing real-time, professional support for all IT issues, regardless of your location.
+        </p>
+        <p data-ps="src/pages/remote-support.astro:rm4hdo">
+          Our experts are ready to help you with all your IT challenges. We offer safe, reliable, 
+          and fast service that makes your company's IT environment smooth and seamless.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4" data-ps="src/pages/remote-support.astro:bm510r">
+          <a href="tel:+358405829704" class="bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-6 rounded-lg transition text-center" data-ps="src/pages/remote-support.astro:ki6koj">
+            Call: 040 582 9704
+          </a>
+          <a href="/contact" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-6 rounded-lg transition text-center border border-zinc-700" data-ps="src/pages/remote-support.astro:ki6knx">
+            Contact Request
+          </a>
+        </div>
+      </div>
+      <div data-ps="src/pages/remote-support.astro:vpc4cj">
+        <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1758577515339-93872db0d37e?auto=format&w=800&q=80" 
+          class="rounded-xl shadow-2xl w-full h-full object-cover" 
+          alt="Remote Support" data-ps="src/pages/remote-support.astro:93vwp7" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-16" data-ps="src/pages/remote-support.astro:vpc4ci">
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/remote-support.astro:vpc4ch">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/remote-support.astro:bsp5ye">Daily Support</h3>
+        <p class="text-zinc-400" data-ps="src/pages/remote-support.astro:rm4hdn">Daily support for employees in all computer-related issues.</p>
+      </div>
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/remote-support.astro:vpc4cg">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/remote-support.astro:bsp5yd">Software Support</h3>
+        <p class="text-zinc-400" data-ps="src/pages/remote-support.astro:rm4hdm">Questions related to software, such as Microsoft Office 365.</p>
+      </div>
+      <div class="bg-zinc-900 p-8 rounded-xl border border-zinc-800" data-ps="src/pages/remote-support.astro:vpc4cf">
+        <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/remote-support.astro:bsp5yc">Troubleshooting</h3>
+        <p class="text-zinc-400" data-ps="src/pages/remote-support.astro:rm4hdl">System updates, troubleshooting, and maintenance via remote connection.</p>
+      </div>
+    </div>
+
+    <div class="bg-zinc-900 p-10 rounded-2xl border border-zinc-800" data-ps="src/pages/remote-support.astro:vpc4ce">
+      <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/remote-support.astro:2vpr9a">Outsourced IT Support</h2>
+      <div class="grid md:grid-cols-2 gap-8" data-ps="src/pages/remote-support.astro:vpc4cd">
+        <div data-ps="src/pages/remote-support.astro:vpc4cc">
+          <p class="text-zinc-300 mb-4" data-ps="src/pages/remote-support.astro:rm4hdk">
+            We offer additional resource help for your current IT department during busy times or comprehensive outsourcing.
+            We are the solution when:
+          </p>
+          <ul class="list-disc list-inside text-zinc-300 space-y-2">
+            <li data-ps="src/pages/remote-support.astro:3monq9">You need immediate help with IT worries</li>
+            <li data-ps="src/pages/remote-support.astro:3monqa">You need one number to call for immediate personal help without waiting</li>
+            <li data-ps="src/pages/remote-support.astro:3monqb">You don't know the cause of an IT fault or how to fix it</li>
+            <li data-ps="src/pages/remote-support.astro:3monqc">You need help with update-related questions</li>
+          </ul>
+        </div>
+        <div class="flex items-center justify-center bg-zinc-950/50 rounded-xl p-8" data-ps="src/pages/remote-support.astro:vpc4cb">
+          <div class="text-center" data-ps="src/pages/remote-support.astro:vpc4ca">
+            <p class="text-2xl font-bold text-orange-400 mb-2" data-ps="src/pages/remote-support.astro:rm4hdj">Personal Service</p>
+            <p class="text-white" data-ps="src/pages/remote-support.astro:rm4hdi">Always. That is a promise!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

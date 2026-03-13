@@ -1,0 +1,196 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Boka tid | Archipelago Technics IT-support";
+const description = "Boka din tid för IT-support online. Öppet mån-fre 10:00-16:00.";
+
+const runtime = Astro.locals.runtime;
+let db = runtime?.env?.DB;
+
+let error = '';
+let success = false;
+
+// Handle form submission
+if (Astro.request.method === 'POST') {
+  if (!db) {
+    error = "Tjänsten är inte tillgänglig. Försök igen senare.";
+  } else {
+    try {
+      const formData = await Astro.request.formData();
+      const name = formData.get('name')?.toString();
+      const email = formData.get('email')?.toString();
+      const service = formData.get('service')?.toString();
+      const date = formData.get('date')?.toString();
+      const time = formData.get('time')?.toString();
+      let notes = formData.get('notes')?.toString() || '';
+      const pickup = formData.get('pickup');
+
+      if (pickup) {
+        notes = `[UPPHÄMTNING BEGÄRD] ${notes}`;
+      }
+
+      if (!name || !email || !service || !date || !time) {
+        error = "Fyll i alla obligatoriska fält.";
+      } else {
+        // Validate time slot (server-side check)
+        const dayOfWeek = new Date(date).getDay(); // 0=Sun, 6=Sat
+        const hour = parseInt(time.split(':')[0]);
+
+        if (dayOfWeek === 0 || dayOfWeek === 6) {
+          error = "Bokningar kan endast göras på vardagar (mån-fre).";
+        } else if (hour < 10 || hour > 15) {
+          error = "Bokningar kan endast göras mellan 10:00 och 16:00.";
+        } else {
+            // Check double booking
+            const existing = await db.prepare('SELECT id FROM bookings WHERE date = ? AND time = ? AND status != ?')
+                .bind(date, time, 'rejected')
+                .first();
+            
+            if (existing) {
+                error = "Den valda tiden är redan bokad. Välj en annan tid.";
+            } else {
+                const id = crypto.randomUUID();
+                await db.prepare('INSERT INTO bookings (id, name, email, service, date, time, notes) VALUES (?, ?, ?, ?, ?, ?, ?)')
+                    .bind(id, name, email, service, date, time, notes)
+                    .run();
+                success = true;
+            }
+        }
+      }
+    } catch (e) {
+      console.error('Booking error:', e);
+      error = "Bokningen misslyckades. Försök igen.";
+    }
+  }
+}
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  
+  <div class="max-w-3xl mx-auto px-6 py-12" data-ps="src/pages/sv/bokning.astro:h25bxr">
+    {success ? (
+      <div class="bg-green-50 border border-green-200 text-green-700 p-8 rounded-xl text-center" data-ps="src/pages/sv/bokning.astro:h25bxs">
+        <h2 class="text-2xl font-bold mb-4" data-ps="src/pages/sv/bokning.astro:2acc3f">Bokningsförfrågan mottagen!</h2>
+        <p class="mb-6" data-ps="src/pages/sv/bokning.astro:57463t">Tack för din bokning. Vi bekräftar din tid snart via e-post.</p>
+        <a href="/sv" class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition" data-ps="src/pages/sv/bokning.astro:cb22tm">Tillbaka till startsidan</a>
+      </div>
+    ) : (
+      <div class="bg-zinc-900 border border-white/10 p-8 rounded-xl shadow-lg" data-ps="src/pages/sv/bokning.astro:l675lk">
+        <h2 class="text-2xl font-bold text-white mb-6" data-ps="src/pages/sv/bokning.astro:2acc3e">Boka tid</h2>
+        
+        {error && (
+          <div class="bg-red-500/10 border border-red-500/50 text-red-200 p-4 rounded-lg mb-6" data-ps="src/pages/sv/bokning.astro:l675ll">
+            {error}
+          </div>
+        )}
+
+        <form method="POST" class="space-y-6" id="booking-form">
+          <div class="grid md:grid-cols-2 gap-6" data-ps="src/pages/sv/bokning.astro:l675lm">
+            <div data-ps="src/pages/sv/bokning.astro:l675ln">
+              <label class="block text-sm font-medium text-gray-300 mb-2">Namn *</label>
+              <input type="text" name="name" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none" />
+            </div>
+            <div data-ps="src/pages/sv/bokning.astro:l675lo">
+              <label class="block text-sm font-medium text-gray-300 mb-2">E-post *</label>
+              <input type="email" name="email" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none" />
+            </div>
+          </div>
+
+          <div data-ps="src/pages/sv/bokning.astro:l675lp">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Tjänst *</label>
+            <select name="service" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none">
+              <option value="">Välj tjänst...</option>
+              <option value="Computer Repair">Datorservice</option>
+              <option value="Remote Support">Fjärrsupport</option>
+              <option value="IT Consultation">IT-konsultation</option>
+              <option value="Business IT">IT för företag</option>
+            </select>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6" data-ps="src/pages/sv/bokning.astro:l675lq">
+            <div data-ps="src/pages/sv/bokning.astro:l675lr">
+              <label class="block text-sm font-medium text-gray-300 mb-2">Datum * (Mån-Fre)</label>
+              <input type="date" name="date" id="date-picker" required min={new Date().toISOString().split('T')[0]} class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none" />
+              <p class="text-xs text-gray-400 mt-1" data-ps="src/pages/sv/bokning.astro:57463u">Stängt på helger</p>
+            </div>
+            <div data-ps="src/pages/sv/bokning.astro:l675ls">
+              <label class="block text-sm font-medium text-gray-300 mb-2">Tid * (10:00 - 16:00)</label>
+              <select name="time" id="time-picker" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none disabled:opacity-50" disabled>
+                <option value="">Välj datum först...</option>
+                <!-- Filled by JS -->
+              </select>
+            </div>
+          </div>
+
+          <div data-ps="src/pages/sv/bokning.astro:l675lt">
+            <div class="mb-6 bg-zinc-800/50 p-4 rounded-lg border border-zinc-700/50" data-ps="src/pages/sv/bokning.astro:pmcxvs">
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input type="checkbox" name="pickup" value="yes" class="w-5 h-5 rounded border-zinc-600 bg-zinc-700 text-[#F54a00] focus:ring-[#F54a00] focus:ring-offset-zinc-900" />
+                <span class="text-white font-medium" data-ps="src/pages/sv/bokning.astro:mm250u">Begär gratis upphämtning och återlämning (endast i Åboregionen)</span>
+              </label>
+              <p class="text-sm text-gray-400 mt-2 ml-8" data-ps="src/pages/sv/bokning.astro:rmojk9">Vi hämtar din enhet och lämnar tillbaka den efter service.</p>
+            </div>
+
+            <label class="block text-sm font-medium text-gray-300 mb-2">Anteckningar (Valfritt)</label>
+            <textarea name="notes" rows="3" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-lg transition-colors" data-ps="src/pages/sv/bokning.astro:yemfun">
+            Bekräfta bokning
+          </button>
+        </form>
+      </div>
+    )}
+  </div>
+
+  <script>
+    const dateInput = document.getElementById('date-picker') as HTMLInputElement;
+    const timeInput = document.getElementById('time-picker') as HTMLSelectElement;
+
+    const timeSlots = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00'];
+
+    dateInput?.addEventListener('change', async (e) => {
+        const date = (e.target as HTMLInputElement).value;
+        if (!date) return;
+
+        const day = new Date(date).getDay();
+        if (day === 0 || day === 6) {
+            alert("Vi har stängt på helger. Vänligen välj en vardag.");
+            dateInput.value = '';
+            timeInput.disabled = true;
+            return;
+        }
+
+        timeInput.disabled = true;
+        timeInput.innerHTML = '<option>Kontrollerar tillgänglighet...</option>';
+
+        try {
+            // Fetch booked slots
+            const res = await fetch(`/api/bookings/check?date=${date}`);
+            const booked = await res.json(); 
+            
+            timeInput.innerHTML = '<option value="">Välj tid...</option>';
+            
+            timeSlots.forEach(time => {
+                const isBooked = booked.includes(time);
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                if (isBooked) {
+                    option.disabled = true;
+                    option.textContent += ' (Bokad)';
+                }
+                timeInput.appendChild(option);
+            });
+            timeInput.disabled = false;
+        } catch (err) {
+            console.error(err);
+            timeInput.innerHTML = '<option value="">Fel vid hämtning av tider</option>';
+        }
+    });
+  </script>
+</BaseLayout>

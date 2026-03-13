@@ -1,0 +1,742 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import ConnectMeConfigurator from '@/components/agent/ConnectMeConfigurator.astro';
+
+const title = "Agent Material | Selling Services for Archipelago Technics";
+const description = "Learn about the different services you can sell as an A-T Agent and how much commission you can earn. Configurator coming soon!";
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHeader
+    title="Agent Material & Commission Options"
+    subtitle="Everything you need to know about the services you can sell and the rewards you will earn."
+  />
+
+  <section class="py-20 bg-white" data-ps="src/pages/agent-material.astro:gnomqy">
+    <div class="container mx-auto px-4 max-w-4xl" data-ps="src/pages/agent-material.astro:3yj0vj">
+      <div class="text-center mb-16" data-ps="src/pages/agent-material.astro:3yj0vk">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6" data-ps="src/pages/agent-material.astro:ac6f2c">Service Catalog & Commission Structure</h2>
+        <p class="text-lg text-slate-600" data-ps="src/pages/agent-material.astro:zx1zj">
+          As an A-T Agent, you have a wide range of services you can offer to your network. Below is an overview of our key services and the earning potential for each successful referral.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-20" data-ps="src/pages/agent-material.astro:3yj0vl">
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200" data-ps="src/pages/agent-material.astro:3yj0vm">
+          <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6" data-ps="src/pages/agent-material.astro:dmbs8a">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-700"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3" data-ps="src/pages/agent-material.astro:4c8i5a">Website Development</h3>
+          <p class="text-slate-600 mb-4" data-ps="src/pages/agent-material.astro:zx1zk">Sell modern, fast, and SEO-optimized websites built on Astro and Tailwind CSS. Perfect for small to medium businesses.</p>
+          <ul class="space-y-2 mb-4 text-sm text-slate-700 font-medium">
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk3"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Basic Package</li>
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk4"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> E-commerce integration</li>
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk5"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Custom web applications</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200" data-ps="src/pages/agent-material.astro:dmbs89">
+          <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center mb-6" data-ps="src/pages/agent-material.astro:dmbs88">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-700"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3" data-ps="src/pages/agent-material.astro:4c8i59">Managed IT & Support</h3>
+          <p class="text-slate-600 mb-4" data-ps="src/pages/agent-material.astro:zx1zl">Refer businesses for continuous IT support, Microsoft 365 licensing, and endpoint management through ConnectMe or Pulseway.</p>
+          <ul class="space-y-2 mb-4 text-sm text-slate-700 font-medium">
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk6"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Monthly maintenance contracts</li>
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk7"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> M365 Setup & Migration</li>
+            <li class="flex items-center gap-2" data-ps="src/pages/agent-material.astro:b35bk8"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Security Audits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 rounded-3xl p-10 text-center text-white relative overflow-hidden" data-ps="src/pages/agent-material.astro:dmbs87">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2" data-ps="src/pages/agent-material.astro:dmbs86"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/2" data-ps="src/pages/agent-material.astro:dmbs85"></div>
+        
+        <div class="relative z-10" data-ps="src/pages/agent-material.astro:dmbs84">
+          <h2 class="text-3xl font-bold mb-4" data-ps="src/pages/agent-material.astro:ac6f2d">Commission Configurator</h2>
+          <div class="inline-block bg-blue-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-6" data-ps="src/pages/agent-material.astro:dmbs83">Coming Soon</div>
+          <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8" data-ps="src/pages/agent-material.astro:zx207">
+            We are building an interactive configurator tool right here. Soon, you will be able to select specific services, adjust packages, and instantly see the exact commission you will earn for each sale.
+          </p>
+          <div class="w-full max-w-2xl mx-auto space-y-4 text-left" data-ps="src/pages/agent-material.astro:dmbs82">
+            <!-- Group 1 -->
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden transition-all duration-300 ring-2 ring-blue-500/50 shadow-lg shadow-blue-500/10" data-ps="src/pages/agent-material.astro:3yj0ul">
+              <button class="w-full p-6 flex items-center justify-between text-left group configurator-toggle" data-target="group-1" data-ps="src/pages/agent-material.astro:gexvwq">
+                <div class="flex items-center gap-4" data-ps="src/pages/agent-material.astro:3yj0um">
+                  <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors" data-ps="src/pages/agent-material.astro:3yj0un">
+                    <span class="font-bold" data-ps="src/pages/agent-material.astro:k8adpu">1</span>
+                  </div>
+                  <div data-ps="src/pages/agent-material.astro:3yj0uo">
+                    <h3 class="font-bold text-white" data-ps="src/pages/agent-material.astro:4c8i6s">IT Support for a company</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-ps="src/pages/agent-material.astro:zx1ym">Group 1</p>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-white transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              
+              <div id="group-1" class="hidden p-8 border-t border-slate-700 bg-slate-800/50 group/support" data-ps="src/pages/agent-material.astro:3yj0up">
+                <div class="grid gap-6" data-ps="src/pages/agent-material.astro:3yj0uq">
+                  <div data-ps="src/pages/agent-material.astro:3yj0ur">
+                    <div class="flex justify-between items-center mb-3" data-ps="src/pages/agent-material.astro:dmbs83">
+                      <label class="text-sm font-medium text-slate-300">Number of Employees (0-100)</label>
+                      <input type="number" min="0" max="100" value="0" class="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-support-input="employees" />
+                    </div>
+                    <input type="range" min="0" max="100" value="0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500" data-support-slider="employees" />
+                    <div class="flex justify-between text-xs text-slate-500 mt-2" data-ps="src/pages/agent-material.astro:3yj0vd"><span data-ps="src/pages/agent-material.astro:k8adp8">0</span><span data-ps="src/pages/agent-material.astro:k8adp7">50</span><span data-ps="src/pages/agent-material.astro:k8adp6">100</span></div>
+                  </div>
+                  
+                  <div data-ps="src/pages/agent-material.astro:3yj0ve">
+                    <div class="flex justify-between items-center mb-3" data-ps="src/pages/agent-material.astro:dmbs82">
+                      <label class="text-sm font-medium text-slate-300">Devices to Manage (0-100)</label>
+                      <input type="number" min="0" max="100" value="0" class="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-support-input="devices" />
+                    </div>
+                    <input type="range" min="0" max="100" value="0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500" data-support-slider="devices" />
+                    <div class="flex justify-between text-xs text-slate-500 mt-2" data-ps="src/pages/agent-material.astro:3yj0vf"><span data-ps="src/pages/agent-material.astro:k8adp5">0</span><span data-ps="src/pages/agent-material.astro:k8adp4">50</span><span data-ps="src/pages/agent-material.astro:k8adp3">100</span></div>
+                  </div>
+
+                  <div data-ps="src/pages/agent-material.astro:3yj0vg">
+                    <div class="flex justify-between items-center mb-3" data-ps="src/pages/agent-material.astro:dmbs81">
+                      <label class="text-sm font-medium text-slate-300">Mailboxes (0-100)</label>
+                      <input type="number" min="0" max="100" value="0" class="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-support-input="mailboxes" />
+                    </div>
+                    <input type="range" min="0" max="100" value="0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500" data-support-slider="mailboxes" />
+                    <div class="flex justify-between text-xs text-slate-500 mt-2" data-ps="src/pages/agent-material.astro:3yj0vh"><span data-ps="src/pages/agent-material.astro:k8adp2">0</span><span data-ps="src/pages/agent-material.astro:k8adp1">50</span><span data-ps="src/pages/agent-material.astro:k8adp0">100</span></div>
+                  </div>
+
+                  <div class="pt-4 border-t border-slate-700" data-ps="src/pages/agent-material.astro:3yj0vi">
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                      <div class="relative flex items-center justify-center mt-1" data-ps="src/pages/agent-material.astro:3yj0vj">
+                        <input type="checkbox" class="peer h-5 w-5 appearance-none rounded border border-slate-600 bg-slate-700 checked:bg-blue-600 checked:border-blue-600 transition-all cursor-pointer" />
+                        <svg class="absolute w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <span class="text-sm text-slate-300 group-hover:text-white transition-colors" data-ps="src/pages/agent-material.astro:k8adoz">I don't know, they want you to be in contact with them ASAP</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-4 bg-blue-600/10 rounded-xl border border-blue-500/20 flex items-center justify-between" data-ps="src/pages/agent-material.astro:3yj0vk">
+                  <span class="text-sm font-semibold text-blue-300" data-ps="src/pages/agent-material.astro:k8adod">Potential Commission</span>
+                  <span class="text-xl font-bold text-white" data-commission-display data-ps="src/pages/agent-material.astro:t4uebo">$0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <script is:inline>
+              function setupITSupportConfigurator() {
+                const group = document.querySelector('.group\\/support');
+                if (!group) return;
+
+                const inputs = {
+                  employees: {
+                    slider: group.querySelector('[data-support-slider="employees"]'),
+                    input: group.querySelector('[data-support-input="employees"]')
+                  },
+                  devices: {
+                    slider: group.querySelector('[data-support-slider="devices"]'),
+                    input: group.querySelector('[data-support-input="devices"]')
+                  },
+                  mailboxes: {
+                    slider: group.querySelector('[data-support-slider="mailboxes"]'),
+                    input: group.querySelector('[data-support-input="mailboxes"]')
+                  }
+                };
+
+                const display = group.querySelector('[data-commission-display]');
+
+                function update() {
+                  const emp = parseInt(inputs.employees.input.value) || 0;
+                  const dev = parseInt(inputs.devices.input.value) || 0;
+                  const mail = parseInt(inputs.mailboxes.input.value) || 0;
+
+                  const total = (emp * 8) + (dev * 8) + (mail * 2);
+                  display.textContent = `€${total.toFixed(2)}`;
+                }
+
+                Object.keys(inputs).forEach(key => {
+                  const { slider, input } = inputs[key];
+                  
+                  slider.addEventListener('input', (e) => {
+                    input.value = e.target.value;
+                    update();
+                  });
+
+                  input.addEventListener('input', (e) => {
+                    let val = parseInt(e.target.value);
+                    if (isNaN(val)) val = 0;
+                    if (val > 100) val = 100;
+                    if (val < 0) val = 0;
+                    slider.value = val;
+                    update();
+                  });
+                });
+
+                update();
+              }
+
+              // Run setup
+              setupITSupportConfigurator();
+            </script>
+
+            <!-- Group 2 -->
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden transition-all duration-300 ring-2 ring-blue-500/50 shadow-lg shadow-blue-500/10" data-ps="src/pages/agent-material.astro:3yj0vl">
+              <button class="w-full p-6 flex items-center justify-between text-left group configurator-toggle" data-target="group-2" data-ps="src/pages/agent-material.astro:gexvwr">
+                <div class="flex items-center gap-4" data-ps="src/pages/agent-material.astro:3yj0vm">
+                  <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors" data-ps="src/pages/agent-material.astro:dmbs8a">
+                    <span class="font-bold" data-ps="src/pages/agent-material.astro:k8adob">2</span>
+                  </div>
+                  <div data-ps="src/pages/agent-material.astro:dmbs89">
+                    <h3 class="font-bold text-white" data-ps="src/pages/agent-material.astro:4c8i66">Webpage</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-ps="src/pages/agent-material.astro:zx1yn">Group 2</p>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-white transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+
+              <div id="group-2" class="hidden p-8 border-t border-slate-700 bg-slate-800/50 group/webpage" data-ps="src/pages/agent-material.astro:3yj0un">
+                <div class="grid gap-6" data-ps="src/pages/agent-material.astro:3yj0uo">
+                  <!-- How many pages -->
+                  <div data-ps="src/pages/agent-material.astro:3yj0up">
+                    <div class="flex justify-between items-center mb-3" data-ps="src/pages/agent-material.astro:dmbs83">
+                      <label class="text-sm font-medium text-slate-300">How many pages (0-100)</label>
+                      <input type="number" min="0" max="100" value="0" class="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-webpage-input />
+                    </div>
+                    <input type="range" min="0" max="100" value="0" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500" data-webpage-slider />
+                    <div class="flex justify-between text-xs text-slate-500 mt-2" data-ps="src/pages/agent-material.astro:3yj0uq"><span data-ps="src/pages/agent-material.astro:k8adob">0</span><span data-ps="src/pages/agent-material.astro:k8adoa">50</span><span data-ps="src/pages/agent-material.astro:k8ado9">100</span></div>
+                  </div>
+
+                  <!-- Multilingual -->
+                  <div class="space-y-4" data-ps="src/pages/agent-material.astro:3yj0ur">
+                    <label class="block text-sm font-medium text-slate-300">Multilingual?</label>
+                    <div class="flex gap-4" data-ps="src/pages/agent-material.astro:3yj0vd">
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="multilingual" value="no" class="peer hidden" checked data-webpage-multilingual-no />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:3yj0ve"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8ado8">No</span>
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="multilingual" value="yes" class="peer hidden" data-webpage-multilingual-yes />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:3yj0vf"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8ado7">Yes</span>
+                      </label>
+                    </div>
+                    <div class="hidden [.group:has(input[value='yes']:checked)_~_&]:block space-y-3 pt-2" data-ps="src/pages/agent-material.astro:3yj0vg">
+                      <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider">Number of languages (extra)</label>
+                      <input type="number" min="1" value="1" class="w-20 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-webpage-languages />
+                      <p class="text-[10px] text-slate-500" data-ps="src/pages/agent-material.astro:6uaxsy">+10% price & +3% commission per extra language</p>
+                    </div>
+                  </div>
+
+                  <!-- SEO Optimized -->
+                  <div class="space-y-4" data-ps="src/pages/agent-material.astro:3yj0vh">
+                    <label class="block text-sm font-medium text-slate-300">SEO Optimized for something specific?</label>
+                    <div class="flex gap-4" data-ps="src/pages/agent-material.astro:3yj0vi">
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="seo" value="no" class="peer hidden" checked data-webpage-seo-no />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:3yj0vj"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8ado6">No</span>
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="seo" value="yes" class="peer hidden" data-webpage-seo-yes />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:3yj0vk"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8ado5">Yes</span>
+                      </label>
+                    </div>
+                    <div class="hidden [.group:has(input[value='yes']:checked)_~_&]:block pt-2 space-y-3" data-ps="src/pages/agent-material.astro:3yj0vl">
+                      <textarea placeholder="Describe the SEO goals..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white h-20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none"></textarea>
+                      <p class="text-[10px] text-slate-500" data-ps="src/pages/agent-material.astro:6uaxsx">+100€ price & +10€ commission</p>
+                    </div>
+                  </div>
+
+                  <!-- Other things -->
+                  <div class="space-y-4" data-ps="src/pages/agent-material.astro:3yj0vm">
+                    <label class="block text-sm font-medium text-slate-300">Any other things they wish for the page?</label>
+                    <div class="flex gap-4" data-ps="src/pages/agent-material.astro:dmbs8a">
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="other" value="no" class="peer hidden" checked />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:dmbs89"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8ado4">No</span>
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="other" value="yes" class="peer hidden" />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:dmbs88"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8adni">Yes</span>
+                      </label>
+                    </div>
+                    <div class="hidden [.group:has(input[value='yes']:checked)_~_&]:block pt-2" data-ps="src/pages/agent-material.astro:dmbs87">
+                      <textarea placeholder="Additional requirements..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white h-20 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="space-y-4" data-ps="src/pages/agent-material.astro:dmbs86">
+                    <label class="block text-sm font-medium text-slate-300">Email hosting?</label>
+                    <div class="flex gap-4" data-ps="src/pages/agent-material.astro:dmbs85">
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="email" value="no" class="peer hidden" checked data-webpage-email-no />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:dmbs84"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8adnh">No</span>
+                      </label>
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input type="radio" name="email" value="yes" class="peer hidden" data-webpage-email-yes />
+                        <div class="w-4 h-4 rounded-full border border-slate-600 peer-checked:border-blue-500 peer-checked:bg-blue-500 transition-all" data-ps="src/pages/agent-material.astro:dmbs83"></div>
+                        <span class="text-sm text-slate-400 peer-checked:text-white" data-ps="src/pages/agent-material.astro:k8adng">Yes</span>
+                      </label>
+                    </div>
+                    <div class="hidden [.group:has(input[value='yes']:checked)_~_&]:block pt-2 space-y-3" data-ps="src/pages/agent-material.astro:dmbs82">
+                      <div class="flex items-center justify-between" data-ps="src/pages/agent-material.astro:dmbs81">
+                        <label class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Number of M365 Mailboxes</label>
+                        <input type="number" min="0" value="0" class="w-16 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:ring-1 focus:ring-blue-500" data-webpage-mailboxes />
+                      </div>
+                      <p class="text-[10px] text-slate-500" data-ps="src/pages/agent-material.astro:6uaxsw">+2€ per mailbox</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-blue-600/10 rounded-xl border border-blue-500/20 space-y-4" data-ps="src/pages/agent-material.astro:dmbs81">
+                  <div class="flex items-center justify-between" data-ps="src/pages/agent-material.astro:dmbs82">
+                    <span class="text-sm font-semibold text-blue-300" data-ps="src/pages/agent-material.astro:t4uebn">Estimated Project Price</span>
+                    <span class="text-lg font-bold text-white" data-webpage-price data-ps="src/pages/agent-material.astro:t4uebo">€0.00</span>
+                  </div>
+                  <div class="flex items-center justify-between pt-4 border-t border-blue-500/20" data-ps="src/pages/agent-material.astro:dmbs81">
+                    <span class="text-sm font-semibold text-blue-300" data-ps="src/pages/agent-material.astro:k8adnf">Potential Commission</span>
+                    <span class="text-xl font-bold text-white" data-webpage-commission data-ps="src/pages/agent-material.astro:k8adne">€0.00</span>
+                  </div>
+                </div>
+
+                <script is:inline>
+                  function setupWebpageConfigurator() {
+                    const group = document.querySelector('.group\\/webpage');
+                    if (!group) return;
+
+                    const slider = group.querySelector('[data-webpage-slider]');
+                    const input = group.querySelector('[data-webpage-input]');
+                    const priceDisplay = group.querySelector('[data-webpage-price]');
+                    const commissionDisplay = group.querySelector('[data-webpage-commission]');
+
+                    function update() {
+                    const pages = parseInt(input.value) || 0;
+                    let price = 0;
+                    let commission = 0;
+
+                    if (pages === 1) {
+                    price = 200;
+                    commission = 50;
+                    } else if (pages >= 2 && pages <= 4) {
+                    price = 400;
+                    commission = 100;
+                    } else if (pages >= 5 && pages <= 6) {
+                    price = 500;
+                    commission = 150;
+                    } else if (pages >= 7 && pages <= 8) {
+                    price = 800;
+                    commission = 200;
+                    } else if (pages >= 9 && pages <= 10) {
+                    price = 1000;
+                    commission = 250;
+                    }
+
+                    // Multilingual
+                    const isMultilingual = group.querySelector('[data-webpage-multilingual-yes]').checked;
+                    if (isMultilingual) {
+                    const extraLanguages = parseInt(group.querySelector('[data-webpage-languages]').value) || 0;
+                    price += (price * 0.1) * extraLanguages;
+                    commission += (price * 0.03) * extraLanguages;
+                    }
+
+                    // SEO
+                    const isSeo = group.querySelector('[data-webpage-seo-yes]').checked;
+                    if (isSeo) {
+                    price += 100;
+                    commission += 10;
+                    }
+
+                    // Email
+                    const isEmail = group.querySelector('[data-webpage-email-yes]').checked;
+                    if (isEmail) {
+                    const mailboxes = parseInt(group.querySelector('[data-webpage-mailboxes]').value) || 0;
+                    price += mailboxes * 2;
+                    }
+
+                    priceDisplay.textContent = `€${price.toFixed(2)}`;
+                    commissionDisplay.textContent = `€${commission.toFixed(2)}`;
+                    }
+
+                    group.querySelectorAll('input').forEach(el => el.addEventListener('input', update));
+
+                      priceDisplay.textContent = `€${price.toFixed(2)}`;
+                      commissionDisplay.textContent = `€${commission.toFixed(2)}`;
+                    }
+
+                    slider.addEventListener('input', (e) => {
+                      input.value = e.target.value;
+                      update();
+                    });
+
+                    input.addEventListener('input', (e) => {
+                      let val = parseInt(e.target.value);
+                      if (isNaN(val)) val = 0;
+                      if (val > 100) val = 100;
+                      if (val < 0) val = 0;
+                      slider.value = val;
+                      update();
+                    });
+
+                    update();
+                  }
+
+                  setupWebpageConfigurator();
+                </script>
+              </div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden transition-all duration-300 ring-2 ring-blue-500/50 shadow-lg shadow-blue-500/10" data-ps="src/pages/agent-material.astro:dmbs88">
+              <button class="w-full p-6 flex items-center justify-between text-left group configurator-toggle" data-target="group-3" data-ps="src/pages/agent-material.astro:gexvws">
+                <div class="flex items-center gap-4" data-ps="src/pages/agent-material.astro:dmbs87">
+                  <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors" data-ps="src/pages/agent-material.astro:dmbs86">
+                    <span class="font-bold" data-ps="src/pages/agent-material.astro:k8adoa">3</span>
+                  </div>
+                  <div data-ps="src/pages/agent-material.astro:dmbs85">
+                    <h3 class="font-bold text-white" data-ps="src/pages/agent-material.astro:4c8i65">ConnectMe</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-ps="src/pages/agent-material.astro:zx1yo">Group 3</p>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-white transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              
+              <div id="group-3" class="hidden p-8 border-t border-slate-700 bg-slate-800/50 group/connectme" data-ps="src/pages/agent-material.astro:dmbs82">
+                <ConnectMeConfigurator 
+                  title="ConnectMe Packages"
+                  pkg1="Basic ConnectMe"
+                  pkg2="Standard ConnectMe"
+                  pkg3="Advanced ConnectMe"
+                  amountLabel="Amount"
+                />
+                
+                <div class="mt-8 p-4 bg-blue-600/10 rounded-xl border border-blue-500/20 flex items-center justify-between" data-ps="src/pages/agent-material.astro:dmbs81">
+                  <span class="text-sm font-semibold text-blue-300" data-ps="src/pages/agent-material.astro:t4uebo">Potential Commission</span>
+                  <span class="text-xl font-bold text-white" data-cm-commission data-ps="src/pages/agent-material.astro:t4uebp">€0.00</span>
+                </div>
+
+                <script is:inline>
+                  function setupConnectMeConfigurator() {
+                    const group = document.querySelector('.group\\/connectme');
+                    if (!group) return;
+
+                    const commissionDisplay = group.querySelector('[data-cm-commission]');
+
+                    function update() {
+                      let commission = 0;
+
+                      const p1Check = group.querySelector('[data-cm-pkg1-check]');
+                      const p2Check = group.querySelector('[data-cm-pkg2-check]');
+                      const p3Check = group.querySelector('[data-cm-pkg3-check]');
+
+                      if (p1Check && p1Check.checked) {
+                        const amount = parseInt(group.querySelector('[data-cm-pkg1-amount]').value) || 0;
+                        commission += amount * 30;
+                      }
+                      if (p2Check && p2Check.checked) {
+                        const amount = parseInt(group.querySelector('[data-cm-pkg2-amount]').value) || 0;
+                        commission += amount * 30;
+                      }
+                      if (p3Check && p3Check.checked) {
+                        const amount = parseInt(group.querySelector('[data-cm-pkg3-amount]').value) || 0;
+                        commission += amount * 50;
+                      }
+
+                      commissionDisplay.textContent = `€${commission.toFixed(2)}`;
+                    }
+
+                    group.querySelectorAll('input').forEach(el => el.addEventListener('input', update));
+                    update();
+                  }
+                  setupConnectMeConfigurator();
+                </script>
+              </div>
+            </div>
+
+            <!-- Group 4 -->
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden transition-all duration-300 ring-2 ring-blue-500/50 shadow-lg shadow-blue-500/10" data-ps="src/pages/agent-material.astro:dmbs84">
+              <button class="w-full p-6 flex items-center justify-between text-left group configurator-toggle" data-target="group-4" data-ps="src/pages/agent-material.astro:gexvwt">
+                <div class="flex items-center gap-4" data-ps="src/pages/agent-material.astro:dmbs83">
+                  <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors" data-ps="src/pages/agent-material.astro:dmbs82">
+                    <span class="font-bold" data-ps="src/pages/agent-material.astro:k8ado9">4</span>
+                  </div>
+                  <div data-ps="src/pages/agent-material.astro:dmbs81">
+                    <h3 class="font-bold text-white" data-ps="src/pages/agent-material.astro:4c8i64">AT-Agent Rewards</h3>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-ps="src/pages/agent-material.astro:zx1yp">Group 4</p>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-white transition-transform duration-300"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              
+              <div id="group-4" class="hidden p-8 border-t border-slate-700 bg-slate-800/50 group/rewards" data-ps="src/pages/agent-material.astro:dmbs80">
+                <ConnectMeConfigurator 
+                  title="Reward Services"
+                  pkg1="Home visit"
+                  pkg2="PC-Service"
+                  pkg3="Microsoft 365 Licenses"
+                  pkg4="A bigger project"
+                  amountLabel="Amount"
+                />
+                
+                <div id="pkg4-contact-form" class="hidden mt-6 p-6 bg-slate-900/50 rounded-xl border border-slate-700 space-y-4" data-ps="src/pages/agent-material.astro:dmbs82">
+                  <p class="text-sm text-blue-300 font-medium" data-ps="src/pages/agent-material.astro:6uaxsx">Describe your project and we'll agree on the commission together!</p>
+                  <div class="space-y-3" data-ps="src/pages/agent-material.astro:dmbs81">
+                    <input type="text" id="project-contact" placeholder="Your contact info (Name, Email/Phone)" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+                    <textarea id="project-desc" placeholder="Project details..." rows="3" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+                    <button onclick="const c = document.getElementById('project-contact').value; const d = document.getElementById('project-desc').value; if(!c || !d) { alert('Please fill in both fields'); return; } const btn = this; const ogText = btn.textContent; btn.textContent = 'Sending...'; btn.disabled = true; fetch('/api/submit-form', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: c, email: 'support@a-t.fi', subject: 'Bigger Project Inquiry', Contact_Info: c, Project_Details: d }) }).then(async r=>{ if(r.ok) { alert('Project inquiry sent successfully!'); document.getElementById('project-contact').value = ''; document.getElementById('project-desc').value = ''; } else { const err = await r.json().catch(()=>({message:'Unknown error'})); alert('Failed to send inquiry. Error: ' + err.message); } }).catch((e)=>alert('Network error: ' + e)).finally(() => { btn.textContent = ogText; btn.disabled = false; });" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 rounded-lg transition-colors text-sm" data-ps="src/pages/agent-material.astro:ficlh8">
+                    Send to support@a-t.fi
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-4 bg-blue-600/10 rounded-xl border border-blue-500/20 flex items-center justify-between" data-ps="src/pages/agent-material.astro:dmbs79">
+                  <span class="text-sm font-semibold text-blue-300" data-ps="src/pages/agent-material.astro:dmbs78">Potential Commission</span>
+                  <span class="text-xl font-bold text-white" data-rewards-commission data-ps="src/pages/agent-material.astro:dmbs77">€0.00</span>
+                </div>
+
+                <script is:inline>
+                  function setupRewardsConfigurator() {
+                    const group = document.querySelector('.group\\/rewards');
+                    if (!group) return;
+
+                    const commissionDisplay = group.querySelector('[data-rewards-commission]');
+
+                    function update() {
+                      let commission = 0;
+
+                      if (group.querySelector('[data-cm-pkg1-check]').checked) {
+                        commission += (parseInt(group.querySelector('[data-cm-pkg1-amount]').value) || 0) * 10;
+                      }
+                      if (group.querySelector('[data-cm-pkg2-check]').checked) {
+                        commission += (parseInt(group.querySelector('[data-cm-pkg2-amount]').value) || 0) * 10;
+                      }
+                      if (group.querySelector('[data-cm-pkg3-check]').checked) {
+                        commission += (parseInt(group.querySelector('[data-cm-pkg3-amount]').value) || 0) * 2;
+                      }
+
+                      const hasProject = group.querySelector('[data-cm-pkg4-check]').checked;
+                      commissionDisplay.textContent = hasProject ? `€${commission.toFixed(2)} + Agreed` : `€${commission.toFixed(2)}`;
+                      if (typeof updateGrandTotal === 'function') updateGrandTotal();
+                    }
+
+                    group.querySelectorAll('input').forEach(el => el.addEventListener('input', update));
+                    update();
+                  }
+                  setupRewardsConfigurator();
+                </script>
+              </div>
+            </div>
+
+            <!-- Grand Total -->
+            <div class="mt-12 p-8 bg-slate-800 rounded-3xl border-2 border-blue-500/30 flex flex-col items-center text-center space-y-6 shadow-2xl shadow-blue-500/10" data-ps="src/pages/agent-material.astro:dmbs-grand-total">
+              <div class="space-y-2" data-ps="src/pages/agent-material.astro:dmbs86">
+                <div class="text-slate-400 text-xs uppercase tracking-[0.2em] font-black" data-ps="src/pages/agent-material.astro:dmbs-gt-label">Total Selected Commission</div>
+                <div class="text-5xl font-black text-white bg-blue-600/20 px-8 py-4 rounded-2xl border border-blue-500/40" id="grand-commission-display" data-ps="src/pages/agent-material.astro:dmbs81">
+                  €0.00
+                </div>
+              </div>
+
+              <!-- Order Form -->
+              <div class="w-full max-w-lg mx-auto pt-8 border-t border-slate-700 space-y-4 text-left" data-ps="src/pages/agent-material.astro:dmbs85">
+                <h4 class="text-white font-bold text-lg mb-4" data-ps="src/pages/agent-material.astro:3yw0sh">Customer Information</h4>
+                <div class="grid grid-cols-1 gap-4" data-ps="src/pages/agent-material.astro:dmbs84">
+                  <input type="text" id="order-customer-name" placeholder="Customer Name / Company" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" required />
+                  <input type="text" id="order-customer-contact-name" placeholder="Contact Person Name" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" required />
+                  <input type="text" id="order-customer-address" placeholder="Address" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" required />
+                  <div class="grid grid-cols-2 gap-4" data-ps="src/pages/agent-material.astro:dmbs83">
+                    <input type="tel" id="order-customer-phone" placeholder="Telephone Number" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" required />
+                    <input type="email" id="order-customer-email" placeholder="E-mail Address" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-white text-sm focus:ring-2 focus:ring-blue-500 outline-none" required />
+                  </div>
+                </div>
+
+                <label class="flex items-start gap-3 cursor-pointer group mt-6">
+                  <div class="relative flex items-center justify-center mt-1" data-ps="src/pages/agent-material.astro:dmbs82">
+                    <input type="checkbox" id="order-confirm-rules" class="peer h-5 w-5 appearance-none rounded border border-slate-600 bg-slate-700 checked:bg-blue-600 checked:border-blue-600 transition-all cursor-pointer" />
+                    <svg class="absolute w-3.5 h-3.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <span class="text-xs text-slate-400 group-hover:text-slate-300 transition-colors" data-ps="src/pages/agent-material.astro:t4uebj">I have read and understood the rules and I confirm that this order is real</span>
+                </label>
+
+                <button id="send-order-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl transition-all shadow-lg shadow-blue-600/20 active:scale-[0.98] mt-4 uppercase tracking-wider text-sm" data-ps="src/pages/agent-material.astro:ficlhe">
+                  Send order to support@a-t.fi
+                </button>
+
+                <div id="order-success-msg" class="hidden mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl" data-ps="src/pages/agent-material.astro:dmbs81">
+                  <p class="text-green-400 text-sm font-medium" data-ps="src/pages/agent-material.astro:6uaxt2">
+                    Order sent! You will receive the commission sum for this when the customer has paid A-T and we will be in touch for agreeing on how the payment will be arranged.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script is:inline>
+            function updateGrandTotal() {
+              let total = 0;
+              let hasAgreed = false;
+
+              // Support
+              const supportDisp = document.querySelector('[data-commission-display]');
+              if (supportDisp) total += parseFloat(supportDisp.textContent.replace('€', '')) || 0;
+
+              // Webpage
+              const webDisp = document.querySelector('[data-webpage-commission]');
+              if (webDisp) total += parseFloat(webDisp.textContent.replace('€', '')) || 0;
+
+              // ConnectMe
+              const cmDisp = document.querySelector('[data-cm-commission]');
+              if (cmDisp) total += parseFloat(cmDisp.textContent.replace('€', '')) || 0;
+
+              // Rewards
+              const rewDisp = document.querySelector('[data-rewards-commission]');
+              if (rewDisp) {
+                const text = rewDisp.textContent;
+                total += parseFloat(text.replace('€', '').split('+')[0]) || 0;
+                if (text.includes('Agreed')) hasAgreed = true;
+              }
+
+              const display = document.getElementById('grand-commission-display');
+              if (display) {
+                display.textContent = hasAgreed ? `€${total.toFixed(2)} + Agreed` : `€${total.toFixed(2)}`;
+              }
+            }
+
+            // Global observer to trigger grand total update when any specific commission changes
+            const observer = new MutationObserver(() => {
+              updateGrandTotal();
+            });
+
+            document.querySelectorAll('[data-commission-display], [data-webpage-commission], [data-cm-commission], [data-rewards-commission]').forEach(el => {
+              observer.observe(el, { characterData: true, childList: true, subtree: true });
+            });
+
+            // Send Order Logic
+            document.getElementById('send-order-btn').addEventListener('click', async (e) => {
+              const btn = e.currentTarget;
+              const customerName = document.getElementById('order-customer-name').value;
+              const contactName = document.getElementById('order-customer-contact-name').value;
+              const address = document.getElementById('order-customer-address').value;
+              const phone = document.getElementById('order-customer-phone').value;
+              const email = document.getElementById('order-customer-email').value;
+              const confirmed = document.getElementById('order-confirm-rules').checked;
+
+              if (!customerName || !contactName || !address || !phone || !email) {
+                alert('Please fill in all customer information fields.');
+                return;
+              }
+
+              if (!confirmed) {
+                alert('Please confirm that you have read the rules.');
+                return;
+              }
+
+              const ogText = btn.textContent;
+              btn.textContent = 'Sending...';
+              btn.disabled = true;
+
+              // Gather selection details
+              let details = "--- ORDER RESUME ---\n\n";
+              
+              // Group 1: Support
+              const emp = document.querySelector('[data-support-input="employees"]')?.value || 0;
+              const dev = document.querySelector('[data-support-input="devices"]')?.value || 0;
+              const mail = document.querySelector('[data-support-input="mailboxes"]')?.value || 0;
+              if(emp > 0 || dev > 0 || mail > 0) {
+                details += `GROUP 1: IT SUPPORT\n- Employees: ${emp}\n- Devices: ${dev}\n- Mailboxes: ${mail}\n\n`;
+              }
+
+              // Group 2: Webpage
+              const pages = document.querySelector('[data-webpage-input]')?.value || 0;
+              if(pages > 0) {
+                const isMulti = document.querySelector('[data-webpage-multilingual-yes]')?.checked ? "Yes" : "No";
+                const numLang = document.querySelector('[data-webpage-languages]')?.value || 1;
+                const isSeo = document.querySelector('[data-webpage-seo-yes]')?.checked ? "Yes" : "No";
+                const isEmail = document.querySelector('[data-webpage-email-yes]')?.checked ? "Yes" : "No";
+                const mailboxes = document.querySelector('[data-webpage-mailboxes]')?.value || 0;
+                
+                details += `GROUP 2: WEBPAGE\n- Pages: ${pages}\n- Multilingual: ${isMulti}`;
+                if (isMulti === "Yes") details += ` (${numLang} extra languages)`;
+                details += `\n- SEO: ${isSeo}\n- Email: ${isEmail}`;
+                if (isEmail === "Yes") details += ` (${mailboxes} mailboxes)`;
+                details += `\n\n`;
+              }
+
+              // Group 3: ConnectMe
+              const p1 = document.querySelector('[data-cm-pkg1-amount]')?.value || 0;
+              const p2 = document.querySelector('[data-cm-pkg2-amount]')?.value || 0;
+              const p3 = document.querySelector('[data-cm-pkg3-amount]')?.value || 0;
+              if(p1 > 0 || p2 > 0 || p3 > 0) {
+                details += `GROUP 3: CONNECTME\n- Basic: ${p1}\n- Standard: ${p2}\n- Advanced: ${p3}\n\n`;
+              }
+
+              // Group 4: Rewards
+              const r1 = document.querySelector('.group/rewards [data-cm-pkg1-amount]')?.value || 0;
+              const r2 = document.querySelector('.group/rewards [data-cm-pkg2-amount]')?.value || 0;
+              const r3 = document.querySelector('.group/rewards [data-cm-pkg3-amount]')?.value || 0;
+              const r4 = document.querySelector('.group/rewards [data-cm-pkg4-check]')?.checked ? "Yes" : "No";
+              if(r1 > 0 || r2 > 0 || r3 > 0 || r4 === "Yes") {
+                details += `GROUP 4: REWARDS\n- Home Visit: ${r1}\n- PC-Service: ${r2}\n- Licenses: ${r3}\n- Bigger Project: ${r4}\n\n`;
+              }
+
+              const total = document.getElementById('grand-commission-display').textContent;
+              details += `TOTAL COMMISSION: ${total}\n\n`;
+              
+              const payload = {
+                name: contactName,
+                email: email,
+                subject: "Incoming order from an Agent",
+                CustomerName: customerName,
+                ContactPerson: contactName,
+                Address: address,
+                Phone: phone,
+                OrderDetails: details
+              };
+
+              try {
+                const response = await fetch('/api/submit-form', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload),
+                });
+                
+                if(response.ok) {
+                  document.getElementById('order-success-msg').classList.remove('hidden');
+                } else {
+                  const errorData = await response.json().catch(() => ({ message: "Unknown error" }));
+                  alert("Failed to send the order. Error: " + errorData.message);
+                }
+              } catch(err) {
+                alert("Failed to send. Error: " + (err.message || err));
+              } finally {
+                btn.textContent = ogText;
+                btn.disabled = false;
+              }
+            });
+
+            // Toggle logic
+            document.querySelectorAll('.configurator-toggle').forEach(button => {
+              button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                const target = document.getElementById(targetId);
+                const svg = button.querySelector('svg');
+                
+                if (target.classList.contains('hidden')) {
+                  target.classList.remove('hidden');
+                  svg.classList.add('rotate-180');
+                } else {
+                  target.classList.add('hidden');
+                  svg.classList.remove('rotate-180');
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

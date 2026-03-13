@@ -1,0 +1,104 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const runtime = Astro.locals.runtime;
+if (!runtime?.env?.DB) {
+  return new Response('Service unavailable', { status: 503 });
+}
+
+// Simple security check
+const url = new URL(Astro.request.url);
+const key = url.searchParams.get('key');
+const isAuthorized = key === 'internal'; // Simple secret key
+
+// Handle Status Updates
+if (Astro.request.method === 'POST' && isAuthorized) {
+    const formData = await Astro.request.formData();
+    const id = formData.get('id');
+    const status = formData.get('status');
+    
+    if (id && status) {
+        await runtime.env.DB.prepare('UPDATE bookings SET status = ? WHERE id = ?')
+            .bind(status, id)
+            .run();
+    }
+}
+
+// Fetch Bookings
+let bookings = [];
+try {
+    const { results } = await runtime.env.DB
+        .prepare("SELECT * FROM bookings ORDER BY date DESC, time ASC")
+        .all();
+    bookings = results;
+} catch (e) {
+    console.error(e);
+}
+---
+
+<BaseLayout title="Booking Admin" noIndex={true}>
+    <div class="max-w-6xl mx-auto px-6 py-12" data-ps="src/pages/admin/bookings.astro:ma1j66">
+        <h1 class="text-3xl font-bold mb-8" data-ps="src/pages/admin/bookings.astro:12sbsb">Internal Booking Management</h1>
+
+        {!isAuthorized ? (
+            <div class="bg-red-900/20 border border-red-500/50 p-6 rounded-xl" data-ps="src/pages/admin/bookings.astro:ma1j67">
+                <p class="text-red-200 mb-4" data-ps="src/pages/admin/bookings.astro:6r221a">Access Restricted.</p>
+                <form method="GET" class="flex gap-2">
+                    <input type="password" name="key" placeholder="Enter Admin Key" class="bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-lg text-white" />
+                    <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded-lg" data-ps="src/pages/admin/bookings.astro:xlfgdv">Unlock</button>
+                </form>
+            </div>
+        ) : (
+            <div class="overflow-x-auto" data-ps="src/pages/admin/bookings.astro:ma1j68">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-zinc-800 text-gray-300">
+                            <th class="p-4 rounded-tl-lg">Date/Time</th>
+                            <th class="p-4">Customer</th>
+                            <th class="p-4">Service</th>
+                            <th class="p-4">Status</th>
+                            <th class="p-4 rounded-tr-lg">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800 bg-zinc-900">
+                        {bookings.map((b: any) => (
+                            <tr>
+                                <td class="p-4">
+                                    <div class="font-bold text-white" data-ps="src/pages/admin/bookings.astro:ma1j69">{b.date}</div>
+                                    <div class="text-sm text-gray-400" data-ps="src/pages/admin/bookings.astro:ma1j6a">{b.time}</div>
+                                </td>
+                                <td class="p-4">
+                                    <div class="text-white" data-ps="src/pages/admin/bookings.astro:ma1j6b">{b.name}</div>
+                                    <div class="text-sm text-gray-400" data-ps="src/pages/admin/bookings.astro:ma1j6c">{b.email}</div>
+                                </td>
+                                <td class="p-4 text-gray-300">{b.service}</td>
+                                <td class="p-4">
+                                    <span class={`px-2 py-1 rounded text-xs font-bold uppercase
+                                        ${b.status === 'confirmed' ? 'bg-green-900 text-green-200' : 
+                                          b.status === 'rejected' ? 'bg-red-900 text-red-200' : 
+                                          'bg-yellow-900 text-yellow-200'}`} data-ps="src/pages/admin/bookings.astro:77l0oj">
+                                        {b.status}
+                                    </span>
+                                </td>
+                                <td class="p-4">
+                                    <form method="POST" class="flex gap-2">
+                                        <input type="hidden" name="id" value={b.id} />
+                                        <input type="hidden" name="key" value="internal" /> 
+                                        {b.status !== 'confirmed' && (
+                                            <button name="status" value="confirmed" class="text-green-400 hover:text-green-300 font-bold text-sm" data-ps="src/pages/admin/bookings.astro:xlfgdw">Accept</button>
+                                        )}
+                                        {b.status !== 'rejected' && (
+                                            <button name="status" value="rejected" class="text-red-400 hover:text-red-300 font-bold text-sm" data-ps="src/pages/admin/bookings.astro:xlfgdx">Reject</button>
+                                        )}
+                                    </form>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        )}
+    </div>
+</BaseLayout>

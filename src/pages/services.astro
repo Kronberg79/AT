@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "All IT Services for Business & Home | Archipelago Technics";
+const description = "Our comprehensive range of IT services including computer repair, remote support, cybersecurity, and server maintenance.";
+
+---
+
+<BaseLayout 
+  title="All IT Services for Business & Home | Archipelago Technics" 
+  description="Our comprehensive range of IT services including computer repair, remote support, cybersecurity, and server maintenance." 
+  lang="en"
+>
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/services.astro:on4k2b">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/services.astro:on4k2a">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/services.astro:on4k29">
+        <p class="lead" data-ps="src/pages/services.astro:nget5g">Everything you need for a digital life.</p>
+        <p data-ps="src/pages/services.astro:nget5f">Explore our wide range of services designed to keep your technology efficient, secure, and up-to-date.</p>
+        <ul>
+            <li data-ps="src/pages/services.astro:3uvveb"><a href="/remote-support" class="text-[#F54a00]" data-ps="src/pages/services.astro:9pon4w">Remote Support</a></li>
+            <li data-ps="src/pages/services.astro:3uvvec"><a href="/computer-repair" class="text-[#F54a00]" data-ps="src/pages/services.astro:9pon4v">Computer Repair</a></li>
+            <li data-ps="src/pages/services.astro:3uvved"><a href="/security" class="text-[#F54a00]" data-ps="src/pages/services.astro:n85l4p">Security</a></li>
+            <li data-ps="src/pages/services.astro:3uvvee"><a href="/it-infra" class="text-[#F54a00]" data-ps="src/pages/services.astro:n85l4o">IT Infrastructure</a></li>
+            <li data-ps="src/pages/services.astro:3uvvef"><a href="/websites" class="text-[#F54a00]" data-ps="src/pages/services.astro:n85l4n">Websites</a></li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/services.astro:on4k28">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Server room" data-ps="src/pages/services.astro:giqj9k" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

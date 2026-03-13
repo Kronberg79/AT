@@ -1,0 +1,74 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access
+const defaultAbout = content['en']?.about || {};
+const currentAbout = content[lang]?.about || {};
+const t = {
+  badge: "Our Story",
+  title: "TRUSTED TECH PARTNER",
+  description: "Local IT expertise you can trust.",
+  features: [],
+  stats: { years: "Years", clients: "Clients", support: "Support" },
+  ...defaultAbout,
+  ...currentAbout
+};
+---
+<section id="about" class="py-24 bg-black text-white overflow-hidden" data-ps="src/components/home/About.astro:jxrb3d">
+  <div class="container mx-auto px-6" data-ps="src/components/home/About.astro:39jdrk">
+    <div class="flex flex-col lg:flex-row gap-16 items-center" data-ps="src/components/home/About.astro:39jdrl">
+      <div class="lg:w-1/2 reveal-left" data-ps="src/components/home/About.astro:39jdrm">
+        <div class="text-xs font-black uppercase tracking-[0.3em] text-[#D43F00] mb-4" data-ps="src/components/home/About.astro:5p9dao">{t.badge}</div>
+        <h2 class="text-4xl md:text-6xl font-black mb-8 leading-[0.9]" data-ps="src/components/home/About.astro:kdoai9">
+          {t.title}
+        </h2>
+        <p class="text-xl text-white/60 mb-8 leading-relaxed" data-ps="src/components/home/About.astro:jf35gs">
+          {t.description}
+        </p>
+        <ul class="space-y-4 mb-12">
+          {t.features.map((item) => (
+            <li class="flex items-center gap-3 font-bold" data-ps="src/components/home/About.astro:4yags4">
+              <span class="w-5 h-5 rounded-full bg-[#F54a00] flex items-center justify-center" data-ps="src/components/home/About.astro:mzecrx">
+                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="p-8 rounded-2xl bg-[#F54a00] flex flex-col md:flex-row gap-8 items-center justify-between" data-ps="src/components/home/About.astro:39jdrn">
+          <div data-ps="src/components/home/About.astro:39jdro">
+            <div class="text-4xl font-black" data-ps="src/components/home/About.astro:39jdrp">10+</div>
+            <div class="text-white/80 font-bold" data-ps="src/components/home/About.astro:39jdrq">{t.stats.years}</div>
+          </div>
+          <div class="hidden md:block w-px h-12 bg-white/20" data-ps="src/components/home/About.astro:39jdrr"></div>
+          <div data-ps="src/components/home/About.astro:39jdrs">
+            <div class="text-4xl font-black" data-ps="src/components/home/About.astro:dn4sz4">500+</div>
+            <div class="text-white/80 font-bold" data-ps="src/components/home/About.astro:dn4sz3">{t.stats.clients}</div>
+          </div>
+          <div class="hidden md:block w-px h-12 bg-white/20" data-ps="src/components/home/About.astro:dn4sz2"></div>
+          <div data-ps="src/components/home/About.astro:dn4sz1">
+            <div class="text-4xl font-black" data-ps="src/components/home/About.astro:dn4sz0">24/7</div>
+            <div class="text-white/80 font-bold" data-ps="src/components/home/About.astro:dn4syz">{t.stats.support}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:w-1/2 relative reveal-right" data-ps="src/components/home/About.astro:dn4syy">
+        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl" data-ps="src/components/home/About.astro:dn4syx">
+          <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1701760211427-e7a9068028b2?auto=format&w=800&q=80" 
+            alt="IT Specialist working"
+            class="w-full aspect-[4/5] object-cover" data-ps="src/components/home/About.astro:ra9fh" />
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-6 -right-6 w-64 h-64 bg-[#F54a00]/20 blur-3xl rounded-full -z-10" data-ps="src/components/home/About.astro:dn4syw"></div>
+        <div class="absolute -bottom-6 -left-6 w-64 h-64 bg-white/5 blur-3xl rounded-full -z-10" data-ps="src/components/home/About.astro:dn4syv"></div>
+      </div>
+    </div>
+  </div>
+</section>

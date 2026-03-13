@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string;
+  pkg1?: string;
+  pkg2?: string;
+  pkg3?: string;
+  pkg4?: string;
+  amountLabel?: string;
+}
+
+const {
+  title = "ConnectMe Packages",
+  pkg1 = "Package 1",
+  pkg2 = "Package 2",
+  pkg3 = "Package 3",
+  pkg4,
+  amountLabel = "Amount"
+} = Astro.props;
+---
+
+<div class="mt-4 space-y-3" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cs">
+  <h4 class="font-medium text-gray-900" data-ps="src/components/agent/ConnectMeConfigurator.astro:8orry4">{title}</h4>
+  
+  {/* Package 1 */}
+  <div class="p-3 bg-gray-50 border border-gray-200 rounded-lg" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5ct">
+    <label class="flex items-center justify-between cursor-pointer">
+      <div class="flex items-center gap-3" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cu">
+        <input type="checkbox" data-cm-pkg1-check class="w-4 h-4 text-primary bg-white border-gray-300 rounded focus:ring-primary" onchange="document.getElementById('cm-pkg1-amount').classList.toggle('hidden', !this.checked)" />
+        <span class="text-sm font-medium text-gray-700" data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4uo2">{pkg1}</span>
+      </div>
+    </label>
+    <div id="cm-pkg1-amount" class="hidden mt-3 pt-3 border-t border-gray-200" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cv">
+      <label class="flex items-center gap-3 text-sm text-gray-600">
+        <span data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4uo1">{amountLabel}:</span>
+        <input type="number" data-cm-pkg1-amount min="1" value="1" class="w-24 px-2 py-1 border border-gray-300 rounded focus:ring-primary focus:border-primary outline-none" />
+      </label>
+    </div>
+  </div>
+
+  {/* Package 2 */}
+  <div class="p-3 bg-gray-50 border border-gray-200 rounded-lg" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cw">
+    <label class="flex items-center justify-between cursor-pointer">
+      <div class="flex items-center gap-3" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cx">
+        <input type="checkbox" data-cm-pkg2-check class="w-4 h-4 text-primary bg-white border-gray-300 rounded focus:ring-primary" onchange="document.getElementById('cm-pkg2-amount').classList.toggle('hidden', !this.checked)" />
+        <span class="text-sm font-medium text-gray-700" data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4uo0">{pkg2}</span>
+      </div>
+    </label>
+    <div id="cm-pkg2-amount" class="hidden mt-3 pt-3 border-t border-gray-200" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cy">
+      <label class="flex items-center gap-3 text-sm text-gray-600">
+        <span data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4unz">{amountLabel}:</span>
+        <input type="number" data-cm-pkg2-amount min="1" value="1" class="w-24 px-2 py-1 border border-gray-300 rounded focus:ring-primary focus:border-primary outline-none" />
+      </label>
+    </div>
+  </div>
+
+  {/* Package 3 */}
+  <div class="p-3 bg-gray-50 border border-gray-200 rounded-lg" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5cz">
+    <label class="flex items-center justify-between cursor-pointer">
+      <div class="flex items-center gap-3" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5d0">
+        <input type="checkbox" data-cm-pkg3-check class="w-4 h-4 text-primary bg-white border-gray-300 rounded focus:ring-primary" onchange="document.getElementById('cm-pkg3-amount').classList.toggle('hidden', !this.checked)" />
+        <span class="text-sm font-medium text-gray-700" data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4uny">{pkg3}</span>
+      </div>
+    </label>
+    <div id="cm-pkg3-amount" class="hidden mt-3 pt-3 border-t border-gray-200" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5d1">
+      <label class="flex items-center gap-3 text-sm text-gray-600">
+        <span data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4unx">{amountLabel}:</span>
+        <input type="number" data-cm-pkg3-amount min="1" value="1" class="w-24 px-2 py-1 border border-gray-300 rounded focus:ring-primary focus:border-primary outline-none" />
+      </label>
+    </div>
+  </div>
+
+  {/* Package 4 */}
+  {pkg4 && (
+    <div class="p-3 bg-gray-50 border border-gray-200 rounded-lg" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5d2">
+      <label class="flex items-center justify-between cursor-pointer">
+        <div class="flex items-center gap-3" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5d3">
+          <input type="checkbox" data-cm-pkg4-check class="w-4 h-4 text-primary bg-white border-gray-300 rounded focus:ring-primary" onchange="const el = document.getElementById('cm-pkg4-amount'); if(el) el.classList.toggle('hidden', !this.checked); const form = document.getElementById('pkg4-contact-form'); if(form) form.classList.toggle('hidden', !this.checked);" />
+          <span class="text-sm font-medium text-gray-700" data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4unw">{pkg4}</span>
+        </div>
+      </label>
+      {/* For non-project items (Group 3) we show amount, for project items (Group 4) we show the form in the page */}
+      {pkg4 !== "A bigger project" && pkg4 !== "Suurempi projekti" && pkg4 !== "Ett större projekt" && (
+        <div id="cm-pkg4-amount" class="hidden mt-3 pt-3 border-t border-gray-200" data-ps="src/components/agent/ConnectMeConfigurator.astro:mhh5d4">
+          <label class="flex items-center gap-3 text-sm text-gray-600">
+            <span data-ps="src/components/agent/ConnectMeConfigurator.astro:hl4unv">{amountLabel}:</span>
+            <input type="number" data-cm-pkg4-amount min="1" value="1" class="w-24 px-2 py-1 border border-gray-300 rounded focus:ring-primary focus:border-primary outline-none" />
+          </label>
+        </div>
+      )}
+    </div>
+  )}
+</div>

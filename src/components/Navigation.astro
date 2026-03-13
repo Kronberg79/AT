@@ -1,0 +1,520 @@
+---
+import { SITE } from '@/config/site';
+
+export interface Props {
+  logo?: string;
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { logo = SITE.name, lang = 'en' } = Astro.props;
+
+// Multilingual translations for the menu
+const menu = {
+  fi: [
+    { 
+      name: 'Kuluttaja-asiakkaat', 
+      href: '/fi/kuluttajat',
+      submenu: [
+        { name: 'Noutopalvelu Turku', href: '/fi/tietokoneen-huolto-turku' },
+        { name: 'Etätuki', href: '/fi/etatuki' },
+        { name: 'Tietokonehuolto', href: '/fi/tietokonehuolto' },
+        { name: 'Tietoturva', href: '/fi/tietoturva' },
+        { name: 'Kotisivut', href: '/fi/kotisivut' }
+      ]
+    },
+    { 
+      name: 'Yrityksille', 
+      href: '/fi/yritykset',
+      submenu: [
+        { name: 'IT-Infra', href: '/fi/it-infra' },
+        { name: 'IT-Päällikkö', href: '/fi/it-paallikko' },
+        { name: 'Serverihuolto', href: '/fi/serverihuolto' },
+        { name: 'Etätuki', href: '/fi/etatuki' },
+        { name: 'Tietoturva', href: '/fi/tietoturva' },
+        { name: 'Kotisivut', href: '/fi/kotisivut' }
+      ]
+    },
+    { 
+      name: 'Tuki', 
+      href: '/fi/tuki',
+      submenu: [
+        { name: 'Tuki ja tiketti', href: '/fi/tuki' },
+        { name: 'ConnectMe', href: '/fi/connectme' },
+        { name: 'Login', href: 'https://support.a-t.fi' }
+      ]
+    },
+    { 
+      name: 'Tiimi', 
+      href: '/fi/tiimi',
+      submenu: [
+        { name: 'Tiimi', href: '/fi/tiimi' },
+        { name: 'Ryhdy A-T Agentiksi', href: '/fi/agentti', submenu: [
+          { name: 'Materiaali', href: '/fi/agentti-materiaali' }
+        ] },
+        { name: 'Tuotteemme', href: '#', submenu: [
+          { name: 'Pulseway', href: '/fi/pulseway' },
+          { name: 'Microsoft 365', href: '/fi/m365' }
+        ]}
+      ]
+    },
+    { 
+      name: 'Yhteystiedot', 
+      href: '/fi/yhteystiedot',
+      submenu: [
+        { name: 'Soita meille: +358 40 582 9704', href: 'tel:+358405829704' },
+        { name: 'Yhteystiedot', href: '/fi/yhteystiedot' }
+      ]
+    },
+  ],
+  sv: [
+    { 
+      name: 'Konsumenter', 
+      href: '/sv/konsumenter',
+      submenu: [
+        { name: 'Hämttjänst Åbo', href: '/sv/datorservice-abo' },
+        { name: 'Fjärrsupport', href: '/sv/fjarrsupport' },
+        { name: 'Datorservice', href: '/sv/datorservice' },
+        { name: 'Säkerhet', href: '/sv/sakerhet' },
+        { name: 'Hemsidor', href: '/sv/hemsidor' }
+      ]
+    },
+    { 
+      name: 'Företag', 
+      href: '/sv/foretag',
+      submenu: [
+        { name: 'IT-Infra', href: '/sv/it-infra' },
+        { name: 'IT-Chef', href: '/sv/it-chef' },
+        { name: 'Serverservice', href: '/sv/serverservice' },
+        { name: 'Fjärrsupport', href: '/sv/fjarrsupport' },
+        { name: 'Säkerhet', href: '/sv/sakerhet' },
+        { name: 'Hemsidor', href: '/sv/hemsidor' }
+      ]
+    },
+    { 
+      name: 'Support', 
+      href: '/sv/support',
+      submenu: [
+        { name: 'Support & ärende', href: '/sv/support' },
+        { name: 'ConnectMe', href: '/sv/connectme' },
+        { name: 'Login', href: 'https://support.a-t.fi' }
+        ]
+        },
+    { 
+      name: 'Team', 
+      href: '/sv/team',
+      submenu: [
+        { name: 'Team', href: '/sv/team' },
+        { name: 'Bli en A-T Agent', href: '/sv/agent', submenu: [
+          { name: 'Material', href: '/sv/agent-material' }
+        ] },
+        { name: 'Våra produkter', href: '#', submenu: [
+          { name: 'Pulseway', href: '/sv/pulseway' },
+          { name: 'Microsoft 365', href: '/sv/m365' }
+        ]}
+      ]
+    },
+    { 
+      name: 'Kontakt', 
+      href: '/sv/kontakt',
+      submenu: [
+        { name: 'Ring oss: +358 40 582 9704', href: 'tel:+358405829704' },
+        { name: 'Kontaktuppgifter', href: '/sv/kontakt' }
+      ]
+    },
+  ],
+  en: [
+    { 
+      name: 'Consumers', 
+      href: '/consumers',
+      submenu: [
+        { name: 'Pickup Service Turku', href: '/computer-repair-turku' },
+        { name: 'Remote Support', href: '/remote-support' },
+        { name: 'Computer Repair', href: '/computer-repair' },
+        { name: 'Security', href: '/security' },
+        { name: 'Websites', href: '/websites' }
+      ]
+    },
+    { 
+      name: 'Companies', 
+      href: '/companies',
+      submenu: [
+        { name: 'IT Infra', href: '/it-infra' },
+        { name: 'IT Manager', href: '/it-manager' },
+        { name: 'Server Maint.', href: '/server-maintenance' },
+        { name: 'Remote Support', href: '/remote-support' },
+        { name: 'Security', href: '/security' },
+        { name: 'Websites', href: '/websites' }
+      ]
+    },
+    { 
+      name: 'Support', 
+      href: '/support',
+      submenu: [
+        { name: 'Support & Ticket', href: '/support' },
+        { name: 'ConnectMe', href: '/connectme' },
+        { name: 'Login', href: 'https://support.a-t.fi' }
+      ]
+    },
+    { 
+      name: 'Team', 
+      href: '/team',
+      submenu: [
+        { name: 'Team', href: '/team' },
+        { name: 'Become an A-T Agent', href: '/agent', submenu: [
+          { name: 'Material', href: '/agent-material' }
+        ] },
+        { name: 'Our Products', href: '#', submenu: [
+          { name: 'Pulseway', href: '/pulseway' },
+          { name: 'Microsoft 365', href: '/m365' }
+        ]}
+      ]
+    },
+    { 
+      name: 'Contact', 
+      href: '/contact',
+      submenu: [
+        { name: 'Call Us: +358 40 582 9704', href: 'tel:+358405829704' },
+        { name: 'Contact Details', href: '/contact' }
+      ]
+    },
+  ]
+};
+
+const cta = {
+  fi: 'Varaa Aika',
+  sv: 'Boka Tid',
+  en: 'Book Now'
+};
+
+const currentMenu = menu[lang] || menu.en;
+const currentCta = cta[lang] || cta.en;
+const bookingLink = lang === 'fi' ? '/fi/varaus' : lang === 'sv' ? '/sv/bokning' : '/booking';
+
+// Route mapping for language switcher
+const routeMap = {
+  'consumers': { en: '/consumers', fi: '/fi/kuluttajat', sv: '/sv/konsumenter' },
+  'pickup': { en: '/computer-repair-turku', fi: '/fi/tietokoneen-huolto-turku', sv: '/sv/datorservice-abo' },
+  'remote': { en: '/remote-support', fi: '/fi/etatuki', sv: '/sv/fjarrsupport' },
+  'repair': { en: '/computer-repair', fi: '/fi/tietokonehuolto', sv: '/sv/datorservice' },
+  'security': { en: '/security', fi: '/fi/tietoturva', sv: '/sv/sakerhet' },
+  'websites': { en: '/websites', fi: '/fi/kotisivut', sv: '/sv/hemsidor' },
+  'companies': { en: '/companies', fi: '/fi/yritykset', sv: '/sv/foretag' },
+  'it-infra': { en: '/it-infra', fi: '/fi/it-infra', sv: '/sv/it-infra' },
+  'it-manager': { en: '/it-manager', fi: '/fi/it-paallikko', sv: '/sv/it-chef' },
+  'server': { en: '/server-maintenance', fi: '/fi/serverihuolto', sv: '/sv/serverservice' },
+  'support': { en: '/support', fi: '/fi/tuki', sv: '/sv/support' },
+  'connectme': { en: '/connectme', fi: '/fi/connectme', sv: '/sv/connectme' },
+  'team': { en: '/team', fi: '/fi/tiimi', sv: '/sv/team' },
+  'agent': { en: '/agent', fi: '/fi/agentti', sv: '/sv/agent' },
+  'agent-material': { en: '/agent-material', fi: '/fi/agentti-materiaali', sv: '/sv/agent-material' },
+  'pulseway': { en: '/pulseway', fi: '/fi/pulseway', sv: '/sv/pulseway' },
+  'm365': { en: '/m365', fi: '/fi/m365', sv: '/sv/m365' },
+  'contact': { en: '/contact', fi: '/fi/yhteystiedot', sv: '/sv/kontakt' },
+  'booking': { en: '/booking', fi: '/fi/varaus', sv: '/sv/bokning' },
+  'services': { en: '/services', fi: '/fi/palvelut', sv: '/sv/tjanster' }
+};
+
+function getLocalizedPath(currentPath: string, targetLang: 'en' | 'fi' | 'sv') {
+  const normalizedPath = currentPath.endsWith('/') && currentPath.length > 1 
+    ? currentPath.slice(0, -1) 
+    : currentPath;
+    
+  if (normalizedPath === '/' || normalizedPath === '/fi' || normalizedPath === '/sv') {
+    return targetLang === 'en' ? '/' : `/${targetLang}`;
+  }
+
+  const routeKey = Object.keys(routeMap).find(key => {
+    const map = routeMap[key as keyof typeof routeMap];
+    return Object.values(map).includes(normalizedPath);
+  });
+
+  if (routeKey) {
+    return routeMap[routeKey as keyof typeof routeMap][targetLang];
+  }
+
+  return targetLang === 'en' ? '/' : `/${targetLang}`;
+}
+
+const currentPath = Astro.url.pathname;
+const enPath = getLocalizedPath(currentPath, 'en');
+const fiPath = getLocalizedPath(currentPath, 'fi');
+const svPath = getLocalizedPath(currentPath, 'sv');
+
+const isLangActive = (l: string) => lang === l;
+---
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-[100] transition-all duration-300 border-b border-transparent bg-gradient-to-r from-black via-black/40 to-transparent" data-ps="src/components/Navigation.astro:1zp37o">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-ps="src/components/Navigation.astro:lxl1n1">
+    <div class="flex items-center justify-between h-20" data-ps="src/components/Navigation.astro:lxl1n2">
+      
+      <!-- Logo -->
+      <a href={lang === 'en' ? '/' : `/${lang}`} class="flex items-center gap-0.5 relative z-50 group" data-ps="src/components/Navigation.astro:7vkjqo">
+        <img 
+          src="https://cdn.pagesmith.app/eb31781e/images/atlogo-225-225.webp" 
+          alt="Archipelago Technics" 
+          class="w-12 h-12 object-contain transition-transform group-hover:scale-105" data-ps="src/components/Navigation.astro:jfbxbh" />
+        <div class="hidden sm:flex flex-col leading-none -ml-1" data-ps="src/components/Navigation.astro:lxl1n3">
+          <span class="text-xl font-black text-white tracking-tighter transition-colors" data-ps="src/components/Navigation.astro:7xpc9t">RCHIPELAGO</span>
+          <span class="text-sm font-bold text-[#F54a00] tracking-widest uppercase opacity-90" data-ps="src/components/Navigation.astro:7xpc9s">ECHNICS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center flex-1 justify-end ml-10" data-ps="src/components/Navigation.astro:nrytym">
+        <ul class="flex items-center gap-2">
+          {currentMenu.map(item => (
+            <li class="relative group" data-ps="src/components/Navigation.astro:2wgnk5">
+              <a 
+                href={item.href} 
+                class="flex items-center gap-1 px-4 py-8 text-[13px] font-bold text-white/90 hover:text-white transition-colors tracking-tight"
+               data-ps="src/components/Navigation.astro:7vkjqp">
+                {item.name.toUpperCase()}
+                {item.submenu && (
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                  </svg>
+                )}
+              </a>
+              
+              {/* Desktop Dropdown */}
+              {item.submenu && (
+                <div class="absolute left-0 top-[calc(100%-8px)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 min-w-[220px]" data-ps="src/components/Navigation.astro:gqvsd5">
+                  <div class="bg-[#111] border-t-2 border-[#F54a00] shadow-2xl py-1 flex flex-col" data-ps="src/components/Navigation.astro:gqvsd6">
+                    {item.submenu.map(sub => (
+                      <div class="relative group/sub" data-ps="src/components/Navigation.astro:gqvsda">
+                        <a 
+                          href={sub.href} 
+                          class="flex items-center justify-between px-5 py-2.5 text-[12px] font-bold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                         data-ps="src/components/Navigation.astro:7vkjrb">
+                          {sub.name.toUpperCase()}
+                          {sub.submenu && (
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                          )}
+                        </a>
+                        {sub.submenu && (
+                          <div class="absolute left-full top-0 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-150 z-50 min-w-[200px] ml-0.5" data-ps="src/components/Navigation.astro:gqvsdb">
+                            <div class="bg-[#111] border-l-2 border-[#F54a00] shadow-2xl py-1 flex flex-col" data-ps="src/components/Navigation.astro:gqvsdc">
+                              {sub.submenu.map(nested => (
+                                <a 
+                                  href={nested.href} 
+                                  class="block px-5 py-2.5 text-[12px] font-bold text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                                 data-ps="src/components/Navigation.astro:kd8n5w">
+                                  {nested.name.toUpperCase()}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <!-- Language Switcher Desktop -->
+        <div class="flex items-center ml-4 mr-6 gap-3 text-[11px] font-black border-l border-white/10 pl-6" data-ps="src/components/Navigation.astro:gqvsd8">
+          <a href={enPath} onclick="localStorage.setItem('language-preference', 'en')" class={`hover:text-white transition-colors ${isLangActive('en') ? 'text-[#F54a00]' : 'text-white/40'}`} data-ps="src/components/Navigation.astro:7vkjrc">EN</a>
+          <a href={fiPath} onclick="localStorage.setItem('language-preference', 'fi')" class={`hover:text-white transition-colors ${isLangActive('fi') ? 'text-[#F54a00]' : 'text-white/40'}`} data-ps="src/components/Navigation.astro:7vkjrd">FI</a>
+          <a href={svPath} onclick="localStorage.setItem('language-preference', 'sv')" class={`hover:text-white transition-colors ${isLangActive('sv') ? 'text-[#F54a00]' : 'text-white/40'}`} data-ps="src/components/Navigation.astro:7vkjre">SV</a>
+        </div>
+
+        <a href={bookingLink} class="inline-flex items-center justify-center px-5 py-2 text-[13px] font-black text-white bg-[#F54a00] hover:brightness-110 transition-all uppercase tracking-tight" data-ps="src/components/Navigation.astro:7vkjrf">
+          {currentCta}
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        id="mobile-menu-btn" 
+        class="lg:hidden relative z-50 p-2 text-white hover:text-[#F54a00] transition-colors focus:outline-none"
+        aria-label="Toggle mobile menu"
+       data-ps="src/components/Navigation.astro:4mv8m">
+        <svg id="icon-menu" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="icon-close" class="w-7 h-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-zinc-950 flex flex-col pt-24 pb-6 px-6 overflow-y-auto opacity-0 invisible transition-all duration-300" data-ps="src/components/Navigation.astro:gqvsd9">
+    <nav class="flex-1 flex flex-col gap-2 mt-4" data-ps="src/components/Navigation.astro:nrytyn">
+      {currentMenu.map((item, i) => (
+        <div class="mobile-nav-group border-b border-white/5 last:border-0 pb-4 mb-2" data-ps="src/components/Navigation.astro:gqvsda">
+          <div class="flex items-center justify-between" data-ps="src/components/Navigation.astro:gqvsdb">
+            <a href={item.href} class="text-2xl font-black text-white hover:text-[#F54a00] transition-colors" data-ps="src/components/Navigation.astro:7vkjrg">
+              {item.name}
+            </a>
+            {item.submenu && (
+              <button class="mobile-submenu-btn p-2 text-white/50 hover:text-white" aria-expanded="false" data-index={i} data-ps="src/components/Navigation.astro:4mv8n">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            )}
+          </div>
+          {item.submenu && (
+            <div id={`mobile-sub-${i}`} class="mobile-submenu hidden mt-4 pl-4 border-l-2 border-[#F54a00]/30 flex-col gap-4" data-ps="src/components/Navigation.astro:gqvsdc">
+              {item.submenu.map(sub => (
+                <div class="flex flex-col gap-2" data-ps={`src/components/Navigation.astro:gqvsdd-${i}`}>
+                  <a href={sub.href} class="text-lg font-medium text-white/60 hover:text-white transition-colors block" data-ps="src/components/Navigation.astro:7vkjrh">
+                    {sub.name}
+                  </a>
+                  {sub.submenu && (
+                    <div class="pl-4 flex flex-col gap-2 border-l border-white/10 mt-1 mb-2" data-ps={`src/components/Navigation.astro:gqvsde-${i}`}>
+                      {sub.submenu.map(nested => (
+                        <a href={nested.href} class="text-base font-medium text-white/40 hover:text-white transition-colors block" data-ps={`src/components/Navigation.astro:kd8n5v-${i}`}>
+                          {nested.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </nav>
+
+    <div class="mt-8 flex flex-col gap-8 pb-8" data-ps="src/components/Navigation.astro:gqvsdd">
+      <!-- Language Switcher Mobile -->
+      <div class="flex items-center justify-center gap-8 text-xl font-bold" data-ps="src/components/Navigation.astro:gqvsde">
+        <a href={enPath} onclick="localStorage.setItem('language-preference', 'en')" class={`hover:text-white transition-colors ${isLangActive('en') ? 'text-[#F54a00]' : 'text-white/50'}`} data-ps="src/components/Navigation.astro:7vkjri">EN</a>
+        <a href={fiPath} onclick="localStorage.setItem('language-preference', 'fi')" class={`hover:text-white transition-colors ${isLangActive('fi') ? 'text-[#F54a00]' : 'text-white/50'}`} data-ps="src/components/Navigation.astro:7vkjrj">FI</a>
+        <a href={svPath} onclick="localStorage.setItem('language-preference', 'sv')" class={`hover:text-white transition-colors ${isLangActive('sv') ? 'text-[#F54a00]' : 'text-white/50'}`} data-ps="src/components/Navigation.astro:7vkjrk">SV</a>
+      </div>
+
+      <a href={bookingLink} class="w-full text-center px-6 py-4 text-xl font-bold text-white bg-[#F54a00] hover:bg-[#D43F00] rounded-xl transition-colors shadow-lg" data-ps="src/components/Navigation.astro:7vkjs6">
+        {currentCta}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  function setupNavigation() {
+    const header = document.getElementById('site-header');
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    
+    // Scroll effect for header background
+    function handleScroll() {
+      if (window.scrollY > 20) {
+        header.classList.add('bg-black/95', 'backdrop-blur-md', 'border-white/10');
+        header.classList.remove('border-transparent', 'bg-gradient-to-r', 'from-black', 'via-black/40', 'to-transparent');
+      } else {
+        header.classList.remove('bg-black/95', 'backdrop-blur-md', 'border-white/10');
+        header.classList.add('border-transparent', 'bg-gradient-to-r', 'from-black', 'via-black/40', 'to-transparent');
+      }
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // Mobile Menu Toggle
+    let isMenuOpen = false;
+    
+    function closeMenu() {
+      isMenuOpen = false;
+      mobileMenu.classList.remove('opacity-100', 'visible');
+      mobileMenu.classList.add('opacity-0', 'invisible');
+      document.body.style.overflow = '';
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      handleScroll();
+    }
+
+    function toggleMenu() {
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        isMenuOpen = true;
+        mobileMenu.classList.remove('opacity-0', 'invisible');
+        mobileMenu.classList.add('opacity-100', 'visible');
+        document.body.style.overflow = 'hidden';
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+        // Keep header dark when menu is open
+        header.classList.add('bg-transparent'); 
+        header.classList.remove('border-white/10');
+      }
+    }
+
+    if (mobileBtn) {
+      // Remove old listeners to prevent double-firing
+      const newBtn = mobileBtn.cloneNode(true);
+      mobileBtn.parentNode.replaceChild(newBtn, mobileBtn);
+      newBtn.addEventListener('click', toggleMenu);
+    }
+
+    // Close mobile menu on clicking links
+    if (mobileMenu) {
+      const links = mobileMenu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen) closeMenu();
+        });
+      });
+    }
+
+    // Mobile Submenu Accordions (clean implementation)
+    const submenuBtns = document.querySelectorAll('.mobile-submenu-btn');
+    submenuBtns.forEach(btn => {
+      // Clone and replace to prevent duplicate listeners on page transitions
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(newBtn, btn);
+      
+      newBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const group = newBtn.closest('.mobile-nav-group');
+        const submenu = group.querySelector('.mobile-submenu');
+        const icon = newBtn.querySelector('svg');
+        const isExpanded = newBtn.getAttribute('aria-expanded') === 'true';
+        
+        // Close others
+        document.querySelectorAll('.mobile-submenu').forEach(other => {
+          if (other !== submenu && !other.classList.contains('hidden')) {
+            other.classList.add('hidden');
+            other.classList.remove('flex');
+            const otherGroup = other.closest('.mobile-nav-group');
+            const otherBtn = otherGroup.querySelector('.mobile-submenu-btn');
+            if (otherBtn) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              otherBtn.querySelector('svg').classList.remove('rotate-180');
+            }
+          }
+        });
+
+        // Toggle current
+        if (isExpanded) {
+          submenu.classList.add('hidden');
+          submenu.classList.remove('flex');
+          newBtn.setAttribute('aria-expanded', 'false');
+          icon.classList.remove('rotate-180');
+        } else {
+          submenu.classList.remove('hidden');
+          submenu.classList.add('flex');
+          newBtn.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  }
+
+  // Initialize on load and on Astro view transitions
+  setupNavigation();
+  document.addEventListener('astro:page-load', setupNavigation);
+</script>

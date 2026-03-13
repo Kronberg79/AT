@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Kontakta Archipelago Technics | IT-stöd i Åbo & Pargas";
+const description = "Behöver du IT-hjälp? Kontakta Archipelago Technics för datorservice, IT-konsultation och tekniskt stöd för företag och privatpersoner i Åboland.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/sv/kontakt.astro:dh9iju">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/sv/kontakt.astro:dh9ijt">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/sv/kontakt.astro:dh9ijs">
+        <p class="lead" data-ps="src/pages/sv/kontakt.astro:p3sono">Vi är här för att hjälpa till.</p>
+        <p data-ps="src/pages/sv/kontakt.astro:p3sonp">Kontakta oss för alla IT-frågor, supportärenden eller samarbetsmöjligheter.</p>
+        <div class="not-prose mt-8 p-6 bg-zinc-900 rounded-xl border border-white/10" data-ps="src/pages/sv/kontakt.astro:dh9ijr">
+            <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/sv/kontakt.astro:tk2fs4">Kontaktuppgifter</h3>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/sv/kontakt.astro:j51yz7">Telefon: <a href="tel:+358405829704" class="text-white hover:text-[#F54a00]" data-ps="src/pages/sv/kontakt.astro:w7qldg">+358 40 582 9704</a></p>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/sv/kontakt.astro:j51yz8">E-post: <a href="mailto:info@a-t.fi" class="text-white hover:text-[#F54a00]" data-ps="src/pages/sv/kontakt.astro:w7qldh">info@a-t.fi</a></p>
+            <p class="text-gray-400 mb-2" data-ps="src/pages/sv/kontakt.astro:j51yz9">Adress: Industrigatan 22, 21600 Pargas</p>
+            <p class="text-gray-400" data-ps="src/pages/sv/kontakt.astro:vat-sv">FO-nummer: FI20349445</p>
+        </div>
+      </div>
+      <div data-ps="src/pages/sv/kontakt.astro:dh9ijq">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Kundtjänst" data-ps="src/pages/sv/kontakt.astro:rolks1" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

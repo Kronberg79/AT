@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT Infrastructure Services & Network Solutions | Archipelago Technics";
+const description = "Professional IT infrastructure planning, network design, server management, and cybersecurity solutions for businesses in Turku and Parainen.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+>
+  <PageHeader title={title} description={description} />
+  <div class="max-w-4xl mx-auto px-6 py-16" data-ps="src/pages/it-infra.astro:container">
+    <div class="prose prose-invert prose-lg max-w-none" data-ps="src/pages/it-infra.astro:content">
+      <h2 data-ps="src/pages/it-infra.astro:h2-1">Personalized and Tailored Service</h2>
+      <p data-ps="src/pages/it-infra.astro:p-1">Does your IT infrastructure need an upgrade, or are you just starting to create one? At Archipelago Technics, we believe that every customer and individual is different. We focus on personal service tailored to the customer's needs. This also applies to IT infrastructures!</p>
+      
+      <p data-ps="src/pages/it-infra.astro:p-2">We design IT infrastructures custom-made to customer wishes, whether it's a larger or smaller entity. We have over a decade of experience in the field!</p>
+
+      <h3 data-ps="src/pages/it-infra.astro:h3-1">What We Offer:</h3>
+      <ul data-ps="src/pages/it-infra.astro:ul-1">
+        <li data-ps="src/pages/it-infra.astro:li-1"><strong>Network Design:</strong> We build reliable and fast local networks (LAN) and wireless networks (WLAN).</li>
+        <li data-ps="src/pages/it-infra.astro:li-2"><strong>Server Management:</strong> Server installation, maintenance, and optimization.</li>
+        <li data-ps="src/pages/it-infra.astro:li-3"><strong>Data Backup:</strong> We ensure that your company's important data is always safe and recoverable.</li>
+        <li data-ps="src/pages/it-infra.astro:li-4"><strong>Cybersecurity:</strong> Integrated security as part of the entire infrastructure.</li>
+      </ul>
+
+      <p data-ps="src/pages/it-infra.astro:p-3">Our task is to take into account technical requirements, budget, and business goals to build an optimal infrastructure for you. A properly designed IT infrastructure is the key to your company's success.</p>
+
+      <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-8 mt-12" data-ps="src/pages/it-infra.astro:cta">
+        <h3 class="mt-0" data-ps="src/pages/it-infra.astro:cta-h3">Interested?</h3>
+        <p data-ps="src/pages/it-infra.astro:cta-p">Call us immediately at +358 40 582 9704 or leave a contact request, and we will get back to you soon.</p>
+        <a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors no-underline" data-ps="src/pages/it-infra.astro:cta-a">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

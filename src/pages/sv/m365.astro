@@ -1,0 +1,107 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const lang = 'sv';
+---
+
+<BaseLayout
+  title="Microsoft 365 för Företag | Archipelago Technics"
+  description="Vi är en officiell Microsoft-partner. Vi erbjuder alla Microsoft 365-lösningar, installationer och support för ditt företag."
+>
+  <PageHeader
+    title="Microsoft 365"
+    subtitle="Effektivitet, säkerhet och samarbete för ditt företag"
+  />
+
+  <section class="py-24 bg-white" data-ps="src/pages/sv/m365.astro:86spfy">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" data-ps="src/pages/sv/m365.astro:hswopz">
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-24" data-ps="src/pages/sv/m365.astro:hswoq0">
+        <div data-ps="src/pages/sv/m365.astro:c14140">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-bold mb-6" data-ps="src/pages/sv/m365.astro:c14141">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/></svg>
+            Microsoft Partner
+          </div>
+          <h2 class="text-4xl font-black text-zinc-900 mb-6 leading-tight" data-ps="src/pages/sv/m365.astro:b5yssb">Din auktoriserade Microsoft-partner</h2>
+          <p class="text-lg text-zinc-600 mb-8 leading-relaxed" data-ps="src/pages/sv/m365.astro:4u9e3n">
+            Archipelago Technics är en officiell Microsoft-partner. Vi hjälper ditt företag att välja rätt licenser, genomföra migreringen till molnet och säkerställa att din cybersäkerhet är i toppklass. Vi tillhandahåller alla möjliga lösningar du behöver för att driva din verksamhet.
+          </p>
+          <ul class="space-y-4 mb-10">
+            {[
+              'Expertis inom licenshantering',
+              'Migrering av e-post och filer',
+              'Advanced Threat Protection (ATP)',
+              'Kontinuerlig support och underhåll'
+            ].map(item => (
+              <li class="flex items-center gap-3 text-zinc-800 font-bold" data-ps="src/pages/sv/m365.astro:bwxpa4">
+                <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a href="/sv/kontakt" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-lg shadow-blue-200" data-ps="src/pages/sv/m365.astro:29oili">
+            Kontakta en expert
+          </a>
+        </div>
+        <div class="relative" data-ps="src/pages/sv/m365.astro:c14142">
+          <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1758876021739-d7c60b8742a5?auto=format&w=800&q=80" 
+            alt="Microsoft 365 Business" 
+            class="rounded-3xl shadow-2xl relative z-10" data-ps="src/pages/sv/m365.astro:fankeh" />
+          <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -z-10" data-ps="src/pages/sv/m365.astro:c14143"></div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-24" data-ps="src/pages/sv/m365.astro:c14144">
+        {[
+          {
+            title: 'Microsoft 365 Business Basic',
+            desc: 'Bäst för företag som behöver enkla fjärrlösningar, molnlagring och molntjänster.',
+            features: ['Teams, Exchange, OneDrive', 'Webb- och mobilversioner av Office-appar', '1 TB molnlagring']
+          },
+          {
+            title: 'Microsoft 365 Business Standard',
+            desc: 'Den perfekta lösningen för företag som behöver kompletta Office-appar på alla enheter.',
+            features: ['Alla Basic-funktioner', 'Skrivbordsversioner av Outlook, Word, Excel, etc.', 'Värd för webbinarier enkelt']
+          },
+          {
+            title: 'Microsoft 365 Business Premium',
+            desc: 'Den mest omfattande lösningen inklusive avancerad säkerhet och enhetshantering.',
+            features: ['Alla Standard-funktioner', 'Avancerad cybersäkerhet', 'Enhetshantering (Intune)']
+          }
+        ].map(plan => (
+          <div class="p-10 rounded-3xl border border-zinc-100 bg-zinc-50 hover:bg-white hover:shadow-xl transition-all group" data-ps="src/pages/sv/m365.astro:c14145">
+            <h3 class="text-2xl font-black text-zinc-900 mb-4" data-ps="src/pages/sv/m365.astro:3ig4fa">{plan.title}</h3>
+            <p class="text-zinc-600 mb-8 leading-relaxed" data-ps="src/pages/sv/m365.astro:4u9e3m">{plan.desc}</p>
+            <ul class="space-y-3">
+              {plan.features.map(f => (
+                <li class="flex gap-2 text-sm text-zinc-700 font-medium" data-ps="src/pages/sv/m365.astro:bwxpa5">
+                  <span class="text-blue-600" data-ps="src/pages/sv/m365.astro:ycv6p">•</span> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-zinc-900 rounded-[3rem] p-12 md:p-20 text-center overflow-hidden relative" data-ps="src/pages/sv/m365.astro:c14146">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent opacity-50" data-ps="src/pages/sv/m365.astro:c14147"></div>
+        <div class="relative z-10 max-w-3xl mx-auto" data-ps="src/pages/sv/m365.astro:c14148">
+          <h2 class="text-3xl md:text-5xl font-black text-white mb-8" data-ps="src/pages/sv/m365.astro:b5yssc">Behöver du hjälp att välja?</h2>
+          <p class="text-xl text-zinc-400 mb-12" data-ps="src/pages/sv/m365.astro:4u9e3l">
+            Vi hjälper dig att välja exakt det Microsoft 365-paket som passar ditt företags behov. Vi sköter allt med en nyckelfärdig lösning.
+          </p>
+          <div class="flex flex-wrap justify-center gap-6" data-ps="src/pages/sv/m365.astro:c14149">
+            <a href="tel:+358405829704" class="px-8 py-4 bg-white text-zinc-900 font-bold rounded-xl hover:scale-105 transition-transform" data-ps="src/pages/sv/m365.astro:29oilj">
+              Ring oss: +358 40 582 9704
+            </a>
+            <a href="/sv/kontakt" class="px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold rounded-xl hover:bg-white/10 transition-colors" data-ps="src/pages/sv/m365.astro:29oilk">
+              Skicka ett meddelande
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

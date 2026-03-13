@@ -1,0 +1,59 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access
+const defaultMicrosoft = content['en']?.microsoft || {};
+const currentMicrosoft = content[lang]?.microsoft || {};
+const t = {
+  title: "Microsoft 365 Solutions",
+  p1: "We help your business leverage Microsoft 365 cloud services efficiently.",
+  p2: "Maximize productivity and security with modern tools.",
+  features: [],
+  ...defaultMicrosoft,
+  ...currentMicrosoft
+};
+---
+
+<section id="microsoft" class="py-24 bg-slate-50 overflow-hidden" data-ps="src/components/home/Microsoft.astro:m1">
+  <div class="max-w-7xl mx-auto px-6" data-ps="src/components/home/Microsoft.astro:m2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" data-ps="src/components/home/Microsoft.astro:m3">
+      <div class="order-2 lg:order-1 reveal-left" data-ps="src/components/home/Microsoft.astro:m4">
+        <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1668877780029-9f75961fcf39?auto=format&w=800&q=80" 
+          srcset="https://images.unsplash.com/photo-1668877780029-9f75961fcf39?auto=format&w=320&q=80 320w, https://images.unsplash.com/photo-1668877780029-9f75961fcf39?auto=format&w=480&q=80 480w, https://images.unsplash.com/photo-1668877780029-9f75961fcf39?auto=format&w=640&q=80 640w, https://images.unsplash.com/photo-1668877780029-9f75961fcf39?auto=format&w=800&q=80 800w"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="Microsoft 365 työskentelyä" 
+          class="rounded-3xl shadow-2xl object-cover w-full aspect-video lg:aspect-square"
+          loading="lazy"
+          data-ps="src/components/home/Microsoft.astro:m5"
+        />
+      </div>
+      <div class="order-1 lg:order-2 reveal-right" data-ps="src/components/home/Microsoft.astro:m6">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6" data-ps="src/components/home/Microsoft.astro:m7">
+          {t.title}
+        </h2>
+        <div class="prose prose-slate lg:prose-lg" data-ps="src/components/home/Microsoft.astro:m8">
+          <p class="text-slate-600 leading-relaxed" data-ps="src/components/home/Microsoft.astro:m9">
+            {t.p1}
+          </p>
+          <p class="text-slate-600 leading-relaxed" data-ps="src/components/home/Microsoft.astro:m10">
+            {t.p2}
+          </p>
+        </div>
+        <div class="mt-8 space-y-4" data-ps="src/components/home/Microsoft.astro:m11">
+          {t.features.map(feature => (
+            <div class="flex items-center gap-3 text-slate-700 font-medium" data-ps="src/components/home/Microsoft.astro:m12">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+              {feature}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,156 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Tietokoneen huolto Turku | Ilmainen nouto- ja palautuspalvelu";
+const description = "Etsitkö tietokoneen huoltoa tai korjausta Turun alueella? Archipelago Technics tarjoaa vaivattoman noutopalvelun: haemme laitteesi kotoasi ja palautamme sen huollettuna.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Tietokonehuolto ja noutopalvelu Turku",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Archipelago Technics",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Teollisuuskatu 22",
+      "addressLocality": "Parainen",
+      "postalCode": "21600",
+      "addressRegion": "Turku Region",
+      "addressCountry": "FI"
+    },
+    "telephone": "+358405829704"
+  },
+  "areaServed": "Turku, Parainen, Kaarina",
+  "description": "Tietokoneen huolto ja korjaus ilmaisella noudolla ja palautuksella Turun alueella.",
+  "serviceType": "Tietokoneen korjaus Turku"
+};
+---
+
+<BaseLayout title={title} description={description} lang="fi" jsonLd={jsonLd}>
+  <PageHeader 
+    title="Tietokoneen huolto ja korjaus Turku" 
+    description="Vaivaton noutopalvelu – me haemme tietokoneesi kotoasi, huollamme sen ja tuomme takaisin." 
+  />
+
+  <section class="py-16 md:py-24" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:s3v1">
+    <div class="max-w-7xl mx-auto px-6" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx1w">
+      <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx1x">
+        <div class="prose prose-invert prose-lg" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2j">
+          <h2 class="text-3xl font-bold mb-6" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:kmdzaf">Tietokoneen huolto Turku: Helppo ja nopea noutopalvelu</h2>
+          <p data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm1d">
+            Onko tietokoneesi hidas, ei käynnisty tai kaipaako se puhdistusta? Me teemme huollosta sinulle mahdollisimman helppoa. Sinun ei tarvitse lähteä kantamaan konettasi huoltoon – <strong>me tulemme hakemaan sen suoraan kotioveltasi Turun seudulla.</strong>
+          </p>
+          <p data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm1e">
+            Huollon valmistuttua palautamme laitteen sovittuna ajankohtana takaisin kotiisi. Nouto ja palautus ovat Turun alueella täysin ilmaisia, kun tilaat huoltopalvelun meiltä.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2k">
+            <a href="/fi/varaus" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:pmviqg">
+              Varaa nouto netistä
+            </a>
+            <a href="tel:+358405829704" class="inline-flex justify-center items-center px-6 py-3 border border-gray-700 text-base font-medium rounded-md text-white bg-transparent hover:bg-gray-800 transition-colors" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:pmvir2">
+              Soita ja sovi nouto: 040 582 9704
+            </a>
+          </div>
+        </div>
+        <div class="relative" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2l">
+          <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1699905527162-8b932a8e9206?auto=format&w=1200&q=80" 
+            srcset="https://images.unsplash.com/photo-1699905527162-8b932a8e9206?auto=format&w=320&q=80 320w, https://images.unsplash.com/photo-1699905527162-8b932a8e9206?auto=format&w=480&q=80 480w, https://images.unsplash.com/photo-1699905527162-8b932a8e9206?auto=format&w=800&q=80 800w, https://images.unsplash.com/photo-1699905527162-8b932a8e9206?auto=format&w=1200&q=80 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Tietokoneen huolto Turku" 
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3" 
+            loading="eager" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:aphsqf" />
+          <div class="absolute -bottom-6 -left-6 bg-blue-600 p-6 rounded-xl hidden lg:block shadow-xl" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2m">
+            <span class="text-white font-bold text-lg block" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:3zmpav">Nouto & Palautus</span>
+            <span class="text-blue-50" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:3zmpau">0 € Turun seudulla</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-900/50" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:s3v2">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-16" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2n">
+      <h2 class="text-3xl font-bold mb-4" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:kmdzag">Miten palvelu toimii?</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm1f">Kolme helppoa askelta tietokoneesi kuntoon saamiseksi.</p>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2o">
+      <div class="p-8 bg-gray-950 rounded-2xl border border-gray-800 hover:border-blue-500 transition-colors text-center group" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2p">
+        <div class="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600/20 transition-colors" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2q">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz223">1. Varaa aika</h3>
+        <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm1g">Varaa noutoaika suoraan sivustoltamme tai soita meille. Sovimme sopivan ajan laitteen noudolle kotoasi.</p>
+      </div>
+
+      <div class="p-8 bg-gray-950 rounded-2xl border border-gray-800 hover:border-blue-500 transition-colors text-center group" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2r">
+        <div class="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600/20 transition-colors" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:d7qx2s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz224">2. Huolto</h3>
+        <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm1h">Haemme koneen, suoritamme tarvittavat huoltotoimenpiteet ja korjaukset ammattitaitoisesti Parainen–Turku alueella sijaitsevassa huollossamme.</p>
+      </div>
+
+      <div class="p-8 bg-gray-950 rounded-2xl border border-gray-800 hover:border-blue-500 transition-colors text-center group" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkk">
+        <div class="w-16 h-16 bg-blue-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600/20 transition-colors" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-4" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz225">3. Palautus kotiin</h3>
+        <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm23">Tuomme huolletun ja toimivan koneen takaisin kotiisi. Voit jatkaa työskentelyä ilman turhaa odottelua tai matkustelua.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:s3v3">
+    <div class="max-w-4xl mx-auto px-6" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkm">
+      <h2 class="text-3xl font-bold mb-12 text-center" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:kmdzah">Usein kysytyt kysymykset – Tietokonehuolto Turku</h2>
+      
+      <div class="space-y-8" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkn">
+        <div data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfko">
+          <h3 class="text-xl font-bold mb-3 text-blue-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz226">Onko noutopalvelu todella ilmainen?</h3>
+          <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm24">Kyllä, tarjoamme ilmaisen noudon ja palautuksen kaikille tietokonehuoltoa tai korjausta tarvitseville Turun, Paraisten ja Kaarinan alueella.</p>
+        </div>
+        
+        <div data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkp">
+          <h3 class="text-xl font-bold mb-3 text-blue-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz22s">Mitä tietokoneen korjaus Turussa maksaa?</h3>
+          <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm25">Huollon hinta riippuu tarvittavista toimenpiteistä ja mahdollisista varaosista. Annamme aina arvion kustannuksista ennen työn aloittamista, jotta tiedät tarkalleen mitä maksat.</p>
+        </div>
+        
+        <div data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkq">
+          <h3 class="text-xl font-bold mb-3 text-blue-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz22t">Kuinka kauan tietokoneen huolto kestää?</h3>
+          <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm26">Tyypillisesti huolto valmistuu 1–3 arkipäivän kuluessa noudosta, riippuen huollon laajuudesta ja mahdollisten varaosien saatavuudesta.</p>
+        </div>
+
+        <div data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkr">
+          <h3 class="text-xl font-bold mb-3 text-blue-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:5xz22u">Voitteko korjata koneen paikan päällä kotonani?</h3>
+          <p class="text-gray-400" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm27">Monet ohjelmistopuolen ongelmat ja verkkoasennukset voidaan hoitaa suoraan kotikäynnillä. Jos vika vaatii perusteellisempaa huoltoa tai osien vaihtoa, hyödynnämme noutopalveluamme laitteen viemiseksi huoltotiloihimme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-blue-600" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:s3v4">
+    <div class="max-w-4xl mx-auto px-6 text-center" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfks">
+      <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:kmdzai">Tarvitsetko tietokonehuoltoa Turussa?</h2>
+      <p class="text-xl text-blue-50 mb-8" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:iixm28">Ota yhteyttä ja tilaa ilmainen nouto jo tänään!</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:l1qfkt">
+        <a href="/fi/varaus" class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-100 transition-colors shadow-lg" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:pmvir3">
+          Varaa nouto nyt
+        </a>
+        <a href="tel:+358405829704" class="px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-blue-700 transition-colors" data-ps="src/pages/fi/tietokoneen-huolto-turku.astro:pmvir4">
+          Soita: 040 582 9704
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

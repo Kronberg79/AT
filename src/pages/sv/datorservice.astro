@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Datorservice & Dataåterställning i Åbo | Archipelago Technics";
+const description = "Snabb och pålitlig datorservice samt dataåterställning i Åbo och Pargas. Vi reparerar hårdvarufel, mjukvaruproblem och räddar förlorade filer.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  
+  <div class="max-w-7xl mx-auto px-6 py-16" data-ps="src/pages/sv/datorservice.astro:fsaw04">
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16" data-ps="src/pages/sv/datorservice.astro:fsaw03">
+      <div class="prose prose-lg prose-invert" data-ps="src/pages/sv/datorservice.astro:fsaw02">
+        <h2 class="text-3xl font-bold text-white mb-6" data-ps="src/pages/sv/datorservice.astro:yx0vla">Datorservice & IT-stöd</h2>
+        <p class="lead text-xl text-orange-500 font-semibold" data-ps="src/pages/sv/datorservice.astro:3c3wq0">
+          Låt inte teknologin hindra din företags tillväxt!
+        </p>
+        <p data-ps="src/pages/sv/datorservice.astro:3c3wpz">
+          Vi erbjuder omfattande datorservice och IT-lösningar för både företag och konsumenter.
+          Vi hanterar hårdvarufel, mjukvaruproblem och dataåterställning med yrkesskicklighet.
+        </p>
+        <p data-ps="src/pages/sv/datorservice.astro:3c3wpy">
+          Vi betjänar i vår butik och gör företags- och hembesök vid behov.
+        </p>
+        
+        <div class="mt-8 not-prose" data-ps="src/pages/sv/datorservice.astro:42n4wa">
+          <h3 class="text-xl font-bold text-white mb-4" data-ps="src/pages/sv/datorservice.astro:lfo966">Priser och tjänster</h3>
+          <p class="text-zinc-400 mb-6" data-ps="src/pages/sv/datorservice.astro:3c3wpx">Se detaljerade priser eller begär offert för service.</p>
+          <div class="flex gap-4" data-ps="src/pages/sv/datorservice.astro:42n4wb">
+            <a href="/sv/kontakt" class="bg-orange-700 hover:bg-orange-800 text-white font-bold py-3 px-6 rounded-lg transition" data-ps="src/pages/sv/datorservice.astro:3rtzzt">
+              Kontakta oss
+            </a>
+          </div>
+        </div>
+      </div>
+      <div data-ps="src/pages/sv/datorservice.astro:42n4wc">
+        <img crossorigin="anonymous" src="https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=800&q=80" 
+          class="rounded-xl shadow-2xl w-full h-full object-cover" 
+          alt="Datorservice" data-ps="src/pages/sv/datorservice.astro:iak0bl" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8" data-ps="src/pages/sv/datorservice.astro:42n4wd">
+      <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 text-center" data-ps="src/pages/sv/datorservice.astro:42n4we">
+        <div class="text-orange-500 text-4xl mb-4" data-ps="src/pages/sv/datorservice.astro:42n4wf">💻</div>
+        <h3 class="text-xl font-bold text-white mb-2" data-ps="src/pages/sv/datorservice.astro:lfo967">Service</h3>
+        <p class="text-zinc-400" data-ps="src/pages/sv/datorservice.astro:3c3wpw">Snabb och pålitlig service för alla märken.</p>
+      </div>
+      <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 text-center" data-ps="src/pages/sv/datorservice.astro:42n4wg">
+        <div class="text-orange-500 text-4xl mb-4" data-ps="src/pages/sv/datorservice.astro:42n4wh">💾</div>
+        <h3 class="text-xl font-bold text-white mb-2" data-ps="src/pages/sv/datorservice.astro:lfo968">Dataåterställning</h3>
+        <p class="text-zinc-400" data-ps="src/pages/sv/datorservice.astro:3c3wpv">Vi räddar dina viktiga filer från trasiga enheter.</p>
+      </div>
+      <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 text-center" data-ps="src/pages/sv/datorservice.astro:42n4wi">
+        <div class="text-orange-500 text-4xl mb-4" data-ps="src/pages/sv/datorservice.astro:42n4wj">🏠</div>
+        <h3 class="text-xl font-bold text-white mb-2" data-ps="src/pages/sv/datorservice.astro:lfo969">Hembesök</h3>
+        <p class="text-zinc-400" data-ps="src/pages/sv/datorservice.astro:3c3wp9">Vi kommer till dig för att lösa dina problem.</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

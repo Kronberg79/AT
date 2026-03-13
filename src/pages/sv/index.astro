@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Services from '@/components/home/Services.astro';
+import Microsoft from '@/components/home/Microsoft.astro';
+import Security from '@/components/home/Security.astro';
+import FAQ from '@/components/home/FAQ.astro';
+import About from '@/components/home/About.astro';
+import Contact from '@/components/home/Contact.astro';
+import { SITE } from '@/config/site';
+
+const lang = 'sv';
+const title = "Archipelago Technics | Din IT-partner i Pargas, Åbo och S:t Karins";
+const description = "Pålitliga IT-lösningar för företag och privatpersoner. Vi erbjuder IT-stöd, Microsoft 365, cybersäkerhet och datorservice i Åbolands skärgård.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Archipelago Technics",
+    "image": "https://a-t.fi/favicon.svg",
+    "@id": "https://a-t.fi/sv",
+    "url": "https://a-t.fi/sv",
+    "telephone": "+358 40 554 1234",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Strandvägen 30",
+      "addressLocality": "Pargas",
+      "postalCode": "21600",
+      "addressCountry": "FI"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 60.301,
+      "longitude": 22.302
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/archipelagotechnics"
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang} jsonLd={jsonLd}>
+  <Hero lang={lang} />
+  <Services lang={lang} />
+  <Microsoft lang={lang} />
+  <Security lang={lang} />
+  <FAQ lang={lang} />
+  <About lang={lang} />
+  <Contact lang={lang} />
+</BaseLayout>

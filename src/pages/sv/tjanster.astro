@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-tjänster för Företag & Hem | Archipelago Technics";
+const description = "Utforska vårt omfattande utbud av IT-tjänster i Åbo och Pargas: Datorservice, fjärrsupport, cybersäkerhet, serverunderhåll och hemsidor.";
+---
+
+<BaseLayout title={title} description={description} lang="sv">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/sv/tjanster.astro:a67efu">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/sv/tjanster.astro:a67efv">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/sv/tjanster.astro:a67efw">
+        <p class="lead" data-ps="src/pages/sv/tjanster.astro:ns75jt">Allt du behöver för ett digitalt liv.</p>
+        <p data-ps="src/pages/sv/tjanster.astro:ns75ju">Utforska vårt breda utbud av tjänster designade för att hålla din teknik effektiv, säker och uppdaterad.</p>
+        <ul>
+            <li data-ps="src/pages/sv/tjanster.astro:tdzwbe"><a href="/sv/fjarrsupport" class="text-[#F54a00]" data-ps="src/pages/sv/tjanster.astro:y2z53n">Fjärrsupport</a></li>
+            <li data-ps="src/pages/sv/tjanster.astro:tdzwbd"><a href="/sv/datorservice" class="text-[#F54a00]" data-ps="src/pages/sv/tjanster.astro:y2z53o">Datorservice</a></li>
+            <li data-ps="src/pages/sv/tjanster.astro:tdzwbc"><a href="/sv/sakerhet" class="text-[#F54a00]" data-ps="src/pages/sv/tjanster.astro:o0gdkk">Säkerhet</a></li>
+            <li data-ps="src/pages/sv/tjanster.astro:tdzwbb"><a href="/sv/it-infra" class="text-[#F54a00]" data-ps="src/pages/sv/tjanster.astro:o0gdkl">IT-Infrastruktur</a></li>
+            <li data-ps="src/pages/sv/tjanster.astro:tdzwba"><a href="/sv/hemsidor" class="text-[#F54a00]" data-ps="src/pages/sv/tjanster.astro:o0gdkm">Hemsidor</a></li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/sv/tjanster.astro:a67efx">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Serverrum" data-ps="src/pages/sv/tjanster.astro:jp1k7f" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

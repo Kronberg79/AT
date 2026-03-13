@@ -1,0 +1,162 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access
+const safeContent = content || {};
+const defaultContact = safeContent['en']?.contact || {};
+const currentContact = safeContent[lang]?.contact || {};
+
+// Merge into a guaranteed object to prevent undefined errors
+const t = {
+  title: "Contact Us",
+  description: "Ready to upgrade your IT? Send us a message.",
+  name: "Name",
+  email: "Email",
+  message: "Message",
+  send: "Send Message",
+  ...defaultContact,
+  ...currentContact
+};
+---
+<section id="contact" class="py-24 bg-[#F54a00] text-white" data-ps="src/components/home/Contact.astro:hfh22b">
+  <div class="container mx-auto px-6" data-ps="src/components/home/Contact.astro:o1wv04">
+    <div class="bg-black rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row gap-16 reveal" data-ps="src/components/home/Contact.astro:o1wuzi">
+      <div class="lg:w-1/2" data-ps="src/components/home/Contact.astro:o1wuzh">
+        <h2 class="text-4xl md:text-6xl font-black mb-8 leading-[0.9]" data-ps="src/components/home/Contact.astro:hp7u1u">
+          {t.title}
+        </h2>
+        <p class="text-white/60 text-lg mb-12" data-ps="src/components/home/Contact.astro:u4l0av">
+          {t.description}
+        </p>
+        
+        <div class="space-y-8" data-ps="src/components/home/Contact.astro:o1wuzg">
+          <div class="flex items-center gap-6 group" data-ps="src/components/home/Contact.astro:o1wuzf">
+            <div class="w-14 h-14 rounded-2xl bg-[#F54a00]/10 flex items-center justify-center text-[#F54a00] group-hover:bg-[#F54a00] group-hover:text-white transition-all" data-ps="src/components/home/Contact.astro:o1wuze">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <div data-ps="src/components/home/Contact.astro:o1wuzd">
+              <div class="text-sm font-bold opacity-50 uppercase tracking-widest" data-ps="src/components/home/Contact.astro:o1wuzc">Email Us</div>
+              <div class="text-xl font-black" data-ps="src/components/home/Contact.astro:o1wuzb">info@a-t.fi</div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-6 group" data-ps="src/components/home/Contact.astro:o1wuza">
+            <div class="w-14 h-14 rounded-2xl bg-[#F54a00]/10 flex items-center justify-center text-[#F54a00] group-hover:bg-[#F54a00] group-hover:text-white transition-all" data-ps="src/components/home/Contact.astro:o1wuz9">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            </div>
+            <div data-ps="src/components/home/Contact.astro:1ijz25">
+              <div class="text-sm font-bold opacity-50 uppercase tracking-widest" data-ps="src/components/home/Contact.astro:1ijz26">Call Support</div>
+              <div class="text-xl font-black" data-ps="src/components/home/Contact.astro:1ijz27">+358 40 582 9704</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-6 group" data-ps="src/components/home/Contact.astro:1ijz28">
+            <div class="w-14 h-14 rounded-2xl bg-[#F54a00]/10 flex items-center justify-center text-[#F54a00] group-hover:bg-[#F54a00] group-hover:text-white transition-all" data-ps="src/components/home/Contact.astro:1ijz29">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            </div>
+            <div data-ps="src/components/home/Contact.astro:1ijz2a">
+              <div class="text-sm font-bold opacity-50 uppercase tracking-widest" data-ps="src/components/home/Contact.astro:1ijz2b">Office</div>
+              <div class="text-xl font-black" data-ps="src/components/home/Contact.astro:1ijz2c">Parainen, Finland</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:w-1/2" data-ps="src/components/home/Contact.astro:1ijz2d">
+        <form id="contact-form" class="space-y-6" action="/api/submit-form" method="POST">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-ps="src/components/home/Contact.astro:1ijz2e">
+            <input type="text" name="name" placeholder={t.name} required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/30 focus:border-[#F54a00] outline-none transition-all" />
+            <input type="email" name="email" placeholder={t.email} required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/30 focus:border-[#F54a00] outline-none transition-all" />
+          </div>
+          <input type="text" name="subject" placeholder="Subject" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/30 focus:border-[#F54a00] outline-none transition-all" />
+          <textarea name="message" rows="5" placeholder={t.message} required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/30 focus:border-[#F54a00] outline-none transition-all"></textarea>
+          <button type="submit" id="submit-btn" class="w-full py-5 bg-[#F54a00] text-white rounded-2xl font-black text-lg hover:bg-[#D43F00] transition-all" data-ps="src/components/home/Contact.astro:1yomzj">
+            {t.send}
+          </button>
+          <div id="form-status" class="hidden text-center font-bold p-4 rounded-xl" data-ps="src/components/home/Contact.astro:1ijz2e"></div>
+        </form>
+      </div>
+
+      <script>
+        function initContactForm() {
+          const form = document.getElementById('contact-form');
+          if (!form) return;
+          
+          form.removeEventListener('submit', handleSubmit);
+          form.addEventListener('submit', handleSubmit);
+        }
+
+        async function handleSubmit(e) {
+          e.preventDefault();
+          
+          const form = e.target;
+          const btn = form.querySelector('button[type="submit"]');
+          const status = form.querySelector('#form-status');
+          
+          if (btn) {
+            btn.dataset.originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+          }
+          
+          if (status) {
+            status.className = 'hidden';
+            status.textContent = '';
+          }
+
+          try {
+            const formData = new FormData(form);
+            console.log('Sending message...');
+            
+            const response = await fetch('/api/submit-form', {
+              method: 'POST',
+              body: formData
+            });
+
+            const responseText = await response.text();
+            let result;
+            
+            try {
+              result = JSON.parse(responseText);
+            } catch (err) {
+              console.error('Server returned non-JSON response:', responseText);
+              throw new Error('Server returned an invalid response. Please contact support via email.');
+            }
+
+            if (response.ok && result.success) {
+              if (status) {
+                status.textContent = 'Message sent successfully!';
+                status.className = 'block text-center font-bold p-4 rounded-xl bg-green-500/20 text-green-300 border border-green-500/30 mt-4';
+              }
+              form.reset();
+            } else {
+              throw new Error(result.error || result.details?.message || 'Failed to send message.');
+            }
+          } catch (error) {
+            console.error('Form submission error:', error);
+            if (status) {
+              status.textContent = error.message || 'Connection error. Please try again later.';
+              status.className = 'block text-center font-bold p-4 rounded-xl bg-red-500/20 text-red-300 border border-red-500/30 mt-4 text-sm';
+            } else {
+              alert(error.message);
+            }
+          } finally {
+            if (btn) {
+              btn.innerText = btn.dataset.originalText || 'Send Message';
+              btn.disabled = false;
+            }
+          }
+        }
+
+        initContactForm();
+        document.addEventListener('astro:page-load', initContactForm);
+      </script>
+    </div>
+  </div>
+</section>

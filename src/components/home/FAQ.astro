@@ -1,0 +1,45 @@
+---
+import { content } from '@/i18n/content';
+
+export interface Props {
+  lang?: 'en' | 'fi' | 'sv';
+}
+
+const { lang = 'en' } = Astro.props;
+
+// Defensive fallback for content access - FAQ is nested under security in content.ts
+const defaultFaq = content['en']?.security?.faq || {};
+const currentFaq = content[lang]?.security?.faq || {};
+const t = {
+  title: "Frequently Asked Questions",
+  description: "Answers to common questions about our IT services.",
+  items: [],
+  ...defaultFaq,
+  ...currentFaq
+};
+---
+
+<section id="faq" class="py-24 bg-slate-50" data-ps="src/components/home/FAQ.astro:f1">
+  <div class="max-w-4xl mx-auto px-6" data-ps="src/components/home/FAQ.astro:f2">
+    <div class="text-center mb-16 reveal" data-ps="src/components/home/FAQ.astro:f3">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4" data-ps="src/components/home/FAQ.astro:f4">{t.title}</h2>
+      <p class="text-slate-700" data-ps="src/components/home/FAQ.astro:f5">{t.description}</p>
+    </div>
+
+    <div class="space-y-4" data-ps="src/components/home/FAQ.astro:f6">
+      {t.items.map((item, i) => (
+        <details class="group bg-white rounded-xl border border-slate-200 p-6 reveal" open={i===0} data-ps="src/components/home/FAQ.astro:f7">
+          <summary class="list-none flex justify-between items-center cursor-pointer font-bold text-slate-900" data-ps="src/components/home/FAQ.astro:f8">
+            {item.q}
+            <span class="text-blue-600 transition-transform group-open:rotate-180" data-ps="src/components/home/FAQ.astro:f9">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </span>
+          </summary>
+          <p class="mt-4 text-slate-600" data-ps="src/components/home/FAQ.astro:f10">
+            {item.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

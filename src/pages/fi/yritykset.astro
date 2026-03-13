@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-ratkaisut ja Palvelut Yrityksille | Archipelago Technics";
+const description = "Luotettava IT-kumppani yrityksellesi. Hallinnoidut palvelut, Microsoft 365 ja kokonaisvaltainen IT-tuki.";
+---
+
+<BaseLayout title={title} description={description} lang="fi">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/fi/yritykset.astro:677o1h">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/fi/yritykset.astro:677o1g">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/fi/yritykset.astro:677o1f">
+        <p class="lead" data-ps="src/pages/fi/yritykset.astro:cne8ei">Keskity liiketoimintaan, me hoidamme IT:n.</p>
+        <p data-ps="src/pages/fi/yritykset.astro:cne8ej">Tarjoamme kattavat IT-ratkaisut pienille ja keskisuurille yrityksille. Työasemien hallinnasta pilvipalveluihin ja kyberturvallisuuteen, varmistamme teknologianne toimivuuden.</p>
+        <ul>
+            <li data-ps="src/pages/fi/yritykset.astro:919yvv">Hallinnoidut IT-palvelut</li>
+            <li data-ps="src/pages/fi/yritykset.astro:thuesz">Microsoft 365 -ratkaisut</li>
+            <li data-ps="src/pages/fi/yritykset.astro:thuesy">Verkkoinfrastruktuuri</li>
+            <li data-ps="src/pages/fi/yritykset.astro:thuesx">Tietoturvakartoitukset</li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/fi/yritykset.astro:677o1e">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1758691736975-9f7f643d178e?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Moderni toimisto" data-ps="src/pages/fi/yritykset.astro:yynfae" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

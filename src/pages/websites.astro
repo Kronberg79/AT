@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Web Design & Development | Archipelago Technics";
+const description = "High-quality websites, e-commerce solutions, and custom web development. WordPress, WooCommerce, and tailored software.";
+
+---
+
+<BaseLayout 
+  title="Web Design & Development | Archipelago Technics" 
+  description="High-quality websites, e-commerce solutions, and custom web development. WordPress, WooCommerce, and tailored software." 
+  lang="en"
+>
+  <PageHeader title={title} description={description} />
+  <div class="max-w-4xl mx-auto px-6 py-16" data-ps="src/pages/websites.astro:container">
+    <div class="prose prose-invert prose-lg max-w-none" data-ps="src/pages/websites.astro:content">
+      <h2 data-ps="src/pages/websites.astro:h2-1">Professional Web Solutions</h2>
+      <p data-ps="src/pages/websites.astro:p-1">We create custom webpages on request for unique business needs, but we also offer <strong>Pagesmith.ai</strong> as a powerful, modern solution for fast and professional results.</p>
+
+      <div class="my-16 bg-zinc-800/50 rounded-2xl overflow-hidden border border-zinc-700" data-ps="src/pages/websites.astro:pagesmith-promo">
+        <div class="grid md:grid-cols-2 items-center" data-ps="src/pages/websites.astro:rgw6el">
+          <div class="p-8 md:p-12" data-ps="src/pages/websites.astro:rgw6ek">
+            <div class="inline-block px-3 py-1 rounded-full bg-blue-600/10 text-blue-300 text-sm font-semibold mb-4 border border-blue-600/20" data-ps="src/pages/websites.astro:rgw6ej">Modern Solution</div>
+            <h3 class="text-3xl font-bold text-white mt-0 mb-6" data-ps="src/pages/websites.astro:kbzb8o">Pagesmith.ai</h3>
+            <p class="text-zinc-200 mb-6" data-ps="src/pages/websites.astro:mbtgr5">Experience the next generation of web design. Pagesmith.ai allows us to deliver stunning, high-performance websites with lightning-fast turnaround times. It combines AI-driven efficiency with professional craftsmanship.</p>
+            <ul class="space-y-3 mb-8 list-none p-0">
+              <li class="flex items-center gap-2 text-white" data-ps="src/pages/websites.astro:odzn4g"><span class="text-blue-400 text-xl" data-ps="src/pages/websites.astro:koi703">✓</span> Ultra-fast deployment</li>
+              <li class="flex items-center gap-2 text-white" data-ps="src/pages/websites.astro:odzn4h"><span class="text-blue-400 text-xl" data-ps="src/pages/websites.astro:2yi4xh">✓</span> Modern, responsive designs</li>
+              <li class="flex items-center gap-2 text-white" data-ps="src/pages/websites.astro:odzn4i"><span class="text-blue-400 text-xl" data-ps="src/pages/websites.astro:2yi4xi">✓</span> SEO-ready architecture</li>
+            </ul>
+          </div>
+          <div class="h-full min-h-[300px] relative" data-ps="src/pages/websites.astro:rgw6ei">
+            <img 
+              crossorigin="anonymous"
+              src="https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=1200&q=80"
+              srcset="https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=320&q=80 320w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=480&q=80 480w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=640&q=80 640w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=768&q=80 768w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=1024&q=80 1024w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=1280&q=80 1280w, https://images.unsplash.com/photo-1628586165208-0ac525a54757?auto=format&w=1920&q=80 1920w"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="Modern website builder interface" 
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy" data-ps="src/pages/websites.astro:doywxa" />
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-8" data-ps="src/pages/websites.astro:kbzb8n">Custom Website Services</h3>
+      <div class="grid md:grid-cols-2 gap-8 mt-8" data-ps="src/pages/websites.astro:grid">
+        <div class="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700" data-ps="src/pages/websites.astro:card-1">
+          <h3 class="mt-0 text-white" data-ps="src/pages/websites.astro:h3-1">Info Pages (WordPress)</h3>
+          <p class="text-zinc-200" data-ps="src/pages/websites.astro:p-2">One or few-page entities that serve as your company's business card online.</p>
+        </div>
+        <div class="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700" data-ps="src/pages/websites.astro:card-2">
+          <h3 class="mt-0 text-white" data-ps="src/pages/websites.astro:h3-2">Dynamic Sites (WordPress)</h3>
+          <p class="text-zinc-200" data-ps="src/pages/websites.astro:p-3">Larger websites with multiple subpages, a blog, or other updateable sections.</p>
+        </div>
+        <div class="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700" data-ps="src/pages/websites.astro:card-3">
+          <h3 class="mt-0 text-white" data-ps="src/pages/websites.astro:h3-3">E-commerce (WooCommerce)</h3>
+          <p class="text-zinc-200" data-ps="src/pages/websites.astro:p-4">Complete sales platforms for direct online sales of products and services.</p>
+        </div>
+        <div class="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700" data-ps="src/pages/websites.astro:card-4">
+          <h3 class="mt-0 text-white" data-ps="src/pages/websites.astro:h3-4">Custom Solutions</h3>
+          <p class="text-zinc-200" data-ps="src/pages/websites.astro:p-5">We use PHP, Python, JavaScript, HTML, SQL, and NoSQL for developing more demanding systems.</p>
+        </div>
+      </div>
+
+      <h3 class="mt-12" data-ps="src/pages/websites.astro:h3-5">Comprehensive Service</h3>
+      <p data-ps="src/pages/websites.astro:p-6">We also take care of other critical areas for you:</p>
+      <ul data-ps="src/pages/websites.astro:ul-1">
+        <li data-ps="src/pages/websites.astro:li-1">Domain names and transfers</li>
+        <li data-ps="src/pages/websites.astro:li-2">Reliable web hosting</li>
+        <li data-ps="src/pages/websites.astro:li-3">Google Analytics & Search Console</li>
+        <li data-ps="src/pages/websites.astro:li-4">Search Engine Optimization (SEO)</li>
+        <li data-ps="src/pages/websites.astro:li-5">Logo design and content production</li>
+      </ul>
+
+      <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-8 mt-12" data-ps="src/pages/websites.astro:cta">
+        <h3 class="mt-0" data-ps="src/pages/websites.astro:cta-h3">Request a website quote</h3>
+        <p data-ps="src/pages/websites.astro:cta-p">We help you choose the right solution for your business.</p>
+        <a href="/contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors no-underline" data-ps="src/pages/websites.astro:cta-a">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

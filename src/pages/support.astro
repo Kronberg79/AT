@@ -1,0 +1,283 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const { lang = 'en' } = Astro.props as { lang?: 'en' | 'fi' | 'sv' };
+
+// Translations dictionary
+const t = {
+  en: {
+    title: 'Support',
+    desc: "We're here to help. Follow the instructions below to get in touch with our team.",
+    howTo: 'How to get support',
+    howToDesc: "Whether you're facing a technical issue or have a question about our services, we provide multiple ways to reach our experts.",
+    emailUs: 'Email Us',
+    emailDesc: 'Send your detailed request to our support team.',
+    callUs: 'Call Us',
+    callDesc: 'Speak directly with one of our technicians.',
+    howWorks: 'How it works',
+    step1: 'Submit your request via email, phone, or the form on this page.',
+    step2: 'A support ticket is automatically created in our system.',
+    step3: 'Our team reviews the priority and assigns a specialist.',
+    step4: 'We contact you with a solution or request more details.',
+    formTitle: 'Create a Ticket',
+    name: 'Your Name *',
+    email: 'Email Address *',
+    phone: 'Phone Number *',
+    subject: 'Subject *',
+    message: 'Message *',
+    submit: 'Submit Support Ticket',
+    successTitle: 'Ticket Submitted!',
+    successDesc: "We've received your request and will get back to you shortly.",
+    sendAnother: 'Send another message',
+    errorFill: 'Please fill in all required fields.',
+    errorFail: 'Failed to submit ticket. Please try again or email us directly.'
+  },
+  fi: {
+    title: 'Tuki',
+    desc: 'Olemme täällä auttamassa. Seuraa alla olevia ohjeita ottaaksesi yhteyttä tiimiimme.',
+    howTo: 'Kuinka saada tukea',
+    howToDesc: 'Olitpa kohtaamassa teknisen ongelman tai sinulla on kysyttävää palveluistamme, tarjoamme useita tapoja tavoittaa asiantuntijamme.',
+    emailUs: 'Sähköposti',
+    emailDesc: 'Lähetä yksityiskohtainen pyyntösi tukitiimillemme.',
+    callUs: 'Soita meille',
+    callDesc: 'Keskustele suoraan teknikon kanssa.',
+    howWorks: 'Näin se toimii',
+    step1: 'Lähetä pyyntösi sähköpostitse, puhelimitse tai tällä lomakkeella.',
+    step2: 'Järjestelmäämme luodaan automaattisesti tukitiketti.',
+    step3: 'Tiimimme tarkistaa prioriteetin ja määrittää asiantuntijan.',
+    step4: 'Otamme sinuun yhteyttä ratkaisun kera tai pyydämme lisätietoja.',
+    formTitle: 'Luo tiketti',
+    name: 'Nimesi *',
+    email: 'Sähköpostiosoite *',
+    phone: 'Puhelinnumero *',
+    subject: 'Aihe *',
+    message: 'Viesti *',
+    submit: 'Lähetä tukitiketti',
+    successTitle: 'Tiketti lähetetty!',
+    successDesc: 'Olemme vastaanottaneet pyyntösi ja palaamme asiaan pian.',
+    sendAnother: 'Lähetä uusi viesti',
+    errorFill: 'Täytä kaikki pakolliset kentät.',
+    errorFail: 'Tiketin lähetys epäonnistui. Yritä uudelleen tai lähetä meille sähköpostia.'
+  },
+  sv: {
+    title: 'Support',
+    desc: 'Vi är här för att hjälpa. Följ instruktionerna nedan för att komma i kontakt med vårt team.',
+    howTo: 'Hur man får support',
+    howToDesc: 'Oavsett om du står inför ett tekniskt problem eller har frågor om våra tjänster, erbjuder vi flera sätt att nå våra experter.',
+    emailUs: 'E-post',
+    emailDesc: 'Skicka din detaljerade förfrågan till vårt supportteam.',
+    callUs: 'Ring oss',
+    callDesc: 'Prata direkt med en av våra tekniker.',
+    howWorks: 'Hur det fungerar',
+    step1: 'Skicka din förfrågan via e-post, telefon eller detta formulär.',
+    step2: 'Ett supportärende skapas automatiskt i vårt system.',
+    step3: 'Vårt team granskar prioriteten och tilldelar en specialist.',
+    step4: 'Vi kontaktar dig med en lösning eller ber om mer information.',
+    formTitle: 'Skapa ett ärende',
+    name: 'Ditt namn *',
+    email: 'E-postadress *',
+    phone: 'Telefonnummer *',
+    subject: 'Ämne *',
+    message: 'Meddelande *',
+    submit: 'Skicka supportärende',
+    successTitle: 'Ärende skickat!',
+    successDesc: 'Vi har mottagit din förfrågan och återkommer inom kort.',
+    sendAnother: 'Skicka ett till meddelande',
+    errorFill: 'Vänligen fyll i alla obligatoriska fält.',
+    errorFail: 'Kunde inte skicka ärendet. Försök igen eller maila oss direkt.'
+  }
+};
+
+const i18n = t[lang] || t.en;
+
+const runtime = Astro.locals.runtime;
+let error = '';
+let success = false;
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData();
+  const name = formData.get('name')?.toString() || '';
+  const email = formData.get('email')?.toString() || '';
+  const phone = formData.get('phone')?.toString() || '';
+  const subject = formData.get('subject')?.toString() || '';
+  const message = formData.get('message')?.toString() || '';
+
+  if (!name || !email || !phone || !subject || !message) {
+    error = 'Please fill in all required fields.';
+  } else {
+    try {
+      // 1. Save to Database
+      if (runtime?.env?.DB) {
+        await runtime.env.DB.prepare(
+          'INSERT INTO support_tickets (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)'
+        ).bind(name, email, phone, subject, message).run();
+      }
+
+      // 2. Send Email Notification via Resend API
+      const env = runtime?.env || process?.env || import.meta.env;
+      const resendApiKey = env?.RESEND_API_KEY;
+
+      if (resendApiKey) {
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${resendApiKey}`
+          },
+          body: JSON.stringify({
+            from: 'Website System <onboarding@resend.dev>',
+            to: 'support@a-t.fi',
+            subject: `New Support Ticket: ${subject}`,
+            html: `
+              <h3>New Support Ticket</h3>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${phone}</p>
+              <hr/>
+              <p><strong>Message:</strong></p>
+              <p>${message.replace(/\n/g, '<br/>')}</p>
+            `,
+            reply_to: email
+          })
+        });
+      } else {
+        console.warn("Support Ticket saved to DB but RESEND_API_KEY is missing. Email not sent.");
+      }
+
+      success = true;
+    } catch (e) {
+      console.error('Support ticket error:', e);
+      error = i18n.errorFail;
+    }
+  }
+}
+---
+
+<BaseLayout title={`${i18n.title} | Archipelago Technics`} description={i18n.desc}>
+  <PageHeader 
+    title={i18n.title} 
+    description={i18n.desc}
+  />
+
+  <main class="py-24 bg-zinc-950 min-h-screen" data-ps="src/pages/support.astro:eaw35t">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16" data-ps="src/pages/support.astro:qbdo4d">
+      <!-- Instructions -->
+      <div class="space-y-12" data-ps="src/pages/support.astro:qbdo4e">
+        <div data-ps="src/pages/support.astro:qbdo4f">
+          <h2 class="text-3xl font-black text-white mb-6" data-ps="src/pages/support.astro:z72nrv">{i18n.howTo}</h2>
+          <p class="text-white/60 text-lg leading-relaxed mb-8" data-ps="src/pages/support.astro:q2w1nq">
+            {i18n.howToDesc}
+          </p>
+          
+          <div class="space-y-6" data-ps="src/pages/support.astro:qbdo4g">
+            <div class="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#F54a00]/30 transition-colors" data-ps="src/pages/support.astro:qbdo4h">
+              <div class="w-12 h-12 bg-[#F54a00]/10 rounded-xl flex items-center justify-center text-[#F54a00] shrink-0" data-ps="src/pages/support.astro:qbdo4i">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <div data-ps="src/pages/support.astro:qbdo4j">
+                <h3 class="text-xl font-bold text-white mb-2" data-ps="src/pages/support.astro:kinqk9">{i18n.emailUs}</h3>
+                <p class="text-white/60 mb-2" data-ps="src/pages/support.astro:q2w1oc">{i18n.emailDesc}</p>
+                <a href="mailto:support@a-t.fi" class="text-[#F54a00] font-bold hover:underline" data-ps="src/pages/support.astro:x6tycp">support@a-t.fi</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-[#F54a00]/30 transition-colors" data-ps="src/pages/support.astro:qbdo4k">
+              <div class="w-12 h-12 bg-[#F54a00]/10 rounded-xl flex items-center justify-center text-[#F54a00] shrink-0" data-ps="src/pages/support.astro:qbdo4l">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              </div>
+              <div data-ps="src/pages/support.astro:qbdo4m">
+                <h3 class="text-xl font-bold text-white mb-2" data-ps="src/pages/support.astro:kinqka">{i18n.callUs}</h3>
+                <p class="text-white/60 mb-2" data-ps="src/pages/support.astro:q2w1od">{i18n.callDesc}</p>
+                <a href="tel:+358405829704" class="text-[#F54a00] font-bold hover:underline" data-ps="src/pages/support.astro:x6tydb">+358 40 582 9704</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-ps="src/pages/support.astro:ocsva6">
+          <h2 class="text-2xl font-bold text-white mb-4" data-ps="src/pages/support.astro:z72nrw">{i18n.howWorks}</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-white/60" data-ps="src/pages/support.astro:z32hqd">
+              <span class="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" data-ps="src/pages/support.astro:dhrp14">1</span>
+              <span data-ps="src/pages/support.astro:dhrp15">{i18n.step1}</span>
+            </li>
+            <li class="flex items-start gap-3 text-white/60" data-ps="src/pages/support.astro:z32hqc">
+              <span class="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" data-ps="src/pages/support.astro:dhrp16">2</span>
+              <span data-ps="src/pages/support.astro:dhrp17">{i18n.step2}</span>
+            </li>
+            <li class="flex items-start gap-3 text-white/60" data-ps="src/pages/support.astro:z32hqb">
+              <span class="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" data-ps="src/pages/support.astro:dhrp18">3</span>
+              <span data-ps="src/pages/support.astro:dhrp19">{i18n.step3}</span>
+            </li>
+            <li class="flex items-start gap-3 text-white/60" data-ps="src/pages/support.astro:z32hqa">
+              <span class="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5" data-ps="src/pages/support.astro:dhrp1a">4</span>
+              <span data-ps="src/pages/support.astro:dhrp1b">{i18n.step4}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Ticket Form -->
+      <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative" data-ps="src/pages/support.astro:ocsva5">
+        {success ? (
+          <div class="text-center py-12" data-ps="src/pages/support.astro:ocsva4">
+            <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6" data-ps="src/pages/support.astro:ocsva3">
+              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2" data-ps="src/pages/support.astro:z72nrx">{i18n.successTitle}</h2>
+            <p class="text-white/60 mb-8" data-ps="src/pages/support.astro:q2w1oe">{i18n.successDesc}</p>
+            <button onclick="window.location.reload()" class="px-8 py-3 bg-[#F54a00] text-white rounded-xl font-bold hover:bg-[#D43F00] transition-colors" data-ps="src/pages/support.astro:wxce75">
+              {i18n.sendAnother}
+            </button>
+          </div>
+        ) : (
+          <>
+            <h2 class="text-2xl font-bold text-white mb-8" data-ps="src/pages/support.astro:z72nry">{i18n.formTitle}</h2>
+            
+            {error && (
+              <div class="mb-8 p-4 bg-red-500/10 border border-red-500/20 text-red-500 rounded-xl text-sm" data-ps="src/pages/support.astro:ocsva2">
+                {error}
+              </div>
+            )}
+
+            <form method="POST" class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6" data-ps="src/pages/support.astro:ocsva1">
+                <div class="space-y-2" data-ps="src/pages/support.astro:ocsva0">
+                  <label for="name" class="text-sm font-bold text-white/70 ml-1">{i18n.name}</label>
+                  <input type="text" id="name" name="name" required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#F54a00] outline-none transition-colors" placeholder="" />
+                </div>
+                <div class="space-y-2" data-ps="src/pages/support.astro:ocsv9z">
+                  <label for="email" class="text-sm font-bold text-white/70 ml-1">{i18n.email}</label>
+                  <input type="email" id="email" name="email" required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#F54a00] outline-none transition-colors" placeholder="" />
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-6" data-ps="src/pages/support.astro:ocsv9y_container">
+                <div class="space-y-2" data-ps="src/pages/support.astro:ocsv9y_phone">
+                  <label for="phone" class="text-sm font-bold text-white/70 ml-1">{i18n.phone}</label>
+                  <input type="tel" id="phone" name="phone" required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#F54a00] outline-none transition-colors" placeholder="+358..." />
+                </div>
+                <div class="space-y-2" data-ps="src/pages/support.astro:ocsv9y">
+                  <label for="subject" class="text-sm font-bold text-white/70 ml-1">{i18n.subject}</label>
+                  <input type="text" id="subject" name="subject" required class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#F54a00] outline-none transition-colors" placeholder="..." />
+                </div>
+              </div>
+
+              <div class="space-y-2" data-ps="src/pages/support.astro:ocsv9x">
+                <label for="message" class="text-sm font-bold text-white/70 ml-1">{i18n.message}</label>
+                <textarea id="message" name="message" required rows="6" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#F54a00] outline-none transition-colors resize-none" placeholder="..."></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-5 bg-[#F54a00] text-white rounded-xl font-bold text-lg hover:bg-[#D43F00] transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(245,74,0,0.3)]" data-ps="src/pages/support.astro:wxce74">
+                {i18n.submit}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

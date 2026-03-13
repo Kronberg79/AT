@@ -1,0 +1,73 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Cybersecurity & Network Protection | Archipelago Technics";
+const description = "Comprehensive cybersecurity solutions to protect your business from modern threats. Endpoint security, firewalls, and employee training.";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang="en"
+>
+  <PageHeader title={title} description={description} />
+  
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/security.astro:f3gwi3">
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-ps="src/pages/security.astro:f3gwi4">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/security.astro:f3gwi5">
+        <p class="lead" data-ps="src/pages/security.astro:pfl43a">Cybersecurity is not just a technical issue; it's a business fundamental.</p>
+        <p data-ps="src/pages/security.astro:pfl439">In an era of increasing ransomware and phishing attacks, a "set it and forget it" approach to security is no longer sufficient. We provide a multi-layered defense strategy that protects your identity, your data, and your infrastructure.</p>
+        <p data-ps="src/pages/security.astro:72xx1h">From proactive monitoring to employee training, we ensure your organization stays resilient against evolving digital threats.</p>
+      </div>
+      <div data-ps="src/pages/security.astro:f3gwi6">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Cybersecurity Shield" data-ps="src/pages/security.astro:ers256" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24" data-ps="src/pages/security.astro:t88e8t">
+      <div class="bg-neutral-900 border border-white/10 p-6 rounded-xl" data-ps="src/pages/security.astro:f3gwhx">
+        <h3 class="font-bold text-lg mb-2" data-ps="src/pages/security.astro:qbrgtm">Endpoint Security</h3>
+        <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1g">Advanced protection for laptops, desktops, and mobile devices with real-time threat detection.</p>
+      </div>
+      <div class="bg-neutral-900 border border-white/10 p-6 rounded-xl" data-ps="src/pages/security.astro:f3gwhy">
+        <h3 class="font-bold text-lg mb-2" data-ps="src/pages/security.astro:qbrgtl">Email Protection</h3>
+        <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1f">Filtering systems to block phishing, malware, and spam before they reach your inbox.</p>
+      </div>
+      <div class="bg-neutral-900 border border-white/10 p-6 rounded-xl" data-ps="src/pages/security.astro:f3gwhz">
+        <h3 class="font-bold text-lg mb-2" data-ps="src/pages/security.astro:qbrgtk">Identity Mgmt</h3>
+        <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1e">Implementing MFA (Multi-Factor Authentication) and Zero Trust access controls.</p>
+      </div>
+      <div class="bg-neutral-900 border border-white/10 p-6 rounded-xl" data-ps="src/pages/security.astro:f3gwi0">
+        <h3 class="font-bold text-lg mb-2" data-ps="src/pages/security.astro:qbrgtj">Security Audits</h3>
+        <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1d">Regular vulnerability scanning and security posture assessments to find weak points.</p>
+      </div>
+    </div>
+
+    <div class="bg-primary-950/20 border border-primary-900/50 p-12 rounded-3xl" data-ps="src/pages/security.astro:f3gwi1">
+      <div class="max-w-3xl mx-auto text-center mb-12" data-ps="src/pages/security.astro:f3gwi2">
+        <h2 class="text-3xl font-bold mb-4" data-ps="src/pages/security.astro:bncjly">The Human Element</h2>
+        <p class="text-neutral-400" data-ps="src/pages/security.astro:72xx1c">Technology is only half the battle. We provide security awareness training to turn your employees into your strongest line of defense.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-ps="src/pages/security.astro:f3gwi3">
+        <div data-ps="src/pages/security.astro:f3gwi4">
+          <h4 class="font-bold mb-2" data-ps="src/pages/security.astro:u0xnxv">Phishing Simulations</h4>
+          <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1b">Realistic test emails to train staff on how to spot and report suspicious messages.</p>
+        </div>
+        <div data-ps="src/pages/security.astro:f3gwi5">
+          <h4 class="font-bold mb-2" data-ps="src/pages/security.astro:u0xnxw">Security Workshops</h4>
+          <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx1a">Hands-on sessions covering password hygiene and safe browsing habits.</p>
+        </div>
+        <div data-ps="src/pages/security.astro:f3gwi6">
+          <h4 class="font-bold mb-2" data-ps="src/pages/security.astro:u0xnxx">Compliance Training</h4>
+          <p class="text-sm text-neutral-400" data-ps="src/pages/security.astro:72xx0o">Ensuring staff understand GDPR and other regulatory requirements for data handling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

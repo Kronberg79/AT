@@ -1,0 +1,177 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const pulsewayImage = "https://images.unsplash.com/photo-1673526759317-be71a1243e3d?auto=format&w=1200&q=80";
+const monitoringImage = "https://images.unsplash.com/photo-1746893737268-81fe686e6a51?auto=format&w=1200&q=80";
+---
+
+<BaseLayout 
+  lang="fi"
+  title="Pulseway Finland - RMM-ratkaisut | Archipelago Technics"
+  description="Pulseway Finland -kumppanina tarjoamme kattavat RMM-ratkaisut yrityksille ja palveluntarjoajille Suomessa. Valvo ja hallitse IT-infrastruktuuriasi tehokkaasti."
+>
+  <!-- Pulseway Themed Header & Logo Ticker -->
+  <div class="bg-[#002B49] pt-24 pb-8 overflow-hidden" data-ps="src/pages/fi/pulseway.astro:fcvt8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12" data-ps="src/pages/fi/pulseway.astro:fcvt7">
+      <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight" data-ps="src/pages/fi/pulseway.astro:4cf8ew">Pulseway RMM</h1>
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-medium mb-8" data-ps="src/pages/fi/pulseway.astro:yydfag">IT-infrastruktuurisi hallinta, missä tahansa oletkin. Pulseway-kumppanisi Suomessa.</p>
+      <a href="https://www.pulseway.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-white/80 hover:text-white font-bold transition-colors border-b border-white/20 hover:border-white pb-1" data-ps="src/pages/fi/pulseway.astro:pwlink">
+        Vieraile Pulseway.com-sivustolla
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Trusted By Ticker -->
+    <div class="relative flex overflow-x-hidden border-y border-white/10 bg-white/5 py-6 group" data-ps="src/pages/fi/pulseway.astro:fcvt6">
+      <div class="animate-marquee whitespace-nowrap flex items-center gap-16 px-8" data-ps="src/pages/fi/pulseway.astro:fcvt5">
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/capterra-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcigb" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/dell-logo.png" data-ps="src/pages/fi/pulseway.astro:fqciga" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/harvard-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig9" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/raspberry-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig8" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/siemens-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig7" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/canon-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig6" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/archipelagotech-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig5" />
+      </div>
+      <div class="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16 px-8 py-6" aria-hidden="true" data-ps="src/pages/fi/pulseway.astro:fcvt4">
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/capterra-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig4" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/dell-logo.png" data-ps="src/pages/fi/pulseway.astro:fqcig3" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/harvard-logo.png" data-ps="src/pages/fi/pulseway.astro:ualugl" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/raspberry-logo.png" data-ps="src/pages/fi/pulseway.astro:ualugk" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/siemens-logo.png" data-ps="src/pages/fi/pulseway.astro:ualugj" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/canon-logo.png" data-ps="src/pages/fi/pulseway.astro:ualugi" />
+        <img alt="Pulseway customer logo" loading="lazy" width="140" height="35" class="h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert brightness-0" src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/home-page/archipelagotech-logo.png" data-ps="src/pages/fi/pulseway.astro:ualugh" />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .animate-marquee {
+      animation: marquee 50s linear infinite;
+    }
+    .animate-marquee2 {
+      animation: marquee2 50s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes marquee2 {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+
+  <section class="py-24 bg-[#001D33]" data-ps="src/pages/fi/pulseway.astro:s9z2x1">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-ps="src/pages/fi/pulseway.astro:s9z2x2">
+  <div class="grid lg:grid-cols-2 gap-16 items-center" data-ps="src/pages/fi/pulseway.astro:s9z2x3">
+  <div data-ps="src/pages/fi/pulseway.astro:s9z2x4">
+  <h2 class="text-3xl md:text-4xl font-black text-white mb-6" data-ps="src/pages/fi/pulseway.astro:s9z2x5">Mikä on Pulseway?</h2>
+  <p class="text-lg text-zinc-300 mb-6" data-ps="src/pages/fi/pulseway.astro:s9z2x6">
+  Pulseway on mobiililähtöinen Remote Monitoring and Management (RMM) -alusta, joka antaa IT-ammattilaisille täyden hallinnan koko IT-ympäristöön mistä tahansa ja milloin tahansa.
+  </p>
+  <div class="space-y-6" data-ps="src/pages/fi/pulseway.astro:s9z2x7">
+  <div class="flex items-start gap-4" data-ps="src/pages/fi/pulseway.astro:s9z2x8">
+  <div class="w-10 h-10 bg-[#F54a00]/10 rounded-lg flex items-center justify-center shrink-0" data-ps="src/pages/fi/pulseway.astro:s9z2x9">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#F54a00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+  </svg>
+  </div>
+  <div data-ps="src/pages/fi/pulseway.astro:s9z2y1">
+  <h3 class="font-bold text-zinc-50" data-ps="src/pages/fi/pulseway.astro:s9z2y2">Mobiilihallinta</h3>
+  <p class="text-zinc-400" data-ps="src/pages/fi/pulseway.astro:s9z2y3">Vastaanota välittömiä ilmoituksia ja korjaa ongelmat suoraan älypuhelimestasi tai tabletistasi.</p>
+  </div>
+  </div>
+  <div class="flex items-start gap-4" data-ps="src/pages/fi/pulseway.astro:s9z2y4">
+  <div class="w-10 h-10 bg-[#F54a00]/10 rounded-lg flex items-center justify-center shrink-0" data-ps="src/pages/fi/pulseway.astro:s9z2y5">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#F54a00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+  </div>
+  <div data-ps="src/pages/fi/pulseway.astro:s9z2y6">
+  <h3 class="font-bold text-zinc-50" data-ps="src/pages/fi/pulseway.astro:s9z2y7">Tehokas automaatio</h3>
+  <p class="text-zinc-400" data-ps="src/pages/fi/pulseway.astro:s9z2y8">Automatisoi rutiininomaiset ylläpitotehtävät, päivitysten hallinta ja tietoturvapäivitykset vaivattomasti.</p>
+  </div>
+  </div>
+            <div class="flex items-start gap-4" data-ps="src/pages/fi/pulseway.astro:s9z2y9">
+              <div class="w-10 h-10 bg-[#F54a00]/10 rounded-lg flex items-center justify-center shrink-0" data-ps="src/pages/fi/pulseway.astro:s9z2z1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#F54a00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04 inter-2 2 0 00-1.79 1.994 11.95 11.95 0 005.458 9.235 11.952 11.952 0 005.459 9.235 2 2 0 001.79-1.994 11.955 11.955 0 015.458-9.235 11.95 11.95 0 005.458-9.235 2 2 0 00-1.79-1.994z" />
+                </svg>
+              </div>
+              <div data-ps="src/pages/fi/pulseway.astro:s9z2z2">
+                <h3 class="font-bold text-zinc-50" data-ps="src/pages/fi/pulseway.astro:s9z2z3">Päätelaitteiden suojaus</h3>
+                <p class="text-zinc-400" data-ps="src/pages/fi/pulseway.astro:s9z2z4">Integroitu virustorjunta ja kiristysohjelmasuojaus varmistavat, että yrityksesi tiedot pysyvät turvassa.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4" data-ps="src/pages/fi/pulseway.astro:patchmgmt">
+              <div class="w-10 h-10 bg-[#F54a00]/10 rounded-lg flex items-center justify-center shrink-0" data-ps="src/pages/fi/pulseway.astro:patchicon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#F54a00]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+              </div>
+              <div data-ps="src/pages/fi/pulseway.astro:patchtext">
+                <h3 class="font-bold text-zinc-50" data-ps="src/pages/fi/pulseway.astro:patchtitle">Automaattinen päivitysten hallinta</h3>
+                <p class="text-zinc-400" data-ps="src/pages/fi/pulseway.astro:patchdesc">Pidä käyttöjärjestelmät ja kolmannen osapuolen sovellukset aina ajan tasalla ilman manuaalista työtä.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative" data-ps="src/pages/fi/pulseway.astro:s9z2z5">
+          <img 
+            src="https://pulseway.s3.us-east-1.amazonaws.com/website/images/new-products/it-management-software/it-management-hero.gif" 
+            alt="Pulseway Finland IT Management" 
+            class="rounded-2xl shadow-2xl w-full border-4 border-white/10" data-ps="src/pages/fi/pulseway.astro:s9z2z6" />
+          <div class="absolute -bottom-6 -left-6 bg-orange-700 p-8 rounded-2xl text-zinc-50 shadow-xl max-w-xs" data-ps="src/pages/fi/pulseway.astro:s9z2z7">
+            <p class="text-2xl font-black mb-2" data-ps="src/pages/fi/pulseway.astro:s9z2z8">100%</p>
+            <p class="text-sm font-bold text-zinc-100" data-ps="src/pages/fi/pulseway.astro:s9z2z9">Näkyvyys IT-infrastruktuuriisi suoraan puhelimestasi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-zinc-50" data-ps="src/pages/fi/pulseway.astro:s9z3a1">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-ps="src/pages/fi/pulseway.astro:s9z3a2">
+      <h2 class="text-3xl md:text-4xl font-black text-zinc-950 mb-8" data-ps="src/pages/fi/pulseway.astro:s9z3a3">Pulseway-kumppanisi Suomessa</h2>
+      <p class="text-xl text-zinc-600 mb-10" data-ps="src/pages/fi/pulseway.astro:s9z3a4">
+        Archipelago Technics on sertifioitu Pulseway-kumppani. Tuomme tämän maailmanluokan IT-hallintaratkaisun yrityksille ja IT-palveluntarjoajille ympäri Suomen.
+      </p>
+      <div class="bg-white p-12 rounded-3xl shadow-sm border border-zinc-200" data-ps="src/pages/fi/pulseway.astro:s9z3a5">
+        <h3 class="text-2xl font-black text-zinc-950 mb-6" data-ps="src/pages/fi/pulseway.astro:s9z3a6">Hanki ratkaisu kauttamme</h3>
+        <p class="text-zinc-600 mb-8" data-ps="src/pages/fi/pulseway.astro:s9z3a7">
+          Halusitpa hallita omaa sisäistä IT-ympäristöäsi tai toimia MSP-palveluntarjoajana asiakkaillesi, tarjoamme lisenssit, asennustuen ja paikallisen asiantuntemuksen Pulsewayn hyödyntämiseen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-ps="src/pages/fi/pulseway.astro:s9z3a8">
+          <a href="/fi/yhteystiedot" class="px-10 py-5 bg-[#F54a00] text-zinc-950 rounded-full font-black text-lg hover:brightness-110 transition-all shadow-xl" data-ps="src/pages/fi/pulseway.astro:s9z3a9">
+            Pyydä esittely
+          </a>
+          <a href="tel:+358405829704" class="px-10 py-5 border-2 border-zinc-200 text-zinc-900 rounded-full font-black text-lg hover:bg-zinc-50 transition-all" data-ps="src/pages/fi/pulseway.astro:s9z3b1">
+            Soita asiantuntijalle
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white" data-ps="src/pages/fi/pulseway.astro:s9z3b2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-ps="src/pages/fi/pulseway.astro:s9z3b3">
+      <div class="grid md:grid-cols-3 gap-8" data-ps="src/pages/fi/pulseway.astro:s9z3b4">
+        <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100" data-ps="src/pages/fi/pulseway.astro:s9z3b5">
+          <h4 class="text-xl font-black text-zinc-950 mb-4" data-ps="src/pages/fi/pulseway.astro:s9z3b6">Sisäiselle IT-osastolle</h4>
+          <p class="text-zinc-600" data-ps="src/pages/fi/pulseway.astro:s9z3b7">Yksinkertaista päivittäistä työtaakkaasi ja valvo palvelimia, työasemia ja verkkolaitteita yhdestä näkymästä.</p>
+        </div>
+        <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100" data-ps="src/pages/fi/pulseway.astro:s9z3b8">
+          <h4 class="text-xl font-black text-zinc-950 mb-4" data-ps="src/pages/fi/pulseway.astro:s9z3b9">Palveluntarjoajille (MSP)</h4>
+          <p class="text-zinc-600" data-ps="src/pages/fi/pulseway.astro:s9z3c1">Kasvata liiketoimintaasi hallitsemalla useita asiakasympäristöjä tehokkaasti ja tarjoamalla proaktiivista tukea.</p>
+        </div>
+        <div class="p-8 bg-zinc-50 rounded-2xl border border-zinc-100" data-ps="src/pages/fi/pulseway.astro:s9z3c2">
+          <h4 class="text-xl font-black text-zinc-950 mb-4" data-ps="src/pages/fi/pulseway.astro:s9z3c3">Paikallinen tuki</h4>
+          <p class="text-zinc-600" data-ps="src/pages/fi/pulseway.astro:s9z3c4">Saat apua tarvittaessa suomalaiselta tiimiltämme. Tunnemme paikalliset markkinat ja vaatimukset.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

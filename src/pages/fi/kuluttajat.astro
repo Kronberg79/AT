@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "IT-tuki Kotiin ja Tietokonehuolto | Archipelago Technics";
+const description = "Ammattitaitoista IT-apua kotiin ja perheelle. Tietokonehuolto, verkon asennus ja tietoturva Turun seudulla.";
+---
+
+<BaseLayout title={title} description={description} lang="fi">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/fi/kuluttajat.astro:n4oq58">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/fi/kuluttajat.astro:n4oq59">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/fi/kuluttajat.astro:n4oq5a">
+        <p class="lead" data-ps="src/pages/fi/kuluttajat.astro:h4re57">Ammattitaitoista IT-apua kotiin.</p>
+        <p data-ps="src/pages/fi/kuluttajat.astro:h4re58">Autamme yksityishenkilöitä ja perheitä tietokoneongelmissa, verkon asennuksessa, tietoturvassa ja laitteiden huollossa. Tarvitsetpa etätukea tai kotikäyntiä, olemme täällä auttamassa.</p>
+        <ul>
+            <li data-ps="src/pages/fi/kuluttajat.astro:5ed2p6">Tietokonehuolto & Ylläpito</li>
+            <li data-ps="src/pages/fi/kuluttajat.astro:g7ok9q">Kotiverkon asennus (Wi-Fi)</li>
+            <li data-ps="src/pages/fi/kuluttajat.astro:g7ok9r">Tietojen palautus & Varmuuskopiointi</li>
+            <li data-ps="src/pages/fi/kuluttajat.astro:g7ok9s">Tietoturva & Virustorjunta</li>
+            <li data-ps="src/pages/fi/kuluttajat.astro:g7ok9z">Ilmainen nouto- ja palautuspalvelu (Turun alueella)</li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/fi/kuluttajat.astro:n4oq5b">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1758686254545-2e8a33d39adb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Perhe tietokoneella" data-ps="src/pages/fi/kuluttajat.astro:6qk8i1" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

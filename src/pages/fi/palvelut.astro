@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHeader from '@/components/PageHeader.astro';
+
+const title = "Kaikki IT-palvelut Yrityksille ja Kotiin | Archipelago Technics";
+const description = "Kattava valikoima IT-palveluita: tietokonehuolto, etätuki, tietoturva, palvelimet ja verkkoratkaisut.";
+---
+
+<BaseLayout title={title} description={description} lang="fi">
+  <PageHeader title={title} description={description} />
+  <div class="max-w-7xl mx-auto px-6 py-12" data-ps="src/pages/fi/palvelut.astro:lf9hg6">
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-ps="src/pages/fi/palvelut.astro:lf9hg5">
+      <div class="prose prose-invert prose-lg" data-ps="src/pages/fi/palvelut.astro:lf9hg4">
+        <p class="lead" data-ps="src/pages/fi/palvelut.astro:1erziv">Kaikki mitä tarvitset digitaaliseen elämään.</p>
+        <p data-ps="src/pages/fi/palvelut.astro:1erziu">Tutustu laajaan palveluvalikoimaamme, joka on suunniteltu pitämään teknologiasi tehokkaana, turvallisena ja ajan tasalla.</p>
+        <ul>
+            <li data-ps="src/pages/fi/palvelut.astro:693z12"><a href="/fi/etatuki" class="text-[#F54a00]" data-ps="src/pages/fi/palvelut.astro:yeydj7">Etätuki</a></li>
+            <li data-ps="src/pages/fi/palvelut.astro:693z13"><a href="/fi/tietokonehuolto" class="text-[#F54a00]" data-ps="src/pages/fi/palvelut.astro:yeydj8">Tietokonehuolto</a></li>
+            <li data-ps="src/pages/fi/palvelut.astro:693z14"><a href="/fi/tietoturva" class="text-[#F54a00]" data-ps="src/pages/fi/palvelut.astro:16iri4">Tietoturva</a></li>
+            <li data-ps="src/pages/fi/palvelut.astro:693z15"><a href="/fi/it-infra" class="text-[#F54a00]" data-ps="src/pages/fi/palvelut.astro:16iri3">IT-Infra</a></li>
+            <li data-ps="src/pages/fi/palvelut.astro:693z16"><a href="/fi/kotisivut" class="text-[#F54a00]" data-ps="src/pages/fi/palvelut.astro:16iri2">Kotisivut</a></li>
+        </ul>
+      </div>
+      <div data-ps="src/pages/fi/palvelut.astro:lf9hg3">
+        <img 
+            crossorigin="anonymous"
+            src="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80" 
+            srcset="https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=400&q=80 400w, https://images.unsplash.com/photo-1680992046617-e2e35451bcdb?auto=format&w=800&q=80 800w"
+            class="rounded-xl shadow-2xl w-full" 
+            alt="Palvelinsali" data-ps="src/pages/fi/palvelut.astro:jqllvp" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
